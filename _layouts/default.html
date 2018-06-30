@@ -2,6 +2,7 @@
 <html lang="{{ site.lang | default: " en-US " }}">
 
 <head>
+    <title>{{ site.title }}</title>
     <meta charset="UTF-8"> {% seo %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
@@ -12,11 +13,24 @@
 <body>
     <header class="page-header" role="banner">
         <h2 class="project-name">{{ site.title | default: site.github.repository_name }}</h2>
+        <a href="/sobre" class="btn">Sobre</a>
     </header>
 
     <main id="content" class="main-content" role="main">
         {{ content }}
+        
+        <footer style="text-align:center;">
+            <span>
+                <a target="_blank" href="https://github.com/fndomariano">GitHub</a>
+                - <a target="_blank" href="https://twitter.com/fndomariano">Twitter</a>
+                - <a target="_blank" href="https://www.linkedin.com/in/fndomariano/">Linkedin</a>
+            </span>
+            <br>
+            <a target="_blank" href="https://github.com/pages-themes/cayman">Cayman Theme</a>
+        </footer>
+
     </main>
+
 
     {% if site.google_analytics %}
     <script>

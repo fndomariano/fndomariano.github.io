@@ -8,12 +8,10 @@ title: {{ site.name }}
     {% for post in site.posts %}
         <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
         {{ post.excerpt }}... 
-  
+
         {% if post.excerpt != post.content %}
             <a href="{{ site.baseurl }}{{ post.url }}">Continue lendo</a>
         {% endif %}
-
-        <hr/>
-
+        <hr />
     {% endfor %}
 </div>

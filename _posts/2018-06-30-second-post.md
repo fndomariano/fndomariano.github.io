@@ -2,10 +2,6 @@
 layout:    post
 title:    "Segundo post"
 excerpt:  "Lorem ipsum vehicula a aliquam vitae sed fringilla quisque aliquet lacinia, curabitur blandit at class libero enim himenaeos in lacinia turpis suscipit, conubia vehicula sit egestas lacus euismod etiam tempus phasellus. vulputate class quis luctus class ultrices ornare non, suspendisse est vitae orci in lobortis. ut felis elementum aenean"
-tags:
-    - test
-    - jekyll
-    - blog
 ---
 
 Lorem ipsum vehicula a aliquam vitae sed fringilla quisque aliquet lacinia, curabitur blandit at class libero enim himenaeos in lacinia turpis suscipit, conubia vehicula sit egestas lacus euismod etiam tempus phasellus. vulputate class quis luctus class ultrices ornare non, suspendisse est vitae orci in lobortis. ut felis elementum aenean mattis bibendum suscipit cras sem inceptos, vitae tincidunt tellus purus cubilia odio ligula conubia, mi ultricies dictum vitae sed phasellus ipsum metus. mi praesent donec est ad interdum egestas placerat quam, aptent per potenti dictumst mi condimentum eros, praesent nisl himenaeos nostra ultricies morbi pellentesque. 
