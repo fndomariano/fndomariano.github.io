@@ -76,11 +76,12 @@
         }
 
         /* Twitter button */
-        .fa-twitter {
+        #share-bar .fa-twitter {
             color: #55acee;
         }
-        .fa-twitter:hover {
+        #share-bar .fa-twitter:hover {
             background-color: #55acee;
+            color: white;
         }
 
         /* Google-PLus button */
@@ -101,12 +102,18 @@
         }
         .menu a {
             color: white;
-            font-weight: bold;
+            font-size: 19px;
         }
         h2.title {
             margin-top: 0;
             margin-bottom: 0;
-            line-height: 1.2
+            line-height: 1.2;
+        }
+        h2.title a {
+            color:white;
+        }
+        h2 a:hover {
+            text-decoration: none;
         }
         .page-header {
             display: flex;
@@ -125,11 +132,28 @@
 <body>
     
     <header class="page-header" role="banner">
-        <h2 class="title">{{ site.title | default: site.github.repository_name }}</h2>
-        <nav class="menu" >
+        <h2 class="title">
+            <a href="/">
+                {{ '@fndomariano' | default: site.github.repository_name }}
+            </a>
+        </h2>
+        <nav class="menu">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/sobre">Sobre</a></li>                
+                <li>
+                    <a target="_blank" href="https://github.com/fndomariano">
+                        <i class="fa fa-github-square"></i>
+                    </a>
+                </li>                
+                <li>
+                    <a target="_blank" href="https://twitter.com/fndomariano">
+                       <i class="fa fa-twitter"></i>
+                    </a>
+                </li>                
+                <li>
+                    <a target="_blank" href="https://www.linkedin.com/in/fndomariano/">
+                       <i class="fa fa-linkedin"></i>
+                    </a>
+                </li>                
             </ul>
         </nav>
     </header>
@@ -137,13 +161,7 @@
     <main id="content" class="main-content" role="main">
         {{ content }}
         
-        <footer style="text-align:center;">
-            <span>
-                <a target="_blank" href="https://github.com/fndomariano">GitHub</a>
-                - <a target="_blank" href="https://twitter.com/fndomariano">Twitter</a>
-                - <a target="_blank" href="https://www.linkedin.com/in/fndomariano/">Linkedin</a>
-            </span>
-            <br>
+        <footer style="text-align:center; font-size: 20px;">
             <a target="_blank" href="https://github.com/pages-themes/cayman">Cayman Theme</a>
         </footer>
 
