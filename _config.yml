@@ -3,4 +3,5 @@ title: Fernando Mariano
 show_downloads: false
 paginate: 5
 paginate_path: /posts/:num/
-plugins: [jekyll-paginate] 
+plugins: [jekyll-paginate]
+google_analytics: 'UA-123045719-1'

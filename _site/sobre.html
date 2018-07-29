@@ -18,7 +18,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=fe982ef6242cabecba8fb8551341ed654085e751">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css?v=f7aec0e9f1204b1152b7903ea77c8204f10577bb">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123045719-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-123045719-1');
+    </script>
+
 
     <style>
         .pagination a, .pagination span {
@@ -41,25 +53,111 @@
         .pagination {
             text-align: center;
          }
+
+ 
+        /* Share Bar */
+        #share-bar {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        /* Each button */
+        .share-button {
+            margin: 0px;
+            margin-bottom: 10px;
+            margin-right: 3px;
+            border: 1px solid #D3D6D2;
+            padding: 5px 10px 5px 10px;
+            text-decoration: none;
+        }
+        .share-button:hover {
+            opacity: 1;
+            color: #ffffff;
+        }
+        .share-buttons a:hover {
+            text-decoration: none;
+        }
+
+        /* Facebook button */
+        .fa-facebook-official {
+            color: #3b5998;
+        }
+        .fa-facebook-official:hover {
+            background-color: #3b5998;
+        }
+
+        /* Twitter button */
+        .fa-twitter {
+            color: #55acee;
+        }
+        .fa-twitter:hover {
+            background-color: #55acee;
+        }
+
+        /* Google-PLus button */
+        .fa-google-plus {
+            color: #dd4b39;
+        }
+        .fa-google-plus:hover {
+            background-color: #dd4b39;
+        }
+        .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+        .menu li {
+            display: inline-block;
+            list-style: none;
+            margin-left: 20px; 
+        }
+        .menu a {
+            color: white;
+            font-weight: bold;
+        }
+        h2.title {
+            margin-top: 0;
+            margin-bottom: 0;
+            line-height: 1.2
+        }
+        .page-header {
+            display: flex;
+            padding: 1rem 6rem;
+            justify-content: space-between;
+            height: 60px;
+            padding-left: 30px;
+            padding-right: 30px;
+            line-height: 30px;
+            background-color: #159957;
+            background-image: linear-gradient(120deg, #155799, #159957);
+        }
     </style>
 </head>
 
 <body>
+    
     <header class="page-header" role="banner">
-        <h2 class="project-name">Fernando Mariano</h2>
-        <a href="/sobre" class="btn">Sobre</a>
+        <h2 class="title">Fernando Mariano</h2>
+        <nav class="menu" >
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/sobre">Sobre</a></li>                
+            </ul>
+        </nav>
     </header>
 
     <main id="content" class="main-content" role="main">
-        <h2>Quem sou?</h2>
+        <h2>Quem eu sou?</h2>
 
-<p>Um desenvolvedor web que gosta de ouvir um bom rock e apreciar uma boa cerveja. Nas horas vagas gosto de tocar violão e sempre que possível vou acampar. Ah, quase esqueci. Eu gosto muito de assitir jogos de futebol e de basquete também.</p>
+<p>Um desenvolvedor que gosta de rock, cerveja, basquete e futebol.</p>
 
-<p>Às vezes escrevo no <a href="https://medium.com/@fndomariano" target="_blank">Medium</a> sobre outros assuntos que não fazem parte do mundo dev.</p>
+<p>Às vezes escrevo no <a href="https://medium.com/@fndomariano" target="_blank">Medium</a> sobre assuntos que não estão relacionados a tecnologia da informação.</p>
 
-<h3>Por quê?</h3>
+<h2>Por quê?</h2>
 
-<p>Bom, primeiramente resolvi criar este blog para melhorar a minha forma de comunicação com outros devs. E claro, também quero compartilhar ideias e discutir sobre assuntos que tenho interesse em aprender ou melhorar.</p>
+<p>Resolvi criar este blog para melhorar a minha escrita e comunicação. Também quero compartilhar ideias e discutir sobre assuntos que tenho interesse em aprender ou melhorar.</p>
+
+<hr />
+
 
         
         <footer style="text-align:center;">
@@ -75,6 +173,18 @@
     </main>
 
 
+    
+        <script>
+            (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-123045719-1', 'auto');
+            ga('send', 'pageview');
+        </script> 
     
 
     <script id="dsq-count-scr" src="//https-fndomariano-github-io.disqus.com/count.js" async></script>
