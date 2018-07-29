@@ -1,3 +1,6 @@
 theme: jekyll-theme-cayman
 title: Fernando Mariano
 show_downloads: false
+paginate: 5
+paginate_path: /posts/:num/
+plugins: [jekyll-paginate] 

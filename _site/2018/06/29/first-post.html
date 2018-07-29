@@ -22,13 +22,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <link rel="stylesheet" href="/assets/css/style.css?v=4239a05d4e582f81a3d0ce1be844d4c056d859f0">
+    <link rel="stylesheet" href="/assets/css/style.css?v=fe982ef6242cabecba8fb8551341ed654085e751">
+
+    <style>
+        .pagination a, .pagination span {
+            padding: 7px 18px;
+            border: 1px solid #eee;
+            margin-left: -2px;
+            margin-right: -2px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            display: inline-block;
+          }
+
+        .pagination a {    
+            &:hover {
+                background-color: #f1f1f1;
+                color: #333;
+            }
+         }
+
+        .pagination {
+            text-align: center;
+         }
+    </style>
 </head>
 
 <body>
     <header class="page-header" role="banner">
         <h2 class="project-name">Fernando Mariano</h2>
-        <a href="#" class="btn">Sobre</a>
+        <a href="/sobre" class="btn">Sobre</a>
     </header>
 
     <main id="content" class="main-content" role="main">
@@ -48,6 +71,30 @@
 
 <a href="/">Voltar</a>
 
+
+	<hr/>
+	<div id="disqus_thread"></div>
+	<script>
+		/**
+		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+		
+		var disqus_config = function () {
+		this.page.url = 'https://fndomariano.github.io/2018/06/29/first-post.html';  // Replace PAGE_URL with your page's canonical URL variable
+		this.page.identifier = '/2018/06/29/first-post'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		
+		(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = 'https://https-fndomariano-github-io.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	                            
+
+
 <hr />
         
         <footer style="text-align:center;">
@@ -64,6 +111,8 @@
 
 
     
+
+    <script id="dsq-count-scr" src="//https-fndomariano-github-io.disqus.com/count.js" async></script>
 </body>
 
 </html>

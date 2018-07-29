@@ -1,6 +1,7 @@
 ---
 layout:    post
 title:    "Primeiro post"
+comments: true
 excerpt:  "Lorem ipsum vehicula a aliquam vitae sed fringilla quisque aliquet lacinia, curabitur blandit at class libero enim himenaeos in lacinia turpis suscipit, conubia vehicula sit egestas lacus euismod etiam tempus phasellus. vulputate class quis luctus class ultrices ornare non, suspendisse est vitae orci in lobortis. ut felis elementum aenean"
 tags:
     - test
