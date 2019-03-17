@@ -206,7 +206,7 @@
 
 
 
-<p>Nesse post pretendo descrever meu primeiro projeto de Ciência de Dados. O projeto consiste em estudar os dados da Trimania que são disponibilizados no site da instituição. Nele eu levantei informações bem simples, como: números sorteados e bairros que mais tiveram ganhadores em determinados anos.</p>
+<p>Nesse post pretendo descrever meu primeiro projeto de Ciência de Dados. O projeto consiste em estudar os dados da Trimania que são disponibilizados no site da instituição. Nele eu levantei informações bem simples, como: números sorteados e bairros que mais tiveram ganhadores em um período.</p>
 
 <h3 id="como-obtive-os-dados">Como obtive os dados</h3>
 
@@ -214,35 +214,35 @@
 
 <p><img src="http://localhost:4000/images/2019-03-17/tables.png" alt="Tabelas do banco de dados" /></p>
 
-<p>Uma das dificuldades para executar esse projeto é o tratamento de dados. Sempre que importado um conjunto de dados foi necessário realizar o tratamento deles, pois, constantemente o nome das cidades divergiam. Como exemplo em sorteios que existem ganhadores na cidade Joinville. No site os dados eram apresentados da seguinte forma: <code class="highlighter-rouge">“Bairro / Joinvillle”</code>, <code class="highlighter-rouge">“Joinvile/Bairro”</code>, <code class="highlighter-rouge">“Joinville /Bairro”</code>. Abaixo algumas imagens que ilustram o problema no sorteio do dia 02/09/2018.</p>
+<p>Uma das dificuldades para executar esse projeto é o tratamento de dados. Sempre que importado um conjunto de dados foi necessário realizar o tratamento deles, pois, constantemente o nome das cidades divergiam. Como exemplo em sorteios que existem ganhadores na cidade Joinville. No site os dados eram apresentados da seguinte forma: <code class="highlighter-rouge">“Bairro / Joinvillle”</code>, <code class="highlighter-rouge">“Joinvile/Bairro”</code>, <code class="highlighter-rouge">“Joinville /Bairro”</code>. Abaixo alguns exemplos do problema citado no sorteio do dia 02/09/2018.</p>
 
 <p><img src="http://localhost:4000/images/2019-03-17/result_draw.png" alt="Sorteios do dia 02/09/2018" /></p>
 
-<p>Sendo assim, não realizando a correção desses dados, os resultados seriam errôneos. Abaixo algumas linhas da tabela de localização com dados corrigidos.</p>
+<p>Não realizando a correção desses dados a análise seria errônea. Na imagem seguinte é mostrada alguns bairros juntamente com a cidade após ter sido feita a correção dos caracteres.</p>
 
 <p><img src="http://localhost:4000/images/2019-03-17/location_table.png" alt="Tabela de localizações" /></p>
 
-<p>Os números sorteados não tem uma quantidade exata como na Mega-Sena, ou seja, a quantidade de números sorteados por rodada vai variar. Logo, não optei por ter uma coluna para cada valor sorteado. Criei uma coluna do tipo texto e salvei usando hífen como separador. A imagem seguinte mostra um exemplo da lógica que usei para salvar os dados.</p>
+<p>Os números sorteados não tem uma quantidade exata como na Mega-Sena, ou seja, a quantidade de números sorteados por rodada vai variar. Logo, não optei por ter uma coluna para cada valor sorteado. Criei uma coluna do tipo texto e salvei usando hífen como separador.</p>
 
 <p><img src="http://localhost:4000/images/2019-03-17/numbers_table.png" alt="Tabela de númberos" /></p>
 
-<h3 id="os-números">Os números.</h3>
+<h3 id="análise-dos-números">Análise dos números</h3>
 
-<p>Para responder a pergunta ‘Quais os números mais sorteados de Janeiro a Abril de 2018?’ eu exportei CSV utilizando o crawler.</p>
+<p>Como este projeto é para estudos eu criei uma pergunta que eu gostaria de responder, a pergunta que elaborei foi <strong>‘Quais os números mais sorteados de Janeiro a Abril de 2018?’</strong>. Para conseguir a resposta comecei exportando um CSV e depois utilizei o Jupyter Notebook para analisar.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Neste linha eu faço a leitura do arquivo e exibo os dados.</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Nesta linha eu faço a leitura do arquivo e mostro uma prévia do que foi importado.</span>
 <span class="n">csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'trimaniaNumbers.csv'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">';'</span><span class="p">);</span>
 <span class="n">csv</span>
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/2019-03-17/numbers_preview.png" alt="Números em um DataFrame" /></p>
+<p><img src="http://localhost:4000/images/2019-03-17/numbers_preview.png" alt="Números importados do CSV" /></p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Dicionário para inserir os números</span>
 <span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s">'number'</span><span class="p">:[]</span>
 <span class="p">}</span>
 
-<span class="c"># Separado os números por hífen e acrescentado os números no dicionário</span>
+<span class="c"># Separando os números por hífen e acrescentado os números no dicionário</span>
 <span class="k">for</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">csv</span><span class="p">[</span><span class="s">'numbers_drawn'</span><span class="p">]:</span>    
     <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">lines</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'-'</span><span class="p">):</span>
             <span class="n">numbers</span><span class="p">[</span><span class="s">'number'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
@@ -255,7 +255,7 @@
 <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'number'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Para visualizar de maneira mais clara eu criei um gráfico com os números e suas respectivas frequências de sorteio.</p>
+<p>Para visualizar de maneira mais amigável, gerei um gráfico de <strong>Números X Quantidade</strong>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Configuro a fonte</span>
 <span class="n">font</span> <span class="o">=</span> <span class="p">{</span>
@@ -264,8 +264,8 @@
 <span class="p">}</span>
 
 <span class="c"># Configuro a label dos eixos X e Y</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Números'</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Frenquência'</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Numbers'</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Quantity'</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
 
 <span class="c"># Exibo um gráfico em barra</span>
 <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
@@ -274,9 +274,9 @@
 
 <p><img src="http://localhost:4000/images/2019-03-17/chart_numbers.png" alt="Números sorteados x Quantidade" /></p>
 
-<h3 id="as-localizações">As localizações</h3>
+<h3 id="análise-das-localizações">Análise das localizações</h3>
 
-<p>Outra pergunta que eu gostaria de responder era <strong>‘Quais os bairros que mais tiveram ganhadores entre Janeiro e Abril de 2018 na cidade de Joinville?’</strong>. Para responder essa perguntei fiz uma simples SQL.</p>
+<p>No estudo das localizações também elaborei uma pergunta: <strong>‘Quais os bairros que mais tiveram ganhadores entre Janeiro e Abril de 2018 na cidade de Joinville?’</strong>. Para conseguir a resposta para tal pergunta fiz apenas uma SQL simples.</p>
 
 <pre><code class="language-SQL">SELECT COUNT(*) AS total, city_district
 FROM locations
@@ -285,11 +285,13 @@ WHERE draw_date BETWEEN '2018-01-01' AND '2018-04-30'
 GROUP BY city_district
 ORDER BY total DESC
 </code></pre>
-<p>Após executar a SQL acima eu obtive os seguintes bairros:</p>
+<p>Após executar a SQL acima eu obtive a minha resposta:</p>
 
 <p><img src="http://localhost:4000/images/2019-03-17/sql_result.png" alt="Bairros que mais tiveram ganhadores" /></p>
 
-<p>Esse foi um projeto simples, sem muitas complexidades. Ainda preciso melhorar meus conhecimentos, mas de qualquer forma esse post é um dos meus passos iniciais. Se você tiver alguma dúvia, sugestão, fique a vontade para comentar :)</p>
+<h3 id="considerações">Considerações</h3>
+
+<p>Este projeto não possui muitas complexidades. Ainda preciso melhorar meus conhecimentos construindo desafios mais complexos. Mesmo assim acredito que este exerício tem um grande valor. Se você tiver alguma dúvida ou sugestão, fique a vontade para comentar :)</p>
 
 
 <a href="/">Voltar</a>
