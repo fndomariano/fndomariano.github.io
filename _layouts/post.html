@@ -31,7 +31,11 @@ layout: default
 
 {{ content }}
 
-<a href="/">Voltar</a>
+{% if page.lang == 'br' %}
+	<a href="/">Voltar</a>
+{% else %}
+	<a href="/en">Come back</a>
+{% endif %}
 
 {% if page.comments %}
 	<hr/>

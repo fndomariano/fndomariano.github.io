@@ -2,13 +2,15 @@
 layout:    post
 title:    "My first project with Data Science"
 comments: true
+lang: en
+ref: first-project-data-science
 excerpt:  "In this post, I pretend to describe my first project with Data Science. The project consists to study Trimania data that are available on its site. On this project, I got simple information like drawn numbers e neighborhoods with most winners"
 tags:
     - data science
     - python
 ---
 
-[Portuguese Version]({{site.url}}/2019/03/17/primeiro-projeto-ciencia-de-dados.html)
+[Portuguese Version]({{site.url}}/br/2019/03/17/primeiro-projeto-ciencia-de-dados.html)
 
 In this post, I pretend to describe my first project with Data Science. The project consists to study Trimania data that are available on its site. On this project, I got simple information like drawn numbers e neighborhoods with most winners.
 
