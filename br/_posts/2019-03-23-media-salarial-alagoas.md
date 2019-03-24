@@ -35,7 +35,7 @@ Cada mesorregião tem um número de cidades que precisam ser sorteads e separada
 
 ```python
 number_cities_agreste = len(filter_agreste)
-number_cities_sertao  = len(filter_sertao)
+number_cities_sertao  = len(filter_sertao) 
 number_cities_leste   = len(filter_leste)
 number_cities = len(data)
 
