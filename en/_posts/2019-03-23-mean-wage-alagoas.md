@@ -11,6 +11,8 @@ tags:
     - statistic
 ---
 
+[Portuguese Version]({{site.url}}/br/2019/03/17/media-salarial-alagoas.html)
+
 This exercise is from Udemy Course that I did. On the course, I needed to make a table with statistical values (mean, median, standard deviation, etc..). Then I decided to make the same exercise with Python and its libraries.
 
 The teacher of the course has provided a spreadsheet with data got for IBGE in 2010. It was included or this exercise was included a sample with **thirty** cities and also defined that would be used stratified sample because of mesoregions (Agreste, Leste e Sertão).
