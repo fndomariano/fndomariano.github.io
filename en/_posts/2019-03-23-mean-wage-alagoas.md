@@ -11,7 +11,7 @@ tags:
     - statistic
 ---
 
-[Portuguese Version]({{site.url}}/br/2019/03/17/media-salarial-alagoas.html)
+[Portuguese Version]({{site.url}}/br/2019/03/23/media-salarial-alagoas.html)
 
 This exercise is from Udemy Course that I did. On the course, I needed to make a table with statistical values (mean, median, standard deviation, etc..). Then I decided to make the same exercise with Python and its libraries.
 

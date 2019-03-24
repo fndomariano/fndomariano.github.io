@@ -11,7 +11,7 @@ tags:
     - statistic
 ---
 
-[English Version]({{site.url}}/br/2019/03/17/mean-wage-alagoas.html)
+[English Version]({{site.url}}/en/2019/03/23/mean-wage-alagoas.html)
 
 Este exercício é de um curso da Udemy que eu fiz. No curso, eu precisei fazer uma tabela com valores estatísticos (média, mediana, desvio padrão, etc...). Então eu decidi fazer o mesmo exercício com Python e suas bibliotecas.
 
