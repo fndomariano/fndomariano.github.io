@@ -1,35 +1,35 @@
 ---
 layout:    post
-title:    "Mean Wage from Alagoas"
+title:    "Média salarial de Alogas"
 comments: true
-lang: en
+lang: br
 ref: mean-wage-alagoas
-excerpt:  "This exercise is from Udemy Course that I did. On the course, I needed to made a table with statistical values (mean, median, standard deviation, etc..). Then I decided to make the same exercise with Python and its libraries"
+excerpt:  "Este exercício é de um curso da Udemy que eu fiz. No curso, eu precisei fazer uma tabela com valores estatísticos (média, mediana, desvio padrão, etc...). Então eu decidi fazer o mesmo exercício com Python e suas bibliotecas"
 tags:
     - data science
     - python
     - statistic
 ---
 
-This exercise is from Udemy Course that I did. On the course, I needed to make a table with statistical values (mean, median, standard deviation, etc..). Then I decided to make the same exercise with Python and its libraries.
+Este exercício é de um curso da Udemy que eu fiz. No curso, eu precisei fazer uma tabela com valores estatísticos (média, mediana, desvio padrão, etc...). Então eu decidi fazer o mesmo exercício com Python e suas bibliotecas.
 
-The teacher of the course has provided a spreadsheet with data got for IBGE in 2010. It was included or this exercise was included a sample with **thirty** cities and also defined that would be used stratified sample because of mesoregions (Agreste, Leste e Sertão).
+O professor do curso providenciou uma planilha com dados do Censo do IBGE de 2010. Foi incluído neste exerício uma amostra com **trinta** cidades e também definido que seria usado a amostra estratificada por causa das mesorregiões.
 
-My first step was to create a new spreadsheet using the values from the original spreadsheet for became my work easier after I exported to CSV then I imported the using Pandas.
+O meu primeiro passo foi criar uma nova planilha usando os valores da planilha original para tornar meu trabalho mais fácil, depois exportei para um arquivo CSV e importe usando Pandas.
 
 ```python
-# Import CSV, set semicolon as a delimiter and I inform that NaN is referring to null values
+# Importo o CSV, defino ponto e vírgula como um delimitador e informo que NaN é referente a valores nulos
 data = pd.read_csv("CidadesAlagoas.csv", delimiter=';', keep_default_na=False, na_values=['NaN'])
 
-# Defined samples number (cities)
+# Definido número da amostra
 NUM_SAMPLE = 30
 
-# The filters of cities by mesoregion
+# Os filtros da cidade por mesorregião
 filter_agreste = data[data['mesoregion'] == 'Agreste Alagoano']
 filter_sertao  = data[data['mesoregion'] == 'Sertão Alagoano']
 filter_leste   = data[data['mesoregion'] == 'Leste Alagoano']
 ```
-Each mesoregion has a number of cities that need to be drawn and separated proportionally. To pick the cities, first I counted the total of cities by mesoregion.
+Cada mesorregião tem um número de cidades que precisam ser sorteads e separadas proporcionamente. Para escolher as cidades, Eu contei o total de cidades por mesorregião.
 
 ```python
 number_cities_agreste = len(filter_agreste)
@@ -38,19 +38,18 @@ number_cities_leste   = len(filter_leste)
 number_cities = len(data)
 
 print ('''
-Number of cities from Agreste Alagoano: %d
-Number of cities from Sertão Alagoano: %d
-Number of cities from Leste Alagoano: %d
+Número de cidades do Agreste Alagoano: %d
+Número de cidades do Sertão Alagoano: %d
+Número de cidades do Leste Alagoano: %d
 ''' %(number_cities_agreste, number_cities_sertao, number_cities_leste))
 
 #-------------------OUT-------------------#
-# Number of cities from Agreste Alagoano: 24
-# Number of cities from Sertão Alagoano: 26
-# Number of cities from Leste Alagoano: 52
+# Número de cidades do Agreste Alagoano: 24
+# Número de cidades do Sertão Alagoano: 26
+# Número de cidades do Leste Alagoano: 52
 #-------------------OUT-------------------#
 ```
-
-After this, I calculated the weight to each mesoregion dividing the total of cities from each mesoregion by total of cities from the state.
+Depois disto, eu calculei o peso para cada mesorregião divindo o total de cidades de cada mesorregião pelo total de cidades do estado.
 
 ```python
 weight_agreste = float(number_cities_agreste)/number_cities
@@ -58,18 +57,17 @@ weight_sertao  = float(number_cities_sertao)/number_cities
 weight_leste   = float(number_cities_leste)/number_cities
 
 print ('''
-Weight from Agreste Alagoano: %.2f
-Weight from Sertão Alagoano: %.2f
-Weight from Leste Alagoano: %.2f
+Peso do Agreste Alagoano: %.2f
+Peso do Sertão Alagoano: %.2f
+Peso do Leste Alagoano: %.2f
 ''' %(weight_agreste, weight_sertao, weight_leste))
 
 #-----------------OUT---------------#
-# Weight from Agreste Alagoano: 0.24
-# Weight from Sertão Alagoano: 0.25
-# Weight from Leste Alagoano: 0.51
+# Peso do Agreste Alagoano: 0.24
+# Peso do Sertão Alagoano: 0.25
+# Peso do Leste Alagoano: 0.51
 #-----------------OUT---------------#
 ```
-
 And then I got the sure quantity cities by mesoregion making a multiplication with weight and total samples.
 
 ```python
@@ -78,47 +76,46 @@ number_draw_cities_sertao  = int(round(weight_sertao * NUM_SAMPLE))
 number_draw_cities_leste   = int(round(weight_leste * NUM_SAMPLE))
 
 print ('''
-Number from cities for draw in Agreste Alagoano: %.d
-Number from cities for draw in Sertão Alagoano: %.d
-Number from cities for draw in Leste Alagoano: %.d
+Número de cidades para sortear in Agreste Alagoano: %.d
+Número de cidades para sortear in Sertão Alagoano: %.d
+Número de cidades para sortear in Leste Alagoano: %.d
 ''' %(number_draw_cities_agreste, number_draw_cities_sertao, number_draw_cities_leste))
 
 #-------------------------OUT------------------------------#
-# Number from cities to draw in Agreste Alagoano: 7
-# Number from cities to draw in Sertão Alagoano: 8
-# Number from cities to draw in Leste Alagoano: 15
+# Número de cidades para sortear no Agreste Alagoano: 7
+# Número de cidades para sortear no Sertão Alagoano: 8
+# Número de cidades para sortear no Leste Alagoano: 15
 #-------------------------OUT------------------------------#
 ```
-
-With the number of cities, I drew them like this.
+Com o número de cidades, eu as sortei assim.
 
 ```python
-# The first parameter is the quantity and I set 'replace' as False for do not repeat
+# O primeiro parametro é a quantiade e eu defino 'replace' como falso para não repetir 
 draw_agreste = filter_agreste.sample(n=number_draw_cities_agreste, replace=False)
 draw_sertao  = filter_sertao.sample(n=number_draw_cities_sertao, replace=False)
 draw_leste   = filter_leste.sample(n=number_draw_cities_leste, replace=False)
 
-# I created one DataFrame for each mesoregion
+# Criei um DataFrame para cada mesorregião
 agreste = pd.DataFrame(draw_agreste)
 sertao = pd.DataFrame(draw_sertao)
 leste  = pd.DataFrame(draw_leste)
 
-# I joined all mesoregions
+# Juntei todas as mesorregiões
 new_data = pd.concat([agreste, sertao, leste])
 
-# Then here I show de DataFrame
+# Então aqui eu mostrao o DataFrame
 new_data
 ```
 
-![Drawn Cities]({{site.url}}/images/2019-03-23/drawn_cities.png)
+![Cidades sorteadas]({{site.url}}/images/2019-03-23/drawn_cities.png)
 
-With the cities drawn, I needed to get the values asked (mean, median, standard derivation, the coefficient of variation, lowest value, highest value, quantile 25%, quantile 75%, percentile 10% and percentile 90%).
+Com as cidades sorteadas, precisei obter os valores pedidos (média, mediana, desvio padrão, coeficiente de variação, menor valor, maior valor, quartil de 25%, quartil de 75%, percentil de 10% e percentil de 90%).
 
 ```python
-# Describe function shows some values for the default
+# A função describe algum dos valores por padrão
 describe = new_data.describe()
 
-# I created a dictionary to organize the values by position
+# Criei um dicionário para organizar os valores por cargo
 result = {
     'with-clt': {
         'mean': describe['with-clt']['mean'],
@@ -183,12 +180,10 @@ result = {
     }
 }
 ```
+Para finalizar o exercício, fiz um gráfico com as médias por cargo.
 
-To finish the exercise I made a chart with the mean wage by position. 
-
-![Chart of the Mean Wage by Position]({{site.url}}/images/2019-03-23/chart_position.png)
+![Gráfico da média salarial por cargo]({{site.url}}/images/2019-03-23/chart_position.png)
 
 ### Considerations
 
-This was another exercise that I made to improve my skills. So, if you have any doubt or suggestion your comment are welcome :)
-
+Este foi um outro exercócio que eu fiz para melhorar minhas habilidades. Se você tem alguma dúvida ou sugestão seu comentário é bem vindo :)
