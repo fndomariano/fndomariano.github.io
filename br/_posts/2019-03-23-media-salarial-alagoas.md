@@ -186,6 +186,6 @@ Para finalizar o exercício, fiz um gráfico com as médias por cargo.
 
 ![Gráfico da média salarial por cargo]({{site.url}}/images/2019-03-23/chart_position.png)
 
-### Considerations
+### Considerações
 
 Este foi um outro exercócio que eu fiz para melhorar minhas habilidades. Se você tem alguma dúvida ou sugestão seu comentário é bem vindo :)
