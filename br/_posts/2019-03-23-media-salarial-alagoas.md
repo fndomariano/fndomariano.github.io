@@ -1,6 +1,6 @@
 ---
 layout:    post
-title:    "Média salarial de Alogas"
+title:    "Média salarial de Alagoas"
 comments: true
 lang: br
 ref: mean-wage-alagoas
