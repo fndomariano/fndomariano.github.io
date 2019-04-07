@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang=" en-US ">
+
+<head>
+    <title>Fernando Mariano</title>
+    <meta charset="UTF-8"> <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Dicas para desenvolvimento com Wordpress | Fernando Mariano</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Dicas para desenvolvimento com Wordpress" />
+<meta property="og:locale" content="br" />
+<meta name="description" content="Este texto é um pouco diferente dos anteriores onde falei assuntos que falavam sobre dados. Aqui pretendo ilustrar algumas dicas no desenvolvimento de projetos em Wordpress." />
+<meta property="og:description" content="Este texto é um pouco diferente dos anteriores onde falei assuntos que falavam sobre dados. Aqui pretendo ilustrar algumas dicas no desenvolvimento de projetos em Wordpress." />
+<link rel="canonical" href="http://localhost:4000/br/2019/04/06/dicas-desenvolvimento-wordpress.html" />
+<meta property="og:url" content="http://localhost:4000/br/2019/04/06/dicas-desenvolvimento-wordpress.html" />
+<meta property="og:site_name" content="Fernando Mariano" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-04-06T00:00:00-03:00" />
+<script type="application/ld+json">
+{"headline":"Dicas para desenvolvimento com Wordpress","dateModified":"2019-04-06T00:00:00-03:00","datePublished":"2019-04-06T00:00:00-03:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/br/2019/04/06/dicas-desenvolvimento-wordpress.html"},"url":"http://localhost:4000/br/2019/04/06/dicas-desenvolvimento-wordpress.html","description":"Este texto é um pouco diferente dos anteriores onde falei assuntos que falavam sobre dados. Aqui pretendo ilustrar algumas dicas no desenvolvimento de projetos em Wordpress.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/style.css?v=9c7d30574b3c47165e84348c5a112f96f54026ca">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123045719-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-123045719-1');
+    </script>
+
+
+    <style>
+        .pagination a, .pagination span {
+            padding: 7px 18px;
+            border: 1px solid #eee;
+            margin-left: -2px;
+            margin-right: -2px;
+            margin-bottom: 30px;
+            background-color: #ffffff;
+            display: inline-block;
+          }
+
+        .pagination {
+            text-align: center;
+         }
+
+ 
+        /* Share Bar */
+        #share-bar {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        /* Each button */
+        .share-button {
+            margin: 0px;
+            margin-bottom: 10px;
+            margin-right: 3px;
+            border: 1px solid #D3D6D2;
+            padding: 5px 10px 5px 10px;
+            text-decoration: none;
+        }
+        .share-button:hover {
+            opacity: 1;
+            color: #ffffff;
+        }
+        .share-buttons a:hover {
+            text-decoration: none;
+        }
+
+        /* Facebook button */
+        .fa-facebook-official {
+            color: #3b5998;
+        }
+        .fa-facebook-official:hover {
+            background-color: #3b5998;
+        }
+
+        /* Twitter button */
+        #share-bar .fa-twitter {
+            color: #55acee;
+        }
+        #share-bar .fa-twitter:hover {
+            background-color: #55acee;
+            color: white;
+        }
+
+        /* Google-PLus button */
+        footer i.fa {
+            color: #fff;
+            -webkit-filter: invert(100%);
+            filter: invert(100%);
+        }
+        .fa-google-plus {
+            color: #dd4b39;
+        }
+        .fa-google-plus:hover {
+            background-color: #dd4b39;
+        }
+        .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+        .menu li {
+            display: inline-block;
+            list-style: none;
+            margin-left: 20px; 
+        }
+        .menu a {
+            color: white;
+            font-size: 19px;
+        }
+        h2.title {
+            margin-top: 0;
+            margin-bottom: 0;
+            line-height: 1.2;
+        }
+        h2.title a {
+            color:white;
+        }
+        h2 a:hover {
+            text-decoration: none;
+        }
+        .page-header {
+            display: flex;
+            padding: 1rem 6rem;
+            justify-content: space-between;
+            height: 60px;
+            padding-left: 30px;
+            padding-right: 30px;
+            line-height: 30px;
+            background-color: #159957;
+            background-image: linear-gradient(120deg, #155799, #159957);
+        }
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .en:lang(en), .fr:lang(fr), .zh:lang(zh){
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    
+    <header class="page-header" role="banner">
+        <h2 class="title">
+            <a href="/">
+                @fndomariano
+            </a>
+        </h2>
+        <nav class="menu">
+            <ul>
+                <li>
+                    <a href="/" class="br">br</a> |
+                    <a href="/en" class="en">en</a> 
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="content" class="main-content" role="main">
+        <h2 style="text-align:center;">Dicas para desenvolvimento com Wordpress</h2>
+<p class="meta" style="text-align:center;">06 Apr 2019</p>
+
+<div id="share-bar">
+    <div class="share-buttons">
+        <a  href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/br/2019/04/06/dicas-desenvolvimento-wordpress.html"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Facebook" >
+            <i class="fa fa-facebook-official share-button"></i>
+        </a>
+
+        <a  href="https://twitter.com/intent/tweet?text=Dicas para desenvolvimento com Wordpress&url=http://localhost:4000/br/2019/04/06/dicas-desenvolvimento-wordpress.html"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Twitter" >
+            <i class="fa fa-twitter share-button"></i>
+        </a>
+
+        <a  href="https://plus.google.com/share?url=http://localhost:4000/br/2019/04/06/dicas-desenvolvimento-wordpress.html"
+            onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
+            title="Share on Google+" >
+            <i class="fa fa-google-plus share-button"></i>
+        </a>
+    </div>
+</div>
+
+
+
+<p><a href="http://localhost:4000/en/2019/04/06/wordpress-development-tips.html">English Version</a></p>
+
+<p>Este texto é um pouco diferente dos anteriores onde falei assuntos que falavam sobre dados. Aqui pretendo ilustrar algumas dicas no desenvolvimento de projetos em Wordpress.</p>
+
+<h3 id="transaction">Transaction</h3>
+
+<p>Muitas vezes nós precisamos importar dados que serão utilizados para exibir em algum projeto. O processo de importação é passivel de erros quando está em atividade, logo precisamos garantir que em casos com problemas as informações não sejam importadas incompletas. Sendo assim, para esses casos o mais correto é utilizar as <code class="highlighter-rouge">transactions</code>. Claro, este é apenas um exemplo, as <code class="highlighter-rouge">transactions</code> podem ser usadas para outras finalidades que não tenham relação com alguma importação.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">function</span> <span class="nf">addPostExample</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="c1">// Variável global do Wordpress
+</span>    <span class="k">global</span> <span class="nv">$wpdb</span><span class="p">;</span> 
+    
+    <span class="c1">// Iniciamos a transaction
+</span>    <span class="nv">$wpdb</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">'START TRANSACTION'</span><span class="p">);</span>
+    
+    <span class="c1">// Definimos algumas informações para o post
+</span>    <span class="nv">$postData</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">'post_title'</span>     <span class="o">=&gt;</span> <span class="s1">'Title example'</span><span class="p">,</span>  
+        <span class="s1">'post_type'</span>      <span class="o">=&gt;</span> <span class="s1">'post-type-example'</span><span class="p">,</span>
+        <span class="s1">'post_status'</span>    <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
+        <span class="s1">'comment_status'</span> <span class="o">=&gt;</span> <span class="s1">'closed'</span><span class="p">,</span>
+        <span class="s1">'ping_status'</span>    <span class="o">=&gt;</span> <span class="s1">'closed'</span>
+    <span class="p">];</span>
+    
+    <span class="c1">// Inserimos o post
+</span>    <span class="nv">$postExample</span> <span class="o">=</span> <span class="nx">wp_insert_post</span><span class="p">(</span><span class="nv">$postData</span><span class="p">,</span> <span class="kc">true</span><span class="p">);</span>
+
+    <span class="c1">// Possui erro?
+</span>    <span class="k">if</span> <span class="p">(</span><span class="nx">is_wp_error</span><span class="p">(</span><span class="nv">$postExample</span><span class="p">))</span> <span class="p">{</span>
+        
+        <span class="c1">// Então fazemos o rollback
+</span>        <span class="nv">$wpdb</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">'ROLLBACK'</span><span class="p">);</span>
+        <span class="k">return</span><span class="p">;</span>
+    <span class="p">}</span> 
+    
+    <span class="c1">// Não tem erro? Então é salvo o registro
+</span>    <span class="nv">$wpdb</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s1">'COMMIT'</span><span class="p">);</span>
+        
+    <span class="c1">// Retorna o id do post
+</span>    <span class="k">return</span> <span class="nv">$postExample</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="truncate-text">Truncate text</h3>
+
+<p>Uma situação que acontece muitas vezes é quando precisarmos exibir somente parte de um conteúdo, como por exemplo a prévia de um texto para chamar a atenção do leitor.</p>
+
+<p>Trabalhei em alguns projetos onde desenvolvedores fizeram uma função para cortar uma certa quantidade de palavras, mas não havia necessidade, pois o Wordpress já possui uma função para esse tipo de tarefa.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$text</span> <span class="o">=</span> <span class="s1">'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit convallis neque non suscipit. Nunc interdum ultrices ultrices. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec id justo tincidunt, porta mi vitae, sodales nibh. Nulla quis velit at erat maximus porta. Mauris sit amet consequat ligula. Vivamus congue pretium fermentum. Duis non lorem sodales, aliquam sapien quis, sodales elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ut ex ultricies, iaculis velit a, suscipit sem. Maecenas pharetra est vitae ipsum posuere, ac elementum lorem condimentum. Maecenas congue ac magna euismod euismod.'</span><span class="p">;</span>
+
+<span class="k">echo</span> <span class="nx">wp_trim_words</span><span class="p">(</span><span class="nv">$text</span><span class="p">,</span> <span class="nv">$numWords</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="s1">'...'</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p>No código acima é utilizada a função <code class="highlighter-rouge">wp_trim_words</code> que possui três parâmetros. O primeiro é o texto (Lorem Ipsum) que será cortado, o segundo significa quantas palavras serão mostradas e o último é o que vai ser concatenado com texto após o corte. Para exemplificar utilizei um trecho de um <code class="highlighter-rouge">Lorem Ipsum</code>. O resultado ficará assim:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In suscipit...
+</code></pre></div></div>
+
+<h3 id="usar-o-atributo-posts">Usar o <em>atributo posts</em></h3>
+
+<p>Em projetos que usam Wordpress é muito comum encontrarmos consultas utilizando <code class="highlighter-rouge">WP_Query</code> e em seguida percorrer os resultados utilizando um <code class="highlighter-rouge">while</code> conforme no exemplo abaixo:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+
+<span class="c1">// Montamos a query
+</span><span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WP_Query</span><span class="p">([</span>
+    <span class="s1">'post_type'</span>      <span class="o">=&gt;</span> <span class="s1">'post-type-example'</span><span class="p">,</span>
+    <span class="s1">'post_status'</span>    <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
+    <span class="s1">'posts_per_page'</span> <span class="o">=&gt;</span> <span class="mi">5</span>
+<span class="p">]);</span>
+
+<span class="cp">?&gt;</span>
+
+// Verifica se possui posts e depois integra o resultado com a estrutura HTML
+<span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">have_posts</span><span class="p">())</span><span class="o">:</span> <span class="cp">?&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="cp">&lt;?php</span> <span class="k">while</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">have_posts</span><span class="p">())</span><span class="o">:</span> <span class="nv">$query</span><span class="o">-&gt;</span><span class="na">the_post</span><span class="p">();</span> <span class="cp">?&gt;</span>
+            <span class="nt">&lt;li&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nx">get_the_title</span><span class="p">()</span> <span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+        <span class="cp">&lt;?php</span> <span class="k">endwhile</span> <span class="cp">?&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+    
+    // Reseta a query para não conflitar com outras consultas
+    <span class="cp">&lt;?php</span> <span class="nx">wp_reset_postdata</span><span class="p">()</span> <span class="cp">?&gt;</span>
+<span class="cp">&lt;?php</span> <span class="k">endif</span> <span class="cp">?&gt;</span>
+</code></pre></div></div>
+
+<p>Agora um exemplo usando o <em>atributo posts</em>. O objeto <code class="highlighter-rouge">WP_Query</code> tem o <em>atributo posts</em>  que é um <code class="highlighter-rouge">array</code> e podemos usar com  <code class="highlighter-rouge">foreach</code> conforme o <code class="highlighter-rouge">PHP</code> sugere.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?php</span> 
+
+<span class="c1">// Montamos a query
+</span><span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WP_Query</span><span class="p">([</span>
+    <span class="s1">'post_type'</span>      <span class="o">=&gt;</span> <span class="s1">'post-type-example'</span><span class="p">,</span>
+    <span class="s1">'post_status'</span>    <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
+    <span class="s1">'posts_per_page'</span> <span class="o">=&gt;</span> <span class="mi">5</span>
+<span class="p">]);</span>
+
+<span class="cp">?&gt;</span>
+
+// Verifica se possui posts e depois integra o resultado com a estrutura HTML
+<span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">posts</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+    <span class="nt">&lt;ul&gt;</span>
+        <span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">posts</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span><span class="o">:</span> <span class="cp">?&gt;</span>
+            <span class="nt">&lt;li&gt;</span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$item</span><span class="o">-&gt;</span><span class="na">post_title</span> <span class="cp">?&gt;</span><span class="nt">&lt;/li&gt;</span>
+        <span class="cp">&lt;?php</span> <span class="k">endforeach</span> <span class="cp">?&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>	
+<span class="cp">&lt;?php</span> <span class="k">endif</span> <span class="cp">?&gt;</span>
+</code></pre></div></div>
+<p>Do meu ponto de vista, com esta abordagem fica mais simples de efetuar uma leitura em código.</p>
+
+<h3 id="função-wp_list_pluck">Função <em>wp_list_pluck</em></h3>
+
+<p>Outra situação que encontrei em muitos projetos foi de que a lógica usada precisava verificar se existiam IDs de uma query em um <code class="highlighter-rouge">array</code>. Até aí tudo bem, mas para obter os IDs da consulta, o desenvolvedor criou uma função separada que retornava um outro <code class="highlighter-rouge">array</code> contendo somente os IDs. Como no exemplo abaixo:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Função para retornar IDs
+</span><span class="k">function</span> <span class="nf">get_ids</span><span class="p">(</span><span class="nv">$query</span><span class="p">)</span> <span class="p">{</span>
+
+    <span class="c1">// Se não tem posts
+</span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">posts</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// array vazios para inserir os ids
+</span>    <span class="nv">$ids</span> <span class="o">=</span> <span class="p">[];</span>
+
+    <span class="c1">// percorre a consulta usando o atributo posts =DDD
+</span>    <span class="k">foreach</span> <span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">posts</span> <span class="k">as</span> <span class="nv">$item</span><span class="p">)</span> <span class="p">{</span>
+        
+        <span class="c1">// Insere os IDs no array
+</span>        <span class="nv">$ids</span><span class="p">[]</span> <span class="o">=</span> <span class="nv">$item</span><span class="o">-&gt;</span><span class="na">ID</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="c1">// Se o array não estiver vazio retorna os ids, senão retorna false
+</span>    <span class="k">return</span> <span class="nb">count</span><span class="p">(</span><span class="nv">$ids</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="o">?</span> <span class="nv">$ids</span> <span class="o">:</span> <span class="kc">false</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Em seguida usa a função da seguinte forma:</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Monta a Query
+</span><span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WP_Query</span><span class="p">([</span>
+    <span class="s1">'post_type'</span>      <span class="o">=&gt;</span> <span class="s1">'post-type-example'</span><span class="p">,</span>
+    <span class="s1">'post_status'</span>    <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
+    <span class="s1">'posts_per_page'</span> <span class="o">=&gt;</span> <span class="o">-</span><span class="mi">1</span>
+<span class="p">]);</span>
+
+<span class="c1">// Obtém os ids
+</span><span class="nv">$ids</span> <span class="o">=</span> <span class="nx">get_ids</span><span class="p">(</span><span class="nv">$query</span><span class="p">);</span>
+
+<span class="c1">// Aplica a sua lógica
+</span><span class="k">if</span> <span class="p">(</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$ids</span><span class="p">)</span> <span class="o">&amp;&amp;</span> <span class="nb">in_array</span><span class="p">(</span><span class="nv">$ids</span><span class="p">,</span> <span class="nv">$array</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// ...
+</span><span class="p">}</span>
+</code></pre></div></div>
+
+<p>Contudo, o Worpress tem a função que resolve o problema de uma forma mais simples, sem precisar implementar a <code class="highlighter-rouge">get_ids</code>. Basta apenas passar um <code class="highlighter-rouge">array</code> que possuam os mesmos indíces.</p>
+
+<div class="language-php highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Monta a Query
+</span><span class="nv">$query</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">WP_Query</span><span class="p">([</span>
+    <span class="s1">'post_type'</span>      <span class="o">=&gt;</span> <span class="s1">'post-type-example'</span><span class="p">,</span>
+    <span class="s1">'post_status'</span>    <span class="o">=&gt;</span> <span class="s1">'publish'</span><span class="p">,</span>
+    <span class="s1">'posts_per_page'</span> <span class="o">=&gt;</span> <span class="o">-</span><span class="mi">1</span>
+<span class="p">]);</span>
+
+<span class="c1">// Obtém os ids
+</span><span class="nv">$ids</span> <span class="o">=</span> <span class="nx">wp_list_pluck</span><span class="p">(</span><span class="nv">$query</span><span class="o">-&gt;</span><span class="na">posts</span><span class="p">,</span> <span class="s1">'ID'</span><span class="p">);</span>
+
+<span class="c1">// Aplica a lógica
+</span><span class="k">if</span> <span class="p">(</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$ids</span><span class="p">,</span> <span class="nv">$array</span><span class="p">))</span> <span class="p">{</span>
+    <span class="c1">// ...
+</span><span class="p">}</span>
+</code></pre></div></div>
+<p>Além de termos mais um motivo para usar o <em>atributo posts</em> também conseguimos econimizar algumas linhas de código =D</p>
+
+<h3 id="atualização-da-versão-e-plugins">Atualização da versão e plugins</h3>
+
+<p>Por último, mas não menos importante, é importante lembrar para sempre trabalharem com as últimas versões de plugins e do Wordpress, pois é um dos gerenciadores de conteúdo mais usados no mundo e com isso é alvo de muitas tentativas de invasão. Constantemente estão sendo lançadas correções não somente de bugs, mas também de brechas de segurança. A não atualização também gera problemas de compatibilidade com plugins que por sua vez param de funcionar da forma que se espera.</p>
+
+<h3 id="considerações">Considerações</h3>
+
+<p>Se você tiver alguma dúvida, sugestão ou crítica fique a vontade para comentar :)</p>
+
+
+
+
+	<a href="/">Voltar</a>
+
+
+
+	<hr/>
+	<div id="disqus_thread"></div>
+	<script>
+		/**
+		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+		
+		var disqus_config = function () {
+		this.page.url = 'https://fndomariano.github.io/br/2019/04/06/dicas-desenvolvimento-wordpress.html';  // Replace PAGE_URL with your page's canonical URL variable
+		this.page.identifier = '/br/2019/04/06/dicas-desenvolvimento-wordpress'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		
+		(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = 'https://https-fndomariano-github-io.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+	</script>
+	<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	                            
+
+
+<hr />
+        
+        <footer style="text-align:center; font-size: 20px;">
+            <nav class="menu">
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://github.com/fndomariano" alt="Github">
+                            <i class="fa fa-github-square"></i>
+                        </a>
+                    </li>                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/fndomariano" alt="Twitter">
+                           <i class="fa fa-twitter"></i>
+                        </a>
+                    </li>                
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/fndomariano/" alt="Linkedin">
+                           <i class="fa fa-linkedin"></i>
+                        </a>
+                    </li>                
+                </ul>
+            </nav>
+            <a target="_blank" href="https://github.com/pages-themes/cayman">Cayman Theme</a>
+        </footer>
+
+    </main>
+
+
+    
+        <script>
+            (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-123045719-1', 'auto');
+            ga('send', 'pageview');
+        </script> 
+    
+
+    <script id="dsq-count-scr" src="//https-fndomariano-github-io.disqus.com/count.js" async></script>
+</body>
+
+</html>

@@ -145,19 +145,10 @@
         </h2>
         <nav class="menu">
             <ul>
-                {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
-                {% for post in posts %}
                 <li>
-                    <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+                    <a href="/" class="br">br</a> |
+                    <a href="/en" class="en">en</a> 
                 </li>
-                {% endfor %}
-                
-                {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
-                {% for page in pages %}
-                <li>
-                    <a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a> 
-                </li>
-                {% endfor %}
             </ul>
         </nav>
     </header>
