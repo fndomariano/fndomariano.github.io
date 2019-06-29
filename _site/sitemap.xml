@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>http://localhost:4000/2019/03/17/primeiro-projeto-ciencia-de-dados/</loc>
+<lastmod>2019-03-17T00:00:00-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2019/03/17/first-project-data-science/</loc>
+<lastmod>2019-03-17T00:00:00-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2019/03/23/media-salarial-alagoas/</loc>
+<lastmod>2019-03-23T00:00:00-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2019/03/23/mean-wage-alagoas/</loc>
+<lastmod>2019-03-23T00:00:00-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2019/04/06/dicas-desenvolvimento-wordpress/</loc>
+<lastmod>2019-04-06T00:00:00-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/2019/04/06/wordpress-development-tips/</loc>
+<lastmod>2019-04-06T00:00:00-03:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/en/</loc>
+</url>
+<url>
+<loc>http://localhost:4000/</loc>
+</url>
+</urlset>

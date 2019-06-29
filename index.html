@@ -1,54 +1,8 @@
 ---
-layout: default
-title: {{ site.name }}
+layout: blog
 ref: index
 lang: br
+feature_text: |
+  ## Fernando Mariano
+  Desenvolvedor
 ---
-
-<div id="home">
-    <h1>Últimos posts</h1>
-		
-	{% assign posts=site.posts | where:"lang", page.lang %}
-
-    {% for post in posts %}
-        <h2><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
-        {{ post.excerpt }}... 
-
-        {% if post.excerpt != post.content %}
-            <a href="{{ site.baseurl }}{{ post.url }}">Continue lendo</a>
-        {% endif %}
-        <hr />
-    {% endfor %}
-
-
-    <div class="pagination"> 
-        
-        {% for post in site.posts %}
-            {% if post.lang == page.lang %}
-                {% if prev %}
-                    <a href="{{ post.url }}">Previous</a>
-                {% endif %}
-                {% assign prev = false %}
-                {% if post.id == page.id %}
-                    {% assign prev = true %}
-                {% endif %}
-            {% endif %}
-        {% endfor %}
-
-        
-        {% for post in site.posts reversed %}
-            {% if post.lang == page.lang %}
-                {% if next %}
-                    <a href="{{ post.url }}">Next</a>
-                    {% break %}
-                {% endif %}
-                {% assign next = false %}
-                {% if post.id == page.id %}
-                    {% assign next = true %}
-                {% endif %}
-            {% endif %}
-        {% endfor %}
-        
-    </div>
-
-</div>
