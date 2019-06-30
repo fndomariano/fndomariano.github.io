@@ -19,7 +19,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency "jekyll-sitemap", "~> 0.13"
   spec.add_runtime_dependency "jekyll-mentions", "~> 1.2"
   spec.add_runtime_dependency "jekyll-paginate", "~> 1.1"
-  spec.add_runtime_dependency "jekyll-paginate-multiple", "~> 0.1.0"
   spec.add_runtime_dependency "jekyll-seo-tag", "~> 2.3"
   spec.add_runtime_dependency "jekyll-redirect-from", "~> 0.12"
   spec.add_runtime_dependency "jekyll-default-layout", "~> 0.1"

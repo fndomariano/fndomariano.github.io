@@ -9,7 +9,6 @@ PATH
       jekyll-include-cache (~> 0.1)
       jekyll-mentions (~> 1.2)
       jekyll-paginate (~> 1.1)
-      jekyll-paginate-multiple (~> 0.1.0)
       jekyll-redirect-from (~> 0.12)
       jekyll-seo-tag (~> 2.3)
       jekyll-sitemap (~> 0.13)
@@ -121,6 +120,7 @@ PLATFORMS
 
 DEPENDENCIES
   alembic-jekyll-theme!
+  jekyll-paginate-multiple (~> 0.1.0)
 
 BUNDLED WITH
    2.0.1
