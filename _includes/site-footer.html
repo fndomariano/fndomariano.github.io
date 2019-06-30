@@ -5,11 +5,9 @@
         {% for link in site.social_links %}
           {% if link[1] != blank %}
             {% assign id = link[0] | downcase %}
-            <li class="item  item--nav{% if item.url == page.url %}  item--current{% endif %}"></li>
-              <a href="{{ link[1] }}">
-                {% include icon.html id=id title=id %}
-              </a>
-            </li>
+            <a href="{{ link[1] }}">
+              {% include icon.html id=id title=id %}
+            </a>
           {% endif %}
         {% endfor %}
       </ul>
