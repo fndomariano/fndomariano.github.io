@@ -5,6 +5,7 @@ comments: true
 lang: br
 ref: wordpress-development-tips
 excerpt:  "Este texto é um pouco diferente dos anteriores onde falei assuntos que falavam sobre dados. Aqui pretendo ilustrar algumas dicas no desenvolvimento de projetos em Wordpress."
+image: "/images/2019-04-06/wordpress.jpg"
 feature_text: |
     ## Dicas para desenvolvimento com Wordpress
 tags:

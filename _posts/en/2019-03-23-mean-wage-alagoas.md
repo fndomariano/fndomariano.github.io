@@ -5,6 +5,7 @@ comments: true
 lang: en
 ref: mean-wage-alagoas
 excerpt:  "This exercise is from Udemy Course that I did. On the course, I needed to made a table with statistical values (mean, median, standard deviation, etc..). Then I decided to make the same exercise with Python and its libraries"
+image: "/images/2019-03-23/brazilian_money.jpg"
 feature_text: |
     ## Mean Wage from Alagoas
 tags:

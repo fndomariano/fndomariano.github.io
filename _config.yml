@@ -93,11 +93,6 @@ favicons: # Favicons are also used in the manifest file. Syntax is 'size: path'
   1024: '/assets/logos/logo@1024px.png'
 
 # 9. Site navigation
-navigation_header:
-- title: br
-  url: /
-- title: en
-  url: /en/
 navigation_footer:
 - title: Created by David Darnes
   url: https://darn.es
