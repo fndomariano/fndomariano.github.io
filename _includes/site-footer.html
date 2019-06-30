@@ -1,8 +1,20 @@
 <footer class="footer">
   <div class="container">
-    <div class="copyright  typeset">
-      <small class="small">&copy; {{ site.title }} {{ site.time | date: '%Y' }}</small>
-    </div>
+    {% if site.navigation_footer %}
+    <nav class="nav  nav--footer">
+        {% for link in site.social_links %}
+          {% if link[1] != blank %}
+            {% assign id = link[0] | downcase %}
+            <li class="item  item--nav{% if item.url == page.url %}  item--current{% endif %}"></li>
+              <a href="{{ link[1] }}">
+                {% include icon.html id=id title=id %}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
 
     {% include nav-footer.html %}
   </div>
