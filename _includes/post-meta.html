@@ -16,5 +16,5 @@
   {% else %}
     {% assign date_format = site.date_format | default: "%m/%d/%Y" %}
   {% endif %}
-  {{ categories | append: "&nbsp;&middot;&nbsp;" }}<time datetime="{{ page.date | date_to_xmlschema }}" class="time">{{ page.date | date: date_format }}</time>
+  <time datetime="{{ page.date | date_to_xmlschema }}" class="time">{{ page.date | date: date_format }}</time>
 </small>

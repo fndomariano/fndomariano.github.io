@@ -5,7 +5,8 @@ comments: true
 lang: br
 ref: mean-wage-alagoas
 excerpt:  "Este exercício é de um curso da Udemy que eu fiz. No curso, eu precisei fazer uma tabela com valores estatísticos (média, mediana, desvio padrão, etc...). Então eu decidi fazer o mesmo exercício com Python e suas bibliotecas"
-feature_image: "/images/2019-03-23/reais.jpg"
+feature_text: |
+    ## Média salarial de Alagoas
 tags:
     - data science
     - python

@@ -1,8 +1,8 @@
-const version = '20190630084059';
+const version = '20190630094730';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/2019/04/06/wordpress-development-tips/","/2019/04/06/dicas-desenvolvimento-wordpress/","/2019/03/23/mean-wage-alagoas/","/2019/03/23/media-salarial-alagoas/","/2019/03/17/first-project-data-science/","/2019/03/17/primeiro-projeto-ciencia-de-dados/","/en/","/","/manifest.json","/assets/search.json","/assets/styles.css","/redirects.json","/sitemap.xml","/robots.txt","/feed.xml","/assets/logos/logo.svg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
+  return ["/2019/04/06/wordpress-development-tips/","/2019/04/06/dicas-desenvolvimento-wordpress/","/2019/03/23/mean-wage-alagoas/","/2019/03/23/media-salarial-alagoas/","/2019/03/17/first-project-data-science/","/2019/03/17/primeiro-projeto-ciencia-de-dados/","/","/manifest.json","/assets/search.json","/assets/styles.css","/redirects.json","/sitemap.xml","/robots.txt","/page2/","/feed.xml","/assets/logos/logo.svg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
   ]
 }
 

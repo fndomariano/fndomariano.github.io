@@ -115,10 +115,5 @@ sharing_links: # Appear at the bottom of single blog posts, add as desired. The 
   Email: false
   linkedin: "#0073b1"
 
-paginate_multiple:
-  - paginate: 5
-    paginate_path: '/pagina:num/'
-    sub_dir: '/br'
-  - paginate: 5
-    paginate_path: '/en/page:num/'
-    sub_dir: '/en'
+paginate: 4
+paginate_path: '/page:num/'

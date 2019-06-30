@@ -5,7 +5,8 @@ comments: true
 lang: en
 ref: wordpress-development-tips
 excerpt:  "This text is a few different from previous texts where I've talked about data subjects. Here I intent to illustrate some tips on projects wordpress development."
-feature_image: "/images/2019-04-06/wordpress-header.jpg"
+feature_text: |
+    ## Wordpress Development Tips
 tags:
     - wordpress
     - php

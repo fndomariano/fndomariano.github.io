@@ -5,7 +5,8 @@ comments: true
 lang: en
 ref: first-project-data-science
 excerpt:  "In this post, I pretend to describe my first project with Data Science. The project consists to study Trimania data that are available on its site. On this project, I got simple information like drawn numbers e neighborhoods with most winners"
-feature_image: "/images/2019-03-17/draw.jpeg"
+feature_text: |
+    ## My first project with Data Science
 tags:
     - data science
     - python
