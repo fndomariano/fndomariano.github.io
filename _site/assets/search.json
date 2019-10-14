@@ -50,5 +50,12 @@
   
   
   
+  {
+    "title": "Search",
+    "excerpt": "\n",
+    "content": "{% include site-search.html %}\n",
+    "url": "/search/"
+  }
+  
 ]
 
