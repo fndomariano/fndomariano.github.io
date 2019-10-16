@@ -1,8 +1,8 @@
-const version = '20191014234926';
+const version = '20191015225022';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/2019/10/14/simple-with-linear-regression/","/2019/10/14/regressao-linear-simples/","/2019/04/06/wordpress-development-tips/","/2019/04/06/dicas-desenvolvimento-wordpress/","/2019/03/23/mean-wage-alagoas/","/2019/03/23/media-salarial-alagoas/","/2019/03/17/first-project-data-science/","/2019/03/17/primeiro-projeto-ciencia-de-dados/","/","/manifest.json","/assets/search.json","/search/","/assets/styles.css","/redirects.json","/sitemap.xml","/robots.txt","/page2/","/feed.xml","/assets/logos/logo.svg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
+  return ["/2019/10/14/simple-linear-regression/","/2019/10/14/regressao-linear-simples/","/2019/04/06/wordpress-development-tips/","/2019/04/06/dicas-desenvolvimento-wordpress/","/2019/03/23/mean-wage-alagoas/","/2019/03/23/media-salarial-alagoas/","/2019/03/17/first-project-data-science/","/2019/03/17/primeiro-projeto-ciencia-de-dados/","/","/manifest.json","/assets/search.json","/search/","/assets/styles.css","/redirects.json","/sitemap.xml","/robots.txt","/page2/","/feed.xml","/assets/logos/logo.svg", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
   ]
 }
 

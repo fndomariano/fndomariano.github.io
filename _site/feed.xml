@@ -1,4 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-14T23:49:26-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Fernando Mariano</title><subtitle></subtitle><author><name>fndomariano</name></author><entry xml:lang="br"><title type="html">Regressão Linear Simples</title><link href="http://localhost:4000/2019/10/14/regressao-linear-simples/" rel="alternate" type="text/html" title="Regressão Linear Simples" /><published>2019-10-14T00:00:00-03:00</published><updated>2019-10-14T00:00:00-03:00</updated><id>http://localhost:4000/2019/10/14/regressao-linear-simples</id><content type="html" xml:base="http://localhost:4000/2019/10/14/regressao-linear-simples/">&lt;p&gt;Hoje eu vou falar sobre os meus estudos com Regressão Linar e mostrar com um simples exemplo. Para este conteúdo, eu procurei no &lt;a href=&quot;https://www.kaggle.com&quot;&gt;Kaggle&lt;/a&gt; e encontrei o dataset &lt;a href=&quot;https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/&quot;&gt;Beer Consumption - Sao Paulo&lt;/a&gt;. Como o nome diz, este possui dados referente ao consumo de cerveja e neste post eu quero descobrir o que ajuda a variar o consumo.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-15T22:50:22-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Fernando Mariano</title><subtitle></subtitle><author><name>fndomariano</name></author><entry xml:lang="br"><title type="html">Regressão Linear Simples</title><link href="http://localhost:4000/2019/10/14/regressao-linear-simples/" rel="alternate" type="text/html" title="Regressão Linear Simples" /><published>2019-10-14T00:00:00-03:00</published><updated>2019-10-14T00:00:00-03:00</updated><id>http://localhost:4000/2019/10/14/regressao-linear-simples</id><content type="html" xml:base="http://localhost:4000/2019/10/14/regressao-linear-simples/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/2019/10/14/simple-linear-regression&quot;&gt;English Version&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Hoje eu vou falar sobre os meus estudos com Regressão Linar e mostrar um exemplo simples. Para este conteúdo, eu procurei no &lt;a href=&quot;https://www.kaggle.com&quot;&gt;Kaggle&lt;/a&gt; e encontrei o dataset &lt;a href=&quot;https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/&quot;&gt;Beer Consumption - Sao Paulo&lt;/a&gt;. Como o nome diz, este possui dados referente ao consumo de cerveja e neste post eu vou mostrar qual dado ajuda a variar o consumo.&lt;/p&gt;
 
 &lt;p&gt;Primeiramente, eu importei as bibliotecas e o dataset para visualizar as colunas.&lt;/p&gt;
 
@@ -15,7 +17,7 @@
 
 &lt;p&gt;Depois disso, eu percebi que havia um monte de linhas em branco.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/total_nan_values.png&quot; alt=&quot;Table with total NaN values by index&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/nan.png&quot; alt=&quot;Tabela exibindo alguns valores nulos&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Para ser exato, no dataset havia 576 linhas em branco. Para saber quantas delas eram valores nulos, eu executei o código abaixo.&lt;/p&gt;
 
@@ -24,7 +26,7 @@
 
 &lt;p&gt;E obtive a seguinte tabela.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/nan.png&quot; alt=&quot;Tabela exibindo alguns valores nulos&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/total_nan_values.png&quot; alt=&quot;Table with total NaN values by index&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Depois de levantar as informações acima, eu precisei limpar as linhas inúteis. Para fazer isso eu executei:&lt;/p&gt;
 
@@ -38,7 +40,7 @@
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;consumption&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;O código mostrou isso:&lt;/p&gt;
+&lt;p&gt;O código acima exibiu o seguinte gráfico:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/nd.png&quot; alt=&quot;Gráfico com os valores normalizados&quot; /&gt;&lt;/p&gt;
 
@@ -46,7 +48,7 @@
 
 &lt;p&gt;Mas antes de visualizar o gráfico, foi preciso converter as variáveis, porque elas foram importadas como &lt;em&gt;strings&lt;/em&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# substitui virgual por ponto e converte os valores
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# substitui vírgula por ponto e converte os valores
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'avg_temperature'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'avg_temperature'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;','&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'avg_temperature'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'avg_temperature'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
@@ -65,17 +67,16 @@
 &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'is_weekend'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'is_weekend'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;astype&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;bool&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Para gerar o mapa de calor eu usei a bibliocate &lt;a href=&quot;https://seaborn.pydata.org/&quot;&gt;Seaborn&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Para gerar o mapa de calor eu usei a biblioteca &lt;a href=&quot;https://seaborn.pydata.org/&quot;&gt;Seaborn&lt;/a&gt;.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;heatmap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;corr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;annot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;O mapa de calor mostrou isto:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/heatmap.png&quot; alt=&quot;Mapa de calor&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Com a imagem do mapa de calor, eu pude ver melhor a relação entre &lt;strong&gt;beer_consumption&lt;/strong&gt; e &lt;strong&gt;max_temperature&lt;/strong&gt;. A força desta correlação era de 0.64 and e tinha uma nível moderado.&lt;/p&gt;
+&lt;p&gt;Com a imagem do mapa de calor, eu pude ver melhor a relação entre &lt;strong&gt;beer_consumption&lt;/strong&gt; e &lt;strong&gt;max_temperature&lt;/strong&gt;. A força desta correlação era de 0.64 e tinha uma nível moderado.&lt;/p&gt;
 
-&lt;p&gt;Os próximos passos foram entender o comportamente entre ambas variáveis através de um gráfico de dispersão.&lt;/p&gt;
+&lt;p&gt;Os próximos passos foram entender o comportamento entre ambas variáveis através de um gráfico de dispersão.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# valores do eixo x
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'max_temperature'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;
@@ -84,7 +85,7 @@
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'beer_consumption'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scatter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-&lt;p&gt;O gráfico me mostrou que conforme cresce &lt;strong&gt;max_temperature&lt;/strong&gt;, também cresce &lt;strong&gt;beer_consumption&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Através do gráfico é possível perceber que conforme cresce &lt;strong&gt;max_temperature&lt;/strong&gt;, também aumenta &lt;strong&gt;beer_consumption&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/scatter_chart.png&quot; alt=&quot;Gráfico de dispersão&quot; /&gt;&lt;/p&gt;
 
@@ -104,7 +105,9 @@
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 &lt;p&gt;Ou seja, com uma temperatura de 38º, o consumo seria de 32 litros.&lt;/p&gt;
 
-&lt;p&gt;Eu espero que tenham gostado do post. Qualquer dúvida ou sugestão é só deixar um comentário.&lt;/p&gt;</content><author><name>fndomariano</name></author><category term="data science" /><category term="python" /><category term="linear regression" /><category term="statistic" /><summary type="html">Hoje eu vou falar sobre os meus estudos com Regressão Linar e mostrar com um simples exemplo.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2019-10-14/chart.jpg" /></entry><entry xml:lang="en"><title type="html">Simple Linear Regression</title><link href="http://localhost:4000/2019/10/14/simple-with-linear-regression/" rel="alternate" type="text/html" title="Simple Linear Regression" /><published>2019-10-14T00:00:00-03:00</published><updated>2019-10-14T00:00:00-03:00</updated><id>http://localhost:4000/2019/10/14/simple-with-linear-regression</id><content type="html" xml:base="http://localhost:4000/2019/10/14/simple-with-linear-regression/">&lt;p&gt;Today I’m going to talk about my studies with Linear Regression and show with a simple example. For this content, I searched on &lt;a href=&quot;https://www.kaggle.com&quot;&gt;Kaggle&lt;/a&gt; and found the &lt;a href=&quot;https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/&quot;&gt;Beer Consumption - Sao Paulo&lt;/a&gt; dataset. As the name says, this one owns data about beer consumption and on this post, I want to find out what helps to vary the consumption.&lt;/p&gt;
+&lt;p&gt;Eu espero que tenham gostado do post. Qualquer dúvida ou sugestão é só deixar um comentário.&lt;/p&gt;</content><author><name>fndomariano</name></author><category term="data science" /><category term="python" /><category term="linear regression" /><category term="statistic" /><summary type="html">Hoje eu vou falar sobre os meus estudos com Regressão Linar e mostrar com um simples exemplo.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2019-10-14/chart.jpg" /></entry><entry xml:lang="en"><title type="html">Simple Linear Regression</title><link href="http://localhost:4000/2019/10/14/simple-linear-regression/" rel="alternate" type="text/html" title="Simple Linear Regression" /><published>2019-10-14T00:00:00-03:00</published><updated>2019-10-14T00:00:00-03:00</updated><id>http://localhost:4000/2019/10/14/simple-linear-regression</id><content type="html" xml:base="http://localhost:4000/2019/10/14/simple-linear-regression/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/2019/10/14/regressao-linear-simples&quot;&gt;Portuguese Version&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Today I’m going to talk about my studies with Linear Regression and show a simple example. For this content, I searched on &lt;a href=&quot;https://www.kaggle.com&quot;&gt;Kaggle&lt;/a&gt; and found the &lt;a href=&quot;https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/&quot;&gt;Beer Consumption - Sao Paulo&lt;/a&gt; dataset. As the name says, this one owns data about beer consumption and on this post, I’m going to find out what information helps to vary the consumption.&lt;/p&gt;
 
 &lt;p&gt;Firstly, I imported the libs and the dataset to visualize the columns.&lt;/p&gt;
 
@@ -121,7 +124,7 @@
 
 &lt;p&gt;After this, I perceived that there was a lot of empty lines.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/total_nan_values.png&quot; alt=&quot;Table with total NaN values by index&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/nan.png&quot; alt=&quot;Table showing some NAN values&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;To be exact, on the dataset there were 576 empty lines. To know how much registers were NaN, I executed the code below.&lt;/p&gt;
 
@@ -130,7 +133,7 @@
 
 &lt;p&gt;And I got the following table.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/nan.png&quot; alt=&quot;Table showing some NAN values&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/total_nan_values.png&quot; alt=&quot;Table with total NaN values by index&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;After raising the information above, I needed to clean useless lines. To do this I executed:&lt;/p&gt;
 
@@ -144,7 +147,7 @@
 &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;consumption&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The code showed this:&lt;/p&gt;
+&lt;p&gt;The code above showed the following graph:&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/nd.png&quot; alt=&quot;Chart with normalized values&quot; /&gt;&lt;/p&gt;
 
@@ -176,8 +179,6 @@
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;sns&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;heatmap&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;base&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;corr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;annot&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;The heatmap showed this:&lt;/p&gt;
-
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/heatmap.png&quot; alt=&quot;Heatmap&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;With the heatmap image, I could see that better relation with &lt;strong&gt;beer_consumption&lt;/strong&gt; was &lt;strong&gt;max_temperature&lt;/strong&gt;. The strong this correlation was 0.64 and it had a modered level.&lt;/p&gt;
@@ -196,7 +197,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-10-14/scatter_chart.png&quot; alt=&quot;Scatter chart&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Before to predict the beer_consumption, I needed to train the data.&lt;/p&gt;
+&lt;p&gt;Before to predict the &lt;strong&gt;beer_consumption&lt;/strong&gt;, I needed to train the data.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LinearRegression&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;

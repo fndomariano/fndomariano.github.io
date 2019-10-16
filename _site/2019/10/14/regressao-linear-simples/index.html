@@ -218,7 +218,9 @@
   <time datetime="2019-10-14T00:00:00-03:00" class="time">14/10/2019</time>
 </small>
 
-    <p>Hoje eu vou falar sobre os meus estudos com Regressão Linar e mostrar com um simples exemplo. Para este conteúdo, eu procurei no <a href="https://www.kaggle.com">Kaggle</a> e encontrei o dataset <a href="https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/">Beer Consumption - Sao Paulo</a>. Como o nome diz, este possui dados referente ao consumo de cerveja e neste post eu quero descobrir o que ajuda a variar o consumo.</p>
+    <p><a href="http://localhost:4000/2019/10/14/simple-linear-regression">English Version</a></p>
+
+<p>Hoje eu vou falar sobre os meus estudos com Regressão Linar e mostrar um exemplo simples. Para este conteúdo, eu procurei no <a href="https://www.kaggle.com">Kaggle</a> e encontrei o dataset <a href="https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/">Beer Consumption - Sao Paulo</a>. Como o nome diz, este possui dados referente ao consumo de cerveja e neste post eu vou mostrar qual dado ajuda a variar o consumo.</p>
 
 <p>Primeiramente, eu importei as bibliotecas e o dataset para visualizar as colunas.</p>
 
@@ -235,7 +237,7 @@
 
 <p>Depois disso, eu percebi que havia um monte de linhas em branco.</p>
 
-<p><img src="http://localhost:4000/images/2019-10-14/total_nan_values.png" alt="Table with total NaN values by index"></p>
+<p><img src="http://localhost:4000/images/2019-10-14/nan.png" alt="Tabela exibindo alguns valores nulos"></p>
 
 <p>Para ser exato, no dataset havia 576 linhas em branco. Para saber quantas delas eram valores nulos, eu executei o código abaixo.</p>
 
@@ -244,7 +246,7 @@
 
 <p>E obtive a seguinte tabela.</p>
 
-<p><img src="http://localhost:4000/images/2019-10-14/nan.png" alt="Tabela exibindo alguns valores nulos"></p>
+<p><img src="http://localhost:4000/images/2019-10-14/total_nan_values.png" alt="Table with total NaN values by index"></p>
 
 <p>Depois de levantar as informações acima, eu precisei limpar as linhas inúteis. Para fazer isso eu executei:</p>
 
@@ -258,7 +260,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">consumption</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>O código mostrou isso:</p>
+<p>O código acima exibiu o seguinte gráfico:</p>
 
 <p><img src="http://localhost:4000/images/2019-10-14/nd.png" alt="Gráfico com os valores normalizados"></p>
 
@@ -266,7 +268,7 @@
 
 <p>Mas antes de visualizar o gráfico, foi preciso converter as variáveis, porque elas foram importadas como <em>strings</em>.</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># substitui virgual por ponto e converte os valores
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># substitui vírgula por ponto e converte os valores
 </span><span class="n">base</span><span class="p">[</span><span class="s">'avg_temperature'</span><span class="p">]</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s">'avg_temperature'</span><span class="p">]</span><span class="o">.</span><span class="nb">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">','</span><span class="p">,</span> <span class="s">'.'</span><span class="p">)</span>
 <span class="n">base</span><span class="p">[</span><span class="s">'avg_temperature'</span><span class="p">]</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s">'avg_temperature'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span>
 
@@ -285,17 +287,16 @@
 <span class="n">base</span><span class="p">[</span><span class="s">'is_weekend'</span><span class="p">]</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s">'is_weekend'</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Para gerar o mapa de calor eu usei a bibliocate <a href="https://seaborn.pydata.org/">Seaborn</a>.</p>
+<p>Para gerar o mapa de calor eu usei a biblioteca <a href="https://seaborn.pydata.org/">Seaborn</a>.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">base</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
-<p>O mapa de calor mostrou isto:</p>
 
 <p><img src="http://localhost:4000/images/2019-10-14/heatmap.png" alt="Mapa de calor"></p>
 
-<p>Com a imagem do mapa de calor, eu pude ver melhor a relação entre <strong>beer_consumption</strong> e <strong>max_temperature</strong>. A força desta correlação era de 0.64 and e tinha uma nível moderado.</p>
+<p>Com a imagem do mapa de calor, eu pude ver melhor a relação entre <strong>beer_consumption</strong> e <strong>max_temperature</strong>. A força desta correlação era de 0.64 e tinha uma nível moderado.</p>
 
-<p>Os próximos passos foram entender o comportamente entre ambas variáveis através de um gráfico de dispersão.</p>
+<p>Os próximos passos foram entender o comportamento entre ambas variáveis através de um gráfico de dispersão.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># valores do eixo x
 </span><span class="n">x</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s">'max_temperature'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -304,7 +305,7 @@
 </span><span class="n">y</span> <span class="o">=</span> <span class="n">base</span><span class="p">[</span><span class="s">'beer_consumption'</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </code></pre></div></div>
-<p>O gráfico me mostrou que conforme cresce <strong>max_temperature</strong>, também cresce <strong>beer_consumption</strong>.</p>
+<p>Através do gráfico é possível perceber que conforme cresce <strong>max_temperature</strong>, também aumenta <strong>beer_consumption</strong>.</p>
 
 <p><img src="http://localhost:4000/images/2019-10-14/scatter_chart.png" alt="Gráfico de dispersão"></p>
 

@@ -15,7 +15,9 @@ tags:
     - statistic
 ---
 
-Today I'm going to talk about my studies with Linear Regression and show with a simple example. For this content, I searched on [Kaggle](https://www.kaggle.com) and found the [Beer Consumption - Sao Paulo](https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/) dataset. As the name says, this one owns data about beer consumption and on this post, I want to find out what helps to vary the consumption.
+[Portuguese Version]({{site.url}}/2019/10/14/regressao-linear-simples)
+
+Today I'm going to talk about my studies with Linear Regression and show a simple example. For this content, I searched on [Kaggle](https://www.kaggle.com) and found the [Beer Consumption - Sao Paulo](https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/) dataset. As the name says, this one owns data about beer consumption and on this post, I'm going to find out what information helps to vary the consumption.
 
 Firstly, I imported the libs and the dataset to visualize the columns. 
 
@@ -33,7 +35,8 @@ base.head()
 
 After this, I perceived that there was a lot of empty lines. 
 
-![Table with total NaN values by index]({{site.url}}/images/2019-10-14/total_nan_values.png)
+![Table showing some NAN values]({{site.url}}/images/2019-10-14/nan.png)
+
 
 To be exact, on the dataset there were 576 empty lines. To know how much registers were NaN, I executed the code below.
 
@@ -43,7 +46,7 @@ base.isna().sum()
 
 And I got the following table.
 
-![Table showing some NAN values]({{site.url}}/images/2019-10-14/nan.png)
+![Table with total NaN values by index]({{site.url}}/images/2019-10-14/total_nan_values.png)
 
 After raising the information above, I needed to clean useless lines. To do this I executed:
 
@@ -59,7 +62,7 @@ consumption = base.iloc[:, -1].values
 plt.hist(consumption)
 ```
 
-The code showed this:
+The code above showed the following graph:
 
 ![Chart with normalized values]({{site.url}}/images/2019-10-14/nd.png)
 
@@ -93,8 +96,6 @@ To generate the heatmap I used the [Seaborn library](https://seaborn.pydata.org/
 sns.heatmap(base.corr(), annot=True)
 ```
 
-The heatmap showed this:
-
 ![Heatmap]({{site.url}}/images/2019-10-14/heatmap.png)
 
 With the heatmap image, I could see that better relation with **beer_consumption** was **max_temperature**. The strong this correlation was 0.64 and it had a modered level. 
@@ -114,7 +115,7 @@ The chart showed me that according **max_temperature** grows, also grows the **b
 
 ![Scatter chart]({{site.url}}/images/2019-10-14/scatter_chart.png)
 
-Before to predict the beer_consumption, I needed to train the data.
+Before to predict the **beer_consumption**, I needed to train the data.
 
 ```python
 model = LinearRegression()

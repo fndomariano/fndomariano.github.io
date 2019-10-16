@@ -16,8 +16,8 @@
 <meta property="og:locale" content="en" />
 <meta name="description" content="Today I’m going to talk about my studies with Linear Regression and show with a simple example." />
 <meta property="og:description" content="Today I’m going to talk about my studies with Linear Regression and show with a simple example." />
-<link rel="canonical" href="http://localhost:4000/2019/10/14/simple-with-linear-regression/" />
-<meta property="og:url" content="http://localhost:4000/2019/10/14/simple-with-linear-regression/" />
+<link rel="canonical" href="http://localhost:4000/2019/10/14/simple-linear-regression/" />
+<meta property="og:url" content="http://localhost:4000/2019/10/14/simple-linear-regression/" />
 <meta property="og:site_name" content="Fernando Mariano" />
 <meta property="og:image" content="http://localhost:4000/images/2019-10-14/chart.jpg" />
 <meta property="og:type" content="article" />
@@ -28,7 +28,7 @@
 <meta name="twitter:site" content="@fndomariano" />
 <meta name="twitter:creator" content="@fndomariano" />
 <script type="application/ld+json">
-{"description":"Today I’m going to talk about my studies with Linear Regression and show with a simple example.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/10/14/simple-with-linear-regression/"},"@type":"BlogPosting","url":"http://localhost:4000/2019/10/14/simple-with-linear-regression/","dateModified":"2019-10-14T00:00:00-03:00","datePublished":"2019-10-14T00:00:00-03:00","headline":"Simple Linear Regression","image":"http://localhost:4000/images/2019-10-14/chart.jpg","author":{"@type":"Person","name":"fndomariano"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/logos/logo.svg"},"name":"fndomariano"},"@context":"https://schema.org"}</script>
+{"description":"Today I’m going to talk about my studies with Linear Regression and show with a simple example.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/10/14/simple-linear-regression/"},"@type":"BlogPosting","url":"http://localhost:4000/2019/10/14/simple-linear-regression/","dateModified":"2019-10-14T00:00:00-03:00","datePublished":"2019-10-14T00:00:00-03:00","headline":"Simple Linear Regression","image":"http://localhost:4000/images/2019-10-14/chart.jpg","author":{"@type":"Person","name":"fndomariano"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/logos/logo.svg"},"name":"fndomariano"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -218,7 +218,9 @@
   <time datetime="2019-10-14T00:00:00-03:00" class="time">10/14/2019</time>
 </small>
 
-    <p>Today I’m going to talk about my studies with Linear Regression and show with a simple example. For this content, I searched on <a href="https://www.kaggle.com">Kaggle</a> and found the <a href="https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/">Beer Consumption - Sao Paulo</a> dataset. As the name says, this one owns data about beer consumption and on this post, I want to find out what helps to vary the consumption.</p>
+    <p><a href="http://localhost:4000/2019/10/14/regressao-linear-simples">Portuguese Version</a></p>
+
+<p>Today I’m going to talk about my studies with Linear Regression and show a simple example. For this content, I searched on <a href="https://www.kaggle.com">Kaggle</a> and found the <a href="https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/">Beer Consumption - Sao Paulo</a> dataset. As the name says, this one owns data about beer consumption and on this post, I’m going to find out what information helps to vary the consumption.</p>
 
 <p>Firstly, I imported the libs and the dataset to visualize the columns.</p>
 
@@ -235,7 +237,7 @@
 
 <p>After this, I perceived that there was a lot of empty lines.</p>
 
-<p><img src="http://localhost:4000/images/2019-10-14/total_nan_values.png" alt="Table with total NaN values by index"></p>
+<p><img src="http://localhost:4000/images/2019-10-14/nan.png" alt="Table showing some NAN values"></p>
 
 <p>To be exact, on the dataset there were 576 empty lines. To know how much registers were NaN, I executed the code below.</p>
 
@@ -244,7 +246,7 @@
 
 <p>And I got the following table.</p>
 
-<p><img src="http://localhost:4000/images/2019-10-14/nan.png" alt="Table showing some NAN values"></p>
+<p><img src="http://localhost:4000/images/2019-10-14/total_nan_values.png" alt="Table with total NaN values by index"></p>
 
 <p>After raising the information above, I needed to clean useless lines. To do this I executed:</p>
 
@@ -258,7 +260,7 @@
 <span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">consumption</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>The code showed this:</p>
+<p>The code above showed the following graph:</p>
 
 <p><img src="http://localhost:4000/images/2019-10-14/nd.png" alt="Chart with normalized values"></p>
 
@@ -290,8 +292,6 @@
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">base</span><span class="o">.</span><span class="n">corr</span><span class="p">(),</span> <span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>The heatmap showed this:</p>
-
 <p><img src="http://localhost:4000/images/2019-10-14/heatmap.png" alt="Heatmap"></p>
 
 <p>With the heatmap image, I could see that better relation with <strong>beer_consumption</strong> was <strong>max_temperature</strong>. The strong this correlation was 0.64 and it had a modered level.</p>
@@ -310,7 +310,7 @@
 
 <p><img src="http://localhost:4000/images/2019-10-14/scatter_chart.png" alt="Scatter chart"></p>
 
-<p>Before to predict the beer_consumption, I needed to train the data.</p>
+<p>Before to predict the <strong>beer_consumption</strong>, I needed to train the data.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">model</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span>
 <span class="n">model</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -353,7 +353,7 @@
       
       
 
-      <a class="button" href="https://twitter.com/intent/tweet/?url=http://localhost:4000/2019/10/14/simple-with-linear-regression/&amp;text=Simple%20Linear%20Regression&amp;via=fndomariano" style="background: #0d94e7">Twitter  <svg width="16" height="16" class="icon  icon--twitter" role="img" alt="twitter">
+      <a class="button" href="https://twitter.com/intent/tweet/?url=http://localhost:4000/2019/10/14/simple-linear-regression/&amp;text=Simple%20Linear%20Regression&amp;via=fndomariano" style="background: #0d94e7">Twitter  <svg width="16" height="16" class="icon  icon--twitter" role="img" alt="twitter">
     
     
     <title>twitter</title>
@@ -370,7 +370,7 @@
       
       
 
-      <a class="button" href="https://facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/10/14/simple-with-linear-regression/" style="background: #3B5998">facebook  <svg width="16" height="16" class="icon  icon--facebook" role="img" alt="facebook">
+      <a class="button" href="https://facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/10/14/simple-linear-regression/" style="background: #3B5998">facebook  <svg width="16" height="16" class="icon  icon--facebook" role="img" alt="facebook">
     
     
     <title>facebook</title>
@@ -389,7 +389,7 @@
       
       
 
-      <a class="button" href="https://www.linkedin.com/shareArticle?url=http://localhost:4000/2019/10/14/simple-with-linear-regression/&amp;title=Simple%20Linear%20Regression&amp;source=Fernando%20Mariano&amp;mini=true" style="background: #0073b1">linkedin  <svg width="16" height="16" class="icon  icon--linkedin" role="img" alt="linkedin">
+      <a class="button" href="https://www.linkedin.com/shareArticle?url=http://localhost:4000/2019/10/14/simple-linear-regression/&amp;title=Simple%20Linear%20Regression&amp;source=Fernando%20Mariano&amp;mini=true" style="background: #0073b1">linkedin  <svg width="16" height="16" class="icon  icon--linkedin" role="img" alt="linkedin">
     
     
     <title>linkedin</title>
@@ -406,8 +406,8 @@
   <div id="disqus_thread"></div>
   <script>
     var disqus_config = function () {
-      this.page.url = "http://localhost:4000/2019/10/14/simple-with-linear-regression/";
-      this.page.identifier = "/2019/10/14/simple-with-linear-regression/";
+      this.page.url = "http://localhost:4000/2019/10/14/simple-linear-regression/";
+      this.page.identifier = "/2019/10/14/simple-linear-regression/";
     };
 
     (function() {
