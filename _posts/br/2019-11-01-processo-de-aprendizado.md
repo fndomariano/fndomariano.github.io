@@ -3,7 +3,7 @@ layout:    post
 title:    "Processo de Aprendizado"
 comments: true
 lang: br
-ref: process-de-aprendizado
+ref: processo-de-aprendizado
 excerpt:  "Hoje eu vou falar sobre meu processo de aprendizado and também destacar alguns pontos."
 image: "/images/2019-11-01/learning.png"
 feature_text: |
