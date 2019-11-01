@@ -7,7 +7,7 @@ ref: processo-de-aprendizado
 excerpt:  "Hoje eu vou falar sobre meu processo de aprendizado and também destacar alguns pontos."
 image: "/images/2019-11-01/learning.png"
 feature_text: |
-    ## Como eu faço para aprender
+    ## Processo de Aprendizado
 tags:
     - aprendizado
     - estudos

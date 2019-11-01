@@ -7,7 +7,7 @@ ref: learning-process
 excerpt:  "Today I will speak about my process of learning and also highlight some points."
 image: "/images/2019-11-01/learning.png"
 feature_text: |
-    ## How I do to learn
+    ## Learning Process
 tags:
     - learning
     - studies
