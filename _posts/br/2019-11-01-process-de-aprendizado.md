@@ -1,11 +1,11 @@
 ---
 layout:    post
-title:    "Como eu faço para aprender"
+title:    "Processo de Aprendizado"
 comments: true
 lang: br
-ref: como-eu-faco-para-aprender
-excerpt:  "Today I will spoke about my proccess of learning and also highligh some points."
-image: "/images/2019-03-23/brazilian_money.jpg"
+ref: process-de-aprendizado
+excerpt:  "Hoje eu vou falar sobre meu processo de aprendizado and também destacar alguns pontos."
+image: "/images/2019-11-01/learning.png"
 feature_text: |
     ## Como eu faço para aprender
 tags:
@@ -13,6 +13,8 @@ tags:
     - estudos
     - metas
 ---
+
+[English Version]({{site.url}}/2019/11/01/learning-process)
 
 Hoje eu vou falar sobre meu processo de aprendizado and também destacar alguns pontos.
 

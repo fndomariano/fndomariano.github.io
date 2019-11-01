@@ -1,11 +1,11 @@
 ---
 layout:    post
-title:    "How I do to learn"
+title:    "Learning Process"
 comments: true
 lang: en
-ref: how-i-do-to-learn
+ref: learning-process
 excerpt:  "Today I will speak about my process of learning and also highlight some points."
-image: "/images/2019-03-23/brazilian_money.jpg"
+image: "/images/2019-11-01/learning.png"
 feature_text: |
     ## How I do to learn
 tags:
@@ -13,6 +13,8 @@ tags:
     - studies
     - goals
 ---
+
+[Portuguese Version]({{site.url}}/2019/11/01/processo-de-aprendizado)
 
 Today I will speak about my process of learning and also highlight some points.
 
