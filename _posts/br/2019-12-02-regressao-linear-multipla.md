@@ -104,7 +104,7 @@ Em seguida, separei o *dataset* em dois conjuntos de dados.
 X_train, X_test, Y_train, Y_test = train_test_split(x, y, test_size = 0.2, random_state=42)
 ```
 
-Para executar o treino e o teste I fiz o código abaixo usando *R2 Score* (Coeficiente de Determinação) para ajustar o modelo.
+Para executar o treino e o teste, fiz o código abaixo usando *R2 Score* (Coeficiente de Determinação) para ajustar o modelo.
 
 ```python
 # avaliação de modelo para conjunto de treino
@@ -125,7 +125,7 @@ print('O Coeficiente de Determinação é %s' %r2)
 # O Coeficiente de Determinação é 0.806069903902
 ```
 
-Repeti o mesmo process para o conjunto de testes onde obtive: 
+Repeti o mesmo processo para o conjunto de testes onde obtive: 
 
 ```python
 # avaliação de modelo para conjunto de testes
