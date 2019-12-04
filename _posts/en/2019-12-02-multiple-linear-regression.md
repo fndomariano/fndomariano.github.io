@@ -145,7 +145,7 @@ print('R2 score is %s' %r2)
 
 #### Considerations
 
-The results from R2 Score showed that is a good model because set of train and test both were close from 1 which is considered great.  
+The results from R2 Score showed that is a good model because set of train and test both were close from 1 that is considered great.  
 
 Another point is that to get a high Chance of Admit, the student needs to have mainly the scores cited with great values.
 
