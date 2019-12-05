@@ -18,7 +18,7 @@ tags:
 
 [English Version]({{site.url}}/2019/12/02/multiple-linear-regression)
 
-Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um [dataset about graduação que encontrei no Kaggle](https://www.kaggle.com/mohansacharya/graduate-admissions).
+Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um [dataset sobre graduação que encontrei no Kaggle](https://www.kaggle.com/mohansacharya/graduate-admissions).
 
 Primeiramente, importe as bibliotecas, o *dataset* e também verifiquei se existia ```NaN values``` (não havia).
 
