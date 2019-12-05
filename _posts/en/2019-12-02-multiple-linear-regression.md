@@ -5,7 +5,7 @@ comments: true
 lang: en
 ref: multiple-linear-regression
 excerpt:  "In this post, I want to show how I've implemented multiple linear regression with a dataset about graduation that I found on Kaggle."
-image: "/images/2019-11-01/learning.png"
+image: "/images/2019-12-02/graduation.jpg"
 feature_text: |
     ## Multiple Linear Regression 
     A study with graduation dataset
@@ -145,7 +145,7 @@ print('R2 score is %s' %r2)
 
 #### Considerations
 
-The results from R2 Score showed that is a good model because set of train and test both were close from 1 which is considered great.  
+The results from R2 Score showed that is a good model because set of train and test both were close from 1 that is considered great.  
 
 Another point is that to get a high Chance of Admit, the student needs to have mainly the scores cited with great values.
 
