@@ -96,7 +96,7 @@ x = pd.DataFrame(np.c_[toefl, gre, cgpa], columns=['toefl','gre', 'cgpa'])
 x.head()
 ```
 
-![Table showing a new Dataframe with columns toefl, gre and cgpa]({{site.url}}/images/2019-12-02/graduation_chart_cgpa.png)
+![Table showing a new Dataframe with columns toefl, gre and cgpa]({{site.url}}/images/2019-12-02/graduation_new_dataframe.png)
 
 Next, I separated this one in two sets of data.
 

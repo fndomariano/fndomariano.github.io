@@ -19,16 +19,16 @@
 <link rel="canonical" href="http://localhost:4000/2019/12/02/regressao-linear-multipla/" />
 <meta property="og:url" content="http://localhost:4000/2019/12/02/regressao-linear-multipla/" />
 <meta property="og:site_name" content="Fernando Mariano" />
-<meta property="og:image" content="http://localhost:4000/images/2019-11-01/learning.png" />
+<meta property="og:image" content="http://localhost:4000/images/2019-12-02/graduation.jpg" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2019-12-02T00:00:00-03:00" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4000/images/2019-11-01/learning.png" />
+<meta property="twitter:image" content="http://localhost:4000/images/2019-12-02/graduation.jpg" />
 <meta property="twitter:title" content="Regressão Linear Multipla" />
 <meta name="twitter:site" content="@fndomariano" />
 <meta name="twitter:creator" content="@fndomariano" />
 <script type="application/ld+json">
-{"description":"Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um dataset about graduação que encontrei no Kaggle.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/12/02/regressao-linear-multipla/"},"@type":"BlogPosting","url":"http://localhost:4000/2019/12/02/regressao-linear-multipla/","dateModified":"2019-12-02T00:00:00-03:00","datePublished":"2019-12-02T00:00:00-03:00","headline":"Regressão Linear Multipla","image":"http://localhost:4000/images/2019-11-01/learning.png","author":{"@type":"Person","name":"fndomariano"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/logos/logo.svg"},"name":"fndomariano"},"@context":"https://schema.org"}</script>
+{"description":"Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um dataset about graduação que encontrei no Kaggle.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/12/02/regressao-linear-multipla/"},"@type":"BlogPosting","url":"http://localhost:4000/2019/12/02/regressao-linear-multipla/","dateModified":"2019-12-02T00:00:00-03:00","datePublished":"2019-12-02T00:00:00-03:00","headline":"Regressão Linear Multipla","image":"http://localhost:4000/images/2019-12-02/graduation.jpg","author":{"@type":"Person","name":"fndomariano"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"http://localhost:4000/assets/logos/logo.svg"},"name":"fndomariano"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
     
@@ -223,9 +223,9 @@
 
     <p><a href="http://localhost:4000/2019/12/02/multiple-linear-regression">English Version</a></p>
 
-<p>Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um <a href="https://www.kaggle.com/mohansacharya/graduate-admissions">dataset about graduação que encontrei no Kaggle</a>.</p>
+<p>Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um <a href="https://www.kaggle.com/mohansacharya/graduate-admissions">dataset sobre graduação que encontrei no Kaggle</a>.</p>
 
-<p>Primeiramente, importe as bibliotecas, o <em>dataset</em> e também verifiquei se existia <code class="highlighter-rouge">NaN values</code> (não havia).</p>
+<p>Primeiramente, importei as bibliotecas, o <em>dataset</em> e também verifiquei se existia <code class="highlighter-rouge">NaN values</code> (não havia).</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span> 
@@ -248,7 +248,7 @@
 
 <p><img src="http://localhost:4000/images/2019-12-02/graduation_heatmap.png" alt="Mapa de calor entre as variáveis do dataset"></p>
 
-<p>Eu pude ver que existem fortes correlações entre <strong><em>GRE Score</em></strong>, <strong><em>TOEFL Score</em></strong> e <strong><em>CGPA Score</em></strong> com <strong><em>Chance of Admit</em></strong>, then I plotted charts to get better visualization.</p>
+<p>Eu pude ver que existem fortes correlações entre <strong><em>GRE Score</em></strong>, <strong><em>TOEFL Score</em></strong> e <strong><em>CGPA Score</em></strong> com <strong><em>Chance of Admit</em></strong>, depois plotei gráficos para ter uma visualização melhor.</p>
 
 <p>Armazenei os valores da coluna <strong><em>Change of Admit</em></strong> em uma variável chamada <code class="highlighter-rouge">y</code>.</p>
 
@@ -294,7 +294,7 @@
 <span class="n">x</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </code></pre></div></div>
 
-<p><img src="http://localhost:4000/images/2019-12-02/graduation_chart_cgpa.png" alt="Tabela mostrando as colunas toefl, gre and cgpa"></p>
+<p><img src="http://localhost:4000/images/2019-12-02/graduation_new_dataframe.png" alt="Tabela mostrando as colunas toefl, gre and cgpa"></p>
 
 <p>Em seguida, separei o <em>dataset</em> em dois conjuntos de dados.</p>
 
@@ -302,7 +302,7 @@
 </span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">Y_train</span><span class="p">,</span> <span class="n">Y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Para executar o treino e o teste I fiz o código abaixo usando <em>R2 Score</em> (Coeficiente de Determinação) para ajustar o modelo.</p>
+<p>Para executar o treino e o teste, fiz o código abaixo usando <em>R2 Score</em> (Coeficiente de Determinação) para ajustar o modelo.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># avaliação de modelo para conjunto de treino
 </span><span class="n">y_train_predict</span> <span class="o">=</span> <span class="n">lin_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_train</span><span class="p">)</span>
@@ -321,7 +321,7 @@
 # O Coeficiente de Determinação é 0.806069903902
 </span></code></pre></div></div>
 
-<p>Repeti o mesmo process para o conjunto de testes onde obtive:</p>
+<p>Repeti o mesmo processo para o conjunto de testes onde obtive:</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># avaliação de modelo para conjunto de testes
 </span><span class="n">y_test_predict</span> <span class="o">=</span> <span class="n">lin_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>

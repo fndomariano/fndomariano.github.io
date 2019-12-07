@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-03T23:17:18-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Fernando Mariano</title><subtitle></subtitle><author><name>fndomariano</name></author><entry xml:lang="br"><title type="html">Regressão Linear Multipla</title><link href="http://localhost:4000/2019/12/02/regressao-linear-multipla/" rel="alternate" type="text/html" title="Regressão Linear Multipla" /><published>2019-12-02T00:00:00-03:00</published><updated>2019-12-02T00:00:00-03:00</updated><id>http://localhost:4000/2019/12/02/regressao-linear-multipla</id><content type="html" xml:base="http://localhost:4000/2019/12/02/regressao-linear-multipla/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/2019/12/02/multiple-linear-regression&quot;&gt;English Version&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-12-06T22:18:04-03:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Fernando Mariano</title><subtitle></subtitle><author><name>fndomariano</name></author><entry xml:lang="br"><title type="html">Regressão Linear Multipla</title><link href="http://localhost:4000/2019/12/02/regressao-linear-multipla/" rel="alternate" type="text/html" title="Regressão Linear Multipla" /><published>2019-12-02T00:00:00-03:00</published><updated>2019-12-02T00:00:00-03:00</updated><id>http://localhost:4000/2019/12/02/regressao-linear-multipla</id><content type="html" xml:base="http://localhost:4000/2019/12/02/regressao-linear-multipla/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/2019/12/02/multiple-linear-regression&quot;&gt;English Version&lt;/a&gt;&lt;/p&gt;
 
-&lt;p&gt;Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um &lt;a href=&quot;https://www.kaggle.com/mohansacharya/graduate-admissions&quot;&gt;dataset about graduação que encontrei no Kaggle&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um &lt;a href=&quot;https://www.kaggle.com/mohansacharya/graduate-admissions&quot;&gt;dataset sobre graduação que encontrei no Kaggle&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;Primeiramente, importe as bibliotecas, o &lt;em&gt;dataset&lt;/em&gt; e também verifiquei se existia &lt;code class=&quot;highlighter-rouge&quot;&gt;NaN values&lt;/code&gt; (não havia).&lt;/p&gt;
+&lt;p&gt;Primeiramente, importei as bibliotecas, o &lt;em&gt;dataset&lt;/em&gt; e também verifiquei se existia &lt;code class=&quot;highlighter-rouge&quot;&gt;NaN values&lt;/code&gt; (não havia).&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pandas&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;
 &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;plt&lt;/span&gt; 
@@ -25,7 +25,7 @@
 
 &lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-12-02/graduation_heatmap.png&quot; alt=&quot;Mapa de calor entre as variáveis do dataset&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;Eu pude ver que existem fortes correlações entre &lt;strong&gt;&lt;em&gt;GRE Score&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;TOEFL Score&lt;/em&gt;&lt;/strong&gt; e &lt;strong&gt;&lt;em&gt;CGPA Score&lt;/em&gt;&lt;/strong&gt; com &lt;strong&gt;&lt;em&gt;Chance of Admit&lt;/em&gt;&lt;/strong&gt;, then I plotted charts to get better visualization.&lt;/p&gt;
+&lt;p&gt;Eu pude ver que existem fortes correlações entre &lt;strong&gt;&lt;em&gt;GRE Score&lt;/em&gt;&lt;/strong&gt;, &lt;strong&gt;&lt;em&gt;TOEFL Score&lt;/em&gt;&lt;/strong&gt; e &lt;strong&gt;&lt;em&gt;CGPA Score&lt;/em&gt;&lt;/strong&gt; com &lt;strong&gt;&lt;em&gt;Chance of Admit&lt;/em&gt;&lt;/strong&gt;, depois plotei gráficos para ter uma visualização melhor.&lt;/p&gt;
 
 &lt;p&gt;Armazenei os valores da coluna &lt;strong&gt;&lt;em&gt;Change of Admit&lt;/em&gt;&lt;/strong&gt; em uma variável chamada &lt;code class=&quot;highlighter-rouge&quot;&gt;y&lt;/code&gt;.&lt;/p&gt;
 
@@ -71,7 +71,7 @@
 &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-12-02/graduation_chart_cgpa.png&quot; alt=&quot;Tabela mostrando as colunas toefl, gre and cgpa&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-12-02/graduation_new_dataframe.png&quot; alt=&quot;Tabela mostrando as colunas toefl, gre and cgpa&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Em seguida, separei o &lt;em&gt;dataset&lt;/em&gt; em dois conjuntos de dados.&lt;/p&gt;
 
@@ -79,7 +79,7 @@
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;X_test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Y_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Y_test&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_test_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_size&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0.2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;random_state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Para executar o treino e o teste I fiz o código abaixo usando &lt;em&gt;R2 Score&lt;/em&gt; (Coeficiente de Determinação) para ajustar o modelo.&lt;/p&gt;
+&lt;p&gt;Para executar o treino e o teste, fiz o código abaixo usando &lt;em&gt;R2 Score&lt;/em&gt; (Coeficiente de Determinação) para ajustar o modelo.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# avaliação de modelo para conjunto de treino
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_train_predict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lin_model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -98,7 +98,7 @@
 # O Coeficiente de Determinação é 0.806069903902
 &lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;Repeti o mesmo process para o conjunto de testes onde obtive:&lt;/p&gt;
+&lt;p&gt;Repeti o mesmo processo para o conjunto de testes onde obtive:&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c1&quot;&gt;# avaliação de modelo para conjunto de testes
 &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_test_predict&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lin_model&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -118,7 +118,7 @@
 
 &lt;p&gt;Os resultados do Coeficiente de Determinação mostraram que é um bom modelo porque os conjuntos de treino e teste ficaram próximos de 1 que é considerado ótimo.&lt;/p&gt;
 
-&lt;p&gt;Outro ponto é que para o estudante ter uma chance maior de ser admitido, ele precisa principalmente ter boas pontuações nas váriáveis usadas neste texto.&lt;/p&gt;</content><author><name>fndomariano</name></author><category term="python" /><category term="regressão linear" /><category term="ciência de dados" /><category term="estatística" /><summary type="html">Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um dataset about graduação que encontrei no Kaggle.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2019-11-01/learning.png" /></entry><entry xml:lang="en"><title type="html">Multiple Linear Regression</title><link href="http://localhost:4000/2019/12/02/multiple-linear-regression/" rel="alternate" type="text/html" title="Multiple Linear Regression" /><published>2019-12-02T00:00:00-03:00</published><updated>2019-12-02T00:00:00-03:00</updated><id>http://localhost:4000/2019/12/02/multiple-linear-regression</id><content type="html" xml:base="http://localhost:4000/2019/12/02/multiple-linear-regression/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/2019/12/02/regressao-linear-multipla&quot;&gt;Portuguese Version&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Outro ponto é que para o estudante ter uma chance maior de ser admitido, ele precisa principalmente ter boas pontuações nas váriáveis usadas neste texto.&lt;/p&gt;</content><author><name>fndomariano</name></author><category term="python" /><category term="regressão linear" /><category term="ciência de dados" /><category term="estatística" /><summary type="html">Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um dataset about graduação que encontrei no Kaggle.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2019-12-02/graduation.jpg" /></entry><entry xml:lang="en"><title type="html">Multiple Linear Regression</title><link href="http://localhost:4000/2019/12/02/multiple-linear-regression/" rel="alternate" type="text/html" title="Multiple Linear Regression" /><published>2019-12-02T00:00:00-03:00</published><updated>2019-12-02T00:00:00-03:00</updated><id>http://localhost:4000/2019/12/02/multiple-linear-regression</id><content type="html" xml:base="http://localhost:4000/2019/12/02/multiple-linear-regression/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/2019/12/02/regressao-linear-multipla&quot;&gt;Portuguese Version&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;In this post, I want to show how I’ve implemented Multiple Linear Regression with a &lt;a href=&quot;https://www.kaggle.com/mohansacharya/graduate-admissions&quot;&gt;dataset about graduation that I found on Kaggle&lt;/a&gt;.&lt;/p&gt;
 
@@ -191,7 +191,7 @@
 &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;head&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-12-02/graduation_chart_cgpa.png&quot; alt=&quot;Table showing a new Dataframe with columns toefl, gre and cgpa&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://localhost:4000/images/2019-12-02/graduation_new_dataframe.png&quot; alt=&quot;Table showing a new Dataframe with columns toefl, gre and cgpa&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Next, I separated this one in two sets of data.&lt;/p&gt;
 
@@ -236,9 +236,9 @@
 
 &lt;h4 id=&quot;considerations&quot;&gt;Considerations&lt;/h4&gt;
 
-&lt;p&gt;The results from R2 Score showed that is a good model because set of train and test both were close from 1 which is considered great.&lt;/p&gt;
+&lt;p&gt;The results from R2 Score showed that is a good model because set of train and test both were close from 1 that is considered great.&lt;/p&gt;
 
-&lt;p&gt;Another point is that to get a high Chance of Admit, the student needs to have mainly the scores cited with great values.&lt;/p&gt;</content><author><name>fndomariano</name></author><category term="python" /><category term="linear regression" /><category term="data science" /><category term="statistic" /><summary type="html">In this post, I want to show how I've implemented multiple linear regression with a dataset about graduation that I found on Kaggle.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2019-11-01/learning.png" /></entry><entry xml:lang="br"><title type="html">Processo de Aprendizado</title><link href="http://localhost:4000/2019/11/01/processo-de-aprendizado/" rel="alternate" type="text/html" title="Processo de Aprendizado" /><published>2019-11-01T00:00:00-03:00</published><updated>2019-11-01T00:00:00-03:00</updated><id>http://localhost:4000/2019/11/01/processo-de-aprendizado</id><content type="html" xml:base="http://localhost:4000/2019/11/01/processo-de-aprendizado/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/2019/11/01/learning-process&quot;&gt;English Version&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Another point is that to get a high Chance of Admit, the student needs to have mainly the scores cited with great values.&lt;/p&gt;</content><author><name>fndomariano</name></author><category term="python" /><category term="linear regression" /><category term="data science" /><category term="statistic" /><summary type="html">In this post, I want to show how I've implemented multiple linear regression with a dataset about graduation that I found on Kaggle.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/images/2019-12-02/graduation.jpg" /></entry><entry xml:lang="br"><title type="html">Processo de Aprendizado</title><link href="http://localhost:4000/2019/11/01/processo-de-aprendizado/" rel="alternate" type="text/html" title="Processo de Aprendizado" /><published>2019-11-01T00:00:00-03:00</published><updated>2019-11-01T00:00:00-03:00</updated><id>http://localhost:4000/2019/11/01/processo-de-aprendizado</id><content type="html" xml:base="http://localhost:4000/2019/11/01/processo-de-aprendizado/">&lt;p&gt;&lt;a href=&quot;http://localhost:4000/2019/11/01/learning-process&quot;&gt;English Version&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Hoje eu vou falar sobre meu processo de aprendizado e também destacar alguns pontos.&lt;/p&gt;
 

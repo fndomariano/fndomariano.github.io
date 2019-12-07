@@ -20,7 +20,7 @@ tags:
 
 Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um [dataset sobre graduação que encontrei no Kaggle](https://www.kaggle.com/mohansacharya/graduate-admissions).
 
-Primeiramente, importe as bibliotecas, o *dataset* e também verifiquei se existia ```NaN values``` (não havia).
+Primeiramente, importei as bibliotecas, o *dataset* e também verifiquei se existia ```NaN values``` (não havia).
 
 ```python
 import pandas as pd
@@ -44,7 +44,7 @@ Depois disso, como no post de [Regressão Linear Simples]({{site.url}}/2019/10/1
 
 ![Mapa de calor entre as variáveis do dataset]({{site.url}}/images/2019-12-02/graduation_heatmap.png)
 
-Eu pude ver que existem fortes correlações entre **_GRE Score_**, **_TOEFL Score_** e **_CGPA Score_** com **_Chance of Admit_**, then I plotted charts to get better visualization.
+Eu pude ver que existem fortes correlações entre **_GRE Score_**, **_TOEFL Score_** e **_CGPA Score_** com **_Chance of Admit_**, depois plotei gráficos para ter uma visualização melhor.
 
 Armazenei os valores da coluna **_Change of Admit_** em uma variável chamada ```y```.
 
@@ -95,7 +95,7 @@ x = pd.DataFrame(np.c_[toefl, gre, cgpa], columns=['toefl','gre', 'cgpa'])
 x.head()
 ```
 
-![Tabela mostrando as colunas toefl, gre and cgpa]({{site.url}}/images/2019-12-02/graduation_chart_cgpa.png)
+![Tabela mostrando as colunas toefl, gre and cgpa]({{site.url}}/images/2019-12-02/graduation_new_dataframe.png)
 
 Em seguida, separei o *dataset* em dois conjuntos de dados.
 
