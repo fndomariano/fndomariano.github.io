@@ -2,25 +2,29 @@
 layout: default
 ---
 
-{% include site-header.html %}
+<div class="post">
+    <div class="post-info">  
+        {% if page.date %}        
+            {% if post.lang == 'br' %}
+                <time datetime="{{ post.date }}">{{ post.date | date: "%d/%m/%Y" }}</time>
+            {% else %}
+                <time datetime="{{ post.date }}">{{ post.date | date: "%m/%d/%Y" }}</time>
+            {% endif %}
+        {% endif %}
+    </div>
 
-<main class="main  container">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-line"></div>
 
-  <article class="article  article--post  content  typeset">
-
-    {% include post-meta.html %}
     {{ content }}
 
-
     {% for tag in page.tags %}
-      <code>{{ tag }}</code>
+        <code>{{ tag }}</code>
     {% endfor %}
 
-    {% include nav-share.html %}
+    {% include share.html %}
+</div>
 
-    {% include post-comments.html %}
-  </article>
-  
-</main>
-
-{% include site-footer.html %}
+{% if page.comments %}
+  {% include disqus_comments.html %}
+{% endif %}

@@ -1,0 +1,20 @@
+<footer>        
+
+    <span>
+        &copy; <time datetime="{{ site.time }}">{{ site.time | date: '%Y' }}</time> Chester How. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+    </span>
+
+    <br>
+
+    {% for link in site.social_links %}
+        {% if link[1] != blank %}
+        {% assign name = link[0] %}
+        {% assign id = link[0] | downcase %}
+        <a href="{{ link[1] }}" target="_blank">
+            <svg width="{{ width | default: "16" }}" height="{{ height | default: "16" }}" class="icon  icon--{{id}}" role="img" alt="{{name}}"><title>{{name}}</title><use xlink:href="#{{id}}" fill="black"></use></svg>
+        </a>
+        {% endif %}
+    {% endfor %}
+
+  
+</footer>

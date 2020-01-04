@@ -6,21 +6,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Home | Fernando Mariano</title>
+<title>Meu primeiro projeto em Data Science | Fernando Mariano</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="Home" />
+<meta property="og:title" content="Meu primeiro projeto em Data Science" />
 <meta name="author" content="Fernando Mariano" />
-<meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/" />
-<meta property="og:url" content="http://localhost:4000/" />
+<meta property="og:locale" content="br" />
+<meta name="description" content="Nesse post pretendo descrever meu primeiro projeto de Ciência de Dados. O projeto consiste em estudar os dados da Trimania que são disponibilizados no site da instituição. Nele eu levantei informações bem simples, como: números sorteados e bairros que mais tiveram ganhadores em um período." />
+<meta property="og:description" content="Nesse post pretendo descrever meu primeiro projeto de Ciência de Dados. O projeto consiste em estudar os dados da Trimania que são disponibilizados no site da instituição. Nele eu levantei informações bem simples, como: números sorteados e bairros que mais tiveram ganhadores em um período." />
+<link rel="canonical" href="http://localhost:4000/2019/03/17/primeiro-projeto-ciencia-de-dados" />
+<meta property="og:url" content="http://localhost:4000/2019/03/17/primeiro-projeto-ciencia-de-dados" />
 <meta property="og:site_name" content="Fernando Mariano" />
-<link rel="next" href="http://localhost:4000/page2" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Home" />
+<meta property="og:image" content="http://localhost:4000/images/2019-03-17/draw.jpeg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-17T00:00:00-03:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="http://localhost:4000/images/2019-03-17/draw.jpeg" />
+<meta property="twitter:title" content="Meu primeiro projeto em Data Science" />
 <meta name="twitter:site" content="@fndomariano" />
 <meta name="twitter:creator" content="@Fernando Mariano" />
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/","name":"Fernando Mariano","headline":"Home","author":{"@type":"Person","name":"Fernando Mariano"},"@context":"https://schema.org"}</script>
+{"description":"Nesse post pretendo descrever meu primeiro projeto de Ciência de Dados. O projeto consiste em estudar os dados da Trimania que são disponibilizados no site da instituição. Nele eu levantei informações bem simples, como: números sorteados e bairros que mais tiveram ganhadores em um período.","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/17/primeiro-projeto-ciencia-de-dados"},"image":"http://localhost:4000/images/2019-03-17/draw.jpeg","@type":"BlogPosting","url":"http://localhost:4000/2019/03/17/primeiro-projeto-ciencia-de-dados","headline":"Meu primeiro projeto em Data Science","dateModified":"2019-03-17T00:00:00-03:00","datePublished":"2019-03-17T00:00:00-03:00","author":{"@type":"Person","name":"Fernando Mariano"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -79,93 +84,207 @@
 
 
     <main>
-      <div class="catalogue">
-  
-    <a href="/2019/12/02/multiple-linear-regression" class="catalogue-item">
-      <div>
+      <div class="post">
+    <div class="post-info">  
+                
+            
+                <time datetime=""></time>
+            
         
-            <time datetime="2019-12-02 00:00:00 -0300" class="catalogue-time">12/02/2019</time>
+    </div>
+
+    <h1 class="post-title">Meu primeiro projeto em Data Science</h1>
+    <div class="post-line"></div>
+
+    <p><a href="http://localhost:4000/2019/03/17/first-project-data-science">English Version</a></p>
+
+<p>Nesse post pretendo descrever meu primeiro projeto de Ciência de Dados. O projeto consiste em estudar os dados da Trimania que são disponibilizados no site da instituição. Nele eu levantei informações bem simples, como: números sorteados e bairros que mais tiveram ganhadores em um período.</p>
+
+<h3 id="como-obtive-os-dados">Como obtive os dados</h3>
+
+<p>Para obter os dados eu <a href="https://github.com/fndomariano/trimania-crawler">criei um crawler</a>. O mesmo foi desenvolvido em PHP utilizando uma biblioteca do framework Symfony. As informações recebidas são salvas em duas tabelas: uma para localização e outra para os números.</p>
+
+<p><img src="http://localhost:4000/images/2019-03-17/tables.png" alt="Tabelas do banco de dados" /></p>
+
+<p>Uma das dificuldades para executar esse projeto é o tratamento de dados. Sempre que importado um conjunto de dados foi necessário realizar o tratamento deles, pois, constantemente o nome das cidades divergiam. Como exemplo em sorteios que existem ganhadores na cidade Joinville. No site os dados eram apresentados da seguinte forma: <code class="highlighter-rouge">“Bairro / Joinvillle”</code>, <code class="highlighter-rouge">“Joinvile/Bairro”</code>, <code class="highlighter-rouge">“Joinville /Bairro”</code>. Abaixo alguns exemplos do problema citado no sorteio do dia 02/09/2018.</p>
+
+<p><img src="http://localhost:4000/images/2019-03-17/result_draw.png" alt="Sorteios do dia 02/09/2018" /></p>
+
+<p>Não realizando a correção desses dados a análise seria errônea. Na imagem seguinte é mostrada alguns bairros juntamente com a cidade após ter sido feita a correção dos caracteres.</p>
+
+<p><img src="http://localhost:4000/images/2019-03-17/location_table.png" alt="Tabela de localizações" /></p>
+
+<p>Os números sorteados não tem uma quantidade exata como na Mega-Sena, ou seja, a quantidade de números sorteados por rodada vai variar. Logo, não optei por ter uma coluna para cada valor sorteado. Criei uma coluna do tipo texto e salvei usando hífen como separador.</p>
+
+<p><img src="http://localhost:4000/images/2019-03-17/numbers_table.png" alt="Tabela de númberos" /></p>
+
+<h3 id="análise-dos-números">Análise dos números</h3>
+
+<p>Como este projeto é para estudos eu criei uma pergunta que eu gostaria de responder, a pergunta que elaborei foi <strong>‘Quais os números mais sorteados de Janeiro a Abril de 2018?’</strong>. Para conseguir a resposta comecei exportando um CSV e depois utilizei o Jupyter Notebook para analisar.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Nesta linha eu faço a leitura do arquivo e mostro uma prévia do que foi importado.
+</span><span class="n">csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'trimaniaNumbers.csv'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">';'</span><span class="p">);</span>
+<span class="n">csv</span>
+</code></pre></div></div>
+
+<p><img src="http://localhost:4000/images/2019-03-17/numbers_preview.png" alt="Números importados do CSV" /></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Dicionário para inserir os números
+</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'number'</span><span class="p">:[]</span>
+<span class="p">}</span>
+
+<span class="c1"># Separando os números por hífen e acrescentado os números no dicionário
+</span><span class="k">for</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">csv</span><span class="p">[</span><span class="s">'numbers_drawn'</span><span class="p">]:</span>    
+    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">lines</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'-'</span><span class="p">):</span>
+            <span class="n">numbers</span><span class="p">[</span><span class="s">'number'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
         
-        <h1 class="catalogue-title">Multiple Linear Regression</h1>
-        <div class="catalogue-line"></div>
 
-        <p>
-          In this post, I want to show how I've implemented multiple linear regression with a dataset about graduation that I found on Kaggle.
-        </p>
+<span class="c1"># Utilizei o dicionado para gerar um novo DataFrame
+</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 
-      </div>
-    </a>
-  
-    <a href="/2019/12/02/regressao-linear-multipla" class="catalogue-item">
-      <div>
+<span class="c1"># Conto os números repetidos e solicito os 20 primeiros 
+</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'number'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Para visualizar de maneira mais amigável, gerei um gráfico de <strong>Números X Quantidade</strong>.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Configuro a fonte
+</span><span class="n">font</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">'weight'</span><span class="p">:</span> <span class="s">'normal'</span><span class="p">,</span>
+    <span class="s">'size'</span><span class="p">:</span> <span class="mi">16</span>
+<span class="p">}</span>
+
+<span class="c1"># Configuro a label dos eixos X e Y
+</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Numbers'</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Quantity'</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
+
+<span class="c1"># Exibo um gráfico em barra
+</span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="http://localhost:4000/images/2019-03-17/chart_numbers.png" alt="Números sorteados x Quantidade" /></p>
+
+<h3 id="análise-das-localizações">Análise das localizações</h3>
+
+<p>No estudo das localizações também elaborei uma pergunta: <strong>‘Quais os bairros que mais tiveram ganhadores entre Janeiro e Abril de 2018 na cidade de Joinville?’</strong>. Para conseguir a resposta para tal pergunta fiz apenas uma SQL simples.</p>
+
+<pre><code class="language-SQL">SELECT COUNT(*) AS total, city_district
+FROM locations
+WHERE draw_date BETWEEN '2018-01-01' AND '2018-04-30'
+      AND city_district like '%/Joinville%'
+GROUP BY city_district
+ORDER BY total DESC
+</code></pre>
+<p>Após executar a SQL acima eu obtive a minha resposta:</p>
+
+<p><img src="http://localhost:4000/images/2019-03-17/sql_result.png" alt="Bairros que mais tiveram ganhadores" /></p>
+
+<h3 id="considerações">Considerações</h3>
+
+<p>Este projeto não possui muitas complexidades. Ainda preciso melhorar meus conhecimentos construindo desafios mais complexos. Mesmo assim acredito que este exerício tem um grande valor. Se você tiver alguma dúvida ou sugestão, fique a vontade para comentar :)</p>
+
+
+    
+        <code>data science</code>
+    
+        <code>python</code>
+    
+
+    <hr/>
+<div class="share">
+    
         
-            <time datetime="2019-12-02 00:00:00 -0300" class="catalogue-time">02/12/2019</time>
+            
+            
+            
+            
+            
+            
+
+            <a class="button" href="https://twitter.com/intent/tweet/?url=http://localhost:4000/2019/03/17/primeiro-projeto-ciencia-de-dados&text=Meu%20primeiro%20projeto%20em%20Data%20Science&via=fndomariano" style="background: #0d94e7">
+                Twitter
+                <svg 
+                    width="16" 
+                    height="16" 
+                    class="icon  icon--twitter" 
+                    role="img" 
+                    alt="Twitter">
+                        <title>twitter</title>
+                        <use 
+                            xlink:href="#twitter" 
+                            fill="CurrentColor">
+                        </use>
+                </svg>
+            </a>
         
-        <h1 class="catalogue-title">Regressão Linear Multipla</h1>
-        <div class="catalogue-line"></div>
-
-        <p>
-          Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um dataset about graduação que encontrei no Kaggle.
-        </p>
-
-      </div>
-    </a>
-  
-    <a href="/2019/11/01/learning-process" class="catalogue-item">
-      <div>
+    
         
-            <time datetime="2019-11-01 00:00:00 -0300" class="catalogue-time">11/01/2019</time>
+            
+            
+            
+            
+            
+            
+
+            <a class="button" href="https://facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/03/17/primeiro-projeto-ciencia-de-dados" style="background: #3B5998">
+                Facebook
+                <svg 
+                    width="16" 
+                    height="16" 
+                    class="icon  icon--facebook" 
+                    role="img" 
+                    alt="Facebook">
+                        <title>facebook</title>
+                        <use 
+                            xlink:href="#facebook" 
+                            fill="CurrentColor">
+                        </use>
+                </svg>
+            </a>
         
-        <h1 class="catalogue-title">Learning Process</h1>
-        <div class="catalogue-line"></div>
-
-        <p>
-          Today I will speak about my process of learning and also highlight some points.
-        </p>
-
-      </div>
-    </a>
-  
-    <a href="/2019/11/01/processo-de-aprendizado" class="catalogue-item">
-      <div>
+    
         
-            <time datetime="2019-11-01 00:00:00 -0300" class="catalogue-time">01/11/2019</time>
+            
+            
+            
+            
+            
+            
+
+            <a class="button" href="https://www.linkedin.com/shareArticle?url=http://localhost:4000/2019/03/17/primeiro-projeto-ciencia-de-dados&title=Meu primeiro projeto em Data Science&source=Fernando Mariano&mini=true" style="background: #0073b1">
+                Linkedin
+                <svg 
+                    width="16" 
+                    height="16" 
+                    class="icon  icon--linkedin" 
+                    role="img" 
+                    alt="Linkedin">
+                        <title>linkedin</title>
+                        <use 
+                            xlink:href="#linkedin" 
+                            fill="CurrentColor">
+                        </use>
+                </svg>
+            </a>
         
-        <h1 class="catalogue-title">Processo de Aprendizado</h1>
-        <div class="catalogue-line"></div>
-
-        <p>
-          Hoje eu vou falar sobre meu processo de aprendizado e também destacar alguns pontos.
-        </p>
-
-      </div>
-    </a>
-  
-    <a href="/2019/10/14/simple-linear-regression" class="catalogue-item">
-      <div>
-        
-            <time datetime="2019-10-14 00:00:00 -0300" class="catalogue-time">10/14/2019</time>
-        
-        <h1 class="catalogue-title">Simple Linear Regression</h1>
-        <div class="catalogue-line"></div>
-
-        <p>
-          Today I'm going to talk about my studies with Linear Regression and show with a simple example.
-        </p>
-
-      </div>
-    </a>
-  
+    
+</div>
 </div>
 
-<div class="pagination">
-  
-  
-    <a href="/page2" class="right arrow">&#8594;</a>
-  
 
-  <span>1</span>
-</div>
+  <!-- Start disqus -->
+<script src="/assets/js/disqusLoader.js" /></script>
+<div id="disqus_thread"><h3>Discussion and feedback</h3></div>
+<div class="disqus"></div>
+<script>
+    disqusLoader('.disqus', {
+        scriptUrl: 'https://https-fndomariano-github-io.disqus.com/embed.js'
+    });
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<!-- End disqus -->
 
     </main>
 

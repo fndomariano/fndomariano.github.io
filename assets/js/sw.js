@@ -1,8 +1,21 @@
-const version = '20200103223434';
+---
+permalink: "/sw.js"
+layout: none
+---
+const version = '{{ site.time | date: '%Y%m%d%H%M%S' }}';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/2019/12/02/multiple-linear-regression","/2019/12/02/regressao-linear-multipla","/2019/11/01/learning-process","/2019/11/01/processo-de-aprendizado","/2019/10/14/simple-linear-regression","/2019/10/14/regressao-linear-simples","/2019/04/06/wordpress-development-tips","/2019/04/06/dicas-desenvolvimento-wordpress","/2019/03/23/mean-wage-alagoas","/2019/03/23/media-salarial-alagoas","/about/","/","/assets/main.css","/feed.xml","/page2/","/page3/","", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
+  return [
+    {%- for post in site.posts limit: 10 -%}
+      "{{ post.url }}",
+    {%- endfor -%}
+    {%- for page in site.pages -%}
+      {%- unless page.url contains 'sw.js' or page.url contains '404.html' -%}
+        "{{ page.url }}",
+      {%- endunless -%}
+    {%- endfor -%}
+      "{{ site.logo }}", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
   ]
 }
 

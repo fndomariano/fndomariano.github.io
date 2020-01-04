@@ -6,9 +6,6 @@ lang: br
 ref: regressao-linear-multipla
 excerpt:  "Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um dataset about graduação que encontrei no Kaggle."
 image: "/images/2019-12-02/graduation.jpg"
-feature_text: |
-    ## Regressao Linear Múltipla
-    Um estudo com um *dataset* de graduação
 tags:
     - python
     - regressão linear
