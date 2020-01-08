@@ -1,8 +1,8 @@
-const version = '20200103223434';
+const version = '20200107222441';
 const cacheName = `static::${version}`;
 
 const buildContentBlob = () => {
-  return ["/2019/12/02/multiple-linear-regression","/2019/12/02/regressao-linear-multipla","/2019/11/01/learning-process","/2019/11/01/processo-de-aprendizado","/2019/10/14/simple-linear-regression","/2019/10/14/regressao-linear-simples","/2019/04/06/wordpress-development-tips","/2019/04/06/dicas-desenvolvimento-wordpress","/2019/03/23/mean-wage-alagoas","/2019/03/23/media-salarial-alagoas","/about/","/","/assets/main.css","/feed.xml","/page2/","/page3/","", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
+  return ["/2020/01/04/logistic-regression","/2020/01/04/regressao-logistica","/2019/12/02/multiple-linear-regression","/2019/12/02/regressao-linear-multipla","/2019/11/01/learning-process","/2019/11/01/processo-de-aprendizado","/2019/10/14/simple-linear-regression","/2019/10/14/regressao-linear-simples","/2019/04/06/wordpress-development-tips","/2019/04/06/dicas-desenvolvimento-wordpress","/about/","/","/assets/main.css","/feed.xml","/page2/","/page3/","", "/assets/default-offline-image.png", "/assets/scripts/fetch.js"
   ]
 }
 
