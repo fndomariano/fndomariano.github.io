@@ -15,13 +15,13 @@ tags:
 
 [Portuguese Version]({{site.url}}/2020/01/04/regressao-logistica)
 
-To talk about Logistic Regression, I used the same dataset of the [post about Multiple Linear Regression]({{site.url}}/2019/12/02/multiple-linear-regression). This one own score about exams that help students to enter colleges.  
+To talk about Logistic Regression, I used the same dataset of the [post about Multiple Linear Regression]({{site.url}}/2019/12/02/multiple-linear-regression). It has scores of exams that help students to enter colleges.  
 
 The Logistic Regression uses binary values to classify and this dataset doesn't have this type of data. So, I inserted a new column **Admitted**.
 
 ![Table showing fourteen lines and ten columns]({{site.url}}/images/2020-01-04/new_column.png)
 
-I added a new column with bases on column **Chance of Admit**. If the chances are greater than 80% then the value is 1 else is 0.
+I added a new column with a basis on column **Chance of Admit**. If the chances are greater than 80% then the value is 1 if not is 0.
 
 ```python
 base['Admitted'] = [1 if chance > 0.8 else 0 for chance in base['Chance of Admit ']]
@@ -43,7 +43,7 @@ plt.title('Admitted students')
 
 ![Bar chart showing total admitted and not admitted students]({{site.url}}/images/2020-01-04/admitted_chart.png)
 
-After I started to prepare the data to train and to test the dataset. Firstly, I made a new ```DataFrame``` only with the necessary columns.
+After I started to prepare the data. Firstly, I made a new ```DataFrame``` only with the necessary columns.
 
 ```python
 toefl = base.iloc[:, 2].values
@@ -59,7 +59,7 @@ y = base.iloc[:, -1].values
 
 ![Table showing nine lines and three columns]({{site.url}}/images/2020-01-04/new_dataframe.png)
 
-With prepared data, I separated dataset on train and test for I can create a model to predict.
+I separated dataset on training and test data for I can create a model to predict.
 
 ```python
 X_train, X_test, y_train, y_test = train_test_split(x,y, test_size=0.20, random_state=42)
@@ -70,7 +70,7 @@ logmodel.fit(X_train,y_train)
 predictions = logmodel.predict(X_test)
 ```
 
-Then I generated a Confusion Matrix and scores too.
+Then I generated a Confusion Matrix and scores to evaluate the result.
 
 ```python
 cnf_matrix = metrics.confusion_matrix(y_test, predictions)
@@ -103,9 +103,9 @@ With the Confusion Matrix we can conclude that:
 
 and with the scores:
 
-**Accuracy:** could predict 85% correctly.  
-**Precision:** it means that 73% of the time the model is correct about its predictions.  
-**Recall:** the model conseguir predict that 70% of the data it was true when this ones expected true.  
+**Accuracy:** 85% was predicted correctly.  
+**Precision:** 73% of the time the model is correct about its predictions.  
+**Recall:** 70% of the time the model expected true result.  
 
 The contents that I have shared are about what I am learning, so, if you found some error, on the code, concepts, considerations even spelling please let me know, like this, you will help me a lot to avoid more mistakes. 
 

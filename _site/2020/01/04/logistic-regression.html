@@ -98,13 +98,13 @@
 
     <p><a href="http://localhost:4000/2020/01/04/regressao-logistica">Portuguese Version</a></p>
 
-<p>To talk about Logistic Regression, I used the same dataset of the <a href="http://localhost:4000/2019/12/02/multiple-linear-regression">post about Multiple Linear Regression</a>. This one own score about exams that help students to enter colleges.</p>
+<p>To talk about Logistic Regression, I used the same dataset of the <a href="http://localhost:4000/2019/12/02/multiple-linear-regression">post about Multiple Linear Regression</a>. It has scores of exams that help students to enter colleges.</p>
 
 <p>The Logistic Regression uses binary values to classify and this dataset doesn’t have this type of data. So, I inserted a new column <strong>Admitted</strong>.</p>
 
 <p><img src="http://localhost:4000/images/2020-01-04/new_column.png" alt="Table showing fourteen lines and ten columns" /></p>
 
-<p>I added a new column with bases on column <strong>Chance of Admit</strong>. If the chances are greater than 80% then the value is 1 else is 0.</p>
+<p>I added a new column with a basis on column <strong>Chance of Admit</strong>. If the chances are greater than 80% then the value is 1 if not is 0.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">base</span><span class="p">[</span><span class="s">'Admitted'</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span> <span class="k">if</span> <span class="n">chance</span> <span class="o">&gt;</span> <span class="mf">0.8</span> <span class="k">else</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">chance</span> <span class="ow">in</span> <span class="n">base</span><span class="p">[</span><span class="s">'Chance of Admit '</span><span class="p">]]</span>
 </code></pre></div></div>
@@ -124,7 +124,7 @@
 
 <p><img src="http://localhost:4000/images/2020-01-04/admitted_chart.png" alt="Bar chart showing total admitted and not admitted students" /></p>
 
-<p>After I started to prepare the data to train and to test the dataset. Firstly, I made a new <code class="highlighter-rouge">DataFrame</code> only with the necessary columns.</p>
+<p>After I started to prepare the data. Firstly, I made a new <code class="highlighter-rouge">DataFrame</code> only with the necessary columns.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">toefl</span> <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
 <span class="n">gre</span>   <span class="o">=</span> <span class="n">base</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -139,7 +139,7 @@
 
 <p><img src="http://localhost:4000/images/2020-01-04/new_dataframe.png" alt="Table showing nine lines and three columns" /></p>
 
-<p>With prepared data, I separated dataset on train and test for I can create a model to predict.</p>
+<p>I separated dataset on training and test data for I can create a model to predict.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.20</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
@@ -149,7 +149,7 @@
 <span class="n">predictions</span> <span class="o">=</span> <span class="n">logmodel</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
 </code></pre></div></div>
 
-<p>Then I generated a Confusion Matrix and scores too.</p>
+<p>Then I generated a Confusion Matrix and scores to evaluate the result.</p>
 
 <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cnf_matrix</span> <span class="o">=</span> <span class="n">metrics</span><span class="o">.</span><span class="n">confusion_matrix</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">predictions</span><span class="p">)</span>
 <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">cnf_matrix</span><span class="p">,</span> <span class="n">annot</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
@@ -180,9 +180,9 @@
 
 <p>and with the scores:</p>
 
-<p><strong>Accuracy:</strong> could predict 85% correctly.<br />
-<strong>Precision:</strong> it means that 73% of the time the model is correct about its predictions.<br />
-<strong>Recall:</strong> the model conseguir predict that 70% of the data it was true when this ones expected true.</p>
+<p><strong>Accuracy:</strong> 85% was predicted correctly.<br />
+<strong>Precision:</strong> 73% of the time the model is correct about its predictions.<br />
+<strong>Recall:</strong> 70% of the time the model expected true result.</p>
 
 <p>The contents that I have shared are about what I am learning, so, if you found some error, on the code, concepts, considerations even spelling please let me know, like this, you will help me a lot to avoid more mistakes.</p>
 
@@ -297,7 +297,7 @@
     <footer>        
 
     <span>
-        &copy; <time datetime="2020-01-07 22:24:41 -0300">2020</time> Chester How. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
+        &copy; <time datetime="2020-01-08 22:15:19 -0300">2020</time> Chester How. Made with Jekyll using the <a href="https://github.com/chesterhow/tale/">Tale</a> theme.
     </span>
 
     <br>
