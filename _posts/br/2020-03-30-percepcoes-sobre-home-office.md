@@ -1,6 +1,6 @@
 ---
 layout:    post
-title:    "Percepções sobre home officce"
+title:    "Percepções sobre home office"
 comments: true
 lang: br
 ref: percepcoes-sobre-home-office
