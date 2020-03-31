@@ -6,26 +6,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>My first project with Data Science | Fernando Mariano</title>
+<title>Page 4 of 4 for Home | Fernando Mariano</title>
 <meta name="generator" content="Jekyll v3.8.6" />
-<meta property="og:title" content="My first project with Data Science" />
+<meta property="og:title" content="Home" />
 <meta name="author" content="Fernando Mariano" />
-<meta property="og:locale" content="en" />
-<meta name="description" content="In this post, I pretend to describe my first project with Data Science. The project consists to study Trimania data that are available on its site. On this project, I got simple information like drawn numbers e neighborhoods with most winners" />
-<meta property="og:description" content="In this post, I pretend to describe my first project with Data Science. The project consists to study Trimania data that are available on its site. On this project, I got simple information like drawn numbers e neighborhoods with most winners" />
-<link rel="canonical" href="http://localhost:4000/2019/03/17/first-project-data-science" />
-<meta property="og:url" content="http://localhost:4000/2019/03/17/first-project-data-science" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/page4/" />
+<meta property="og:url" content="http://localhost:4000/page4/" />
 <meta property="og:site_name" content="Fernando Mariano" />
-<meta property="og:image" content="http://localhost:4000/images/2019-03-17/draw.jpeg" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2019-03-17T00:00:00-03:00" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="http://localhost:4000/images/2019-03-17/draw.jpeg" />
-<meta property="twitter:title" content="My first project with Data Science" />
+<link rel="prev" href="http://localhost:4000/page3" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Home" />
 <meta name="twitter:site" content="@fndomariano" />
 <meta name="twitter:creator" content="@Fernando Mariano" />
 <script type="application/ld+json">
-{"description":"In this post, I pretend to describe my first project with Data Science. The project consists to study Trimania data that are available on its site. On this project, I got simple information like drawn numbers e neighborhoods with most winners","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2019/03/17/first-project-data-science"},"image":"http://localhost:4000/images/2019-03-17/draw.jpeg","@type":"BlogPosting","url":"http://localhost:4000/2019/03/17/first-project-data-science","headline":"My first project with Data Science","dateModified":"2019-03-17T00:00:00-03:00","datePublished":"2019-03-17T00:00:00-03:00","author":{"@type":"Person","name":"Fernando Mariano"},"@context":"https://schema.org"}</script>
+{"@type":"WebPage","url":"http://localhost:4000/page4/","headline":"Home","author":{"@type":"Person","name":"Fernando Mariano"},"@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -84,207 +79,33 @@
 
 
     <main>
-      <div class="post">
-    <div class="post-info">  
-                
-            
-                <time datetime=""></time>
-            
+      <div class="catalogue">
+  
+    <a href="/2019/03/17/primeiro-projeto-ciencia-de-dados" class="catalogue-item">
+      <div>
         
-    </div>
-
-    <h1 class="post-title">My first project with Data Science</h1>
-    <div class="post-line"></div>
-
-    <p><a href="http://localhost:4000/2019/03/17/primeiro-projeto-ciencia-de-dados">Portuguese Version</a></p>
-
-<p>In this post, I pretend to describe my first project with Data Science. The project consists to study Trimania data that are available on its site. On this project, I got simple information like drawn numbers e neighborhoods with most winners.</p>
-
-<h3 id="how-i-got-data">How I got data</h3>
-
-<p>To get data <a href="https://github.com/fndomariano/trimania-crawler">I built a crawler</a>. It was developed with PHP and a Symfony’s library. The informations received are storage on two tables on database. One is for locations and other for numbers.</p>
-
-<p><img src="http://localhost:4000/images/2019-03-17/tables.png" alt="Database tables" /></p>
-
-<p>The main difficulty to carry out this project is clean data. Always that imported a set of data was needed to realize data cleaning because constantly the city name came wrong. As an example in draws where there are winners in Joinville. On site, the data are shown like this: <code class="highlighter-rouge">“Bairro / Joinvillle”</code>, <code class="highlighter-rouge">“Joinvile/Bairro”</code>, <code class="highlighter-rouge">“Joinville /Bairro”</code>. Below some example about the problem on 2nd September 2018.</p>
-
-<p><img src="http://localhost:4000/images/2019-03-17/result_draw.png" alt="Draws at 2nd September 2018" /></p>
-
-<p>If I didn’t the data correction, the analysis would be got wrong. The next image is shown some neighborhoods with the city after data cleaning.</p>
-
-<p><img src="http://localhost:4000/images/2019-03-17/location_table.png" alt="Locations table" /></p>
-
-<p>The drawn numbers don’t have an exact quantity like Mega-Sena, in other words, the quantity of drawn number will variate. Then I’ve decided to create one column for all numbers and separate them by a hyphen.</p>
-
-<p><img src="http://localhost:4000/images/2019-03-17/numbers_table.png" alt="Numbers table" /></p>
-
-<h3 id="analysis-of-the-numbers">Analysis of the numbers</h3>
-
-<p>In this project I created a question that I would like to answer, so the question I elaborated was <strong>‘What are the most numbers drawn between January and April of 2018?’</strong>. To get this I exported a CSV file and after I used the Jupyter Notebook to analyze.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># On this line, I read and show a preview of what was imported
-</span><span class="n">csv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">'trimaniaNumbers.csv'</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">';'</span><span class="p">);</span>
-<span class="n">csv</span>
-</code></pre></div></div>
-
-<p><img src="http://localhost:4000/images/2019-03-17/numbers_preview.png" alt="Imported numbers from CSV file" /></p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Dictionary to insert the numbers
-</span><span class="n">numbers</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'number'</span><span class="p">:[]</span>
-<span class="p">}</span>
-
-<span class="c1"># Separating the numbers by a hyphen and adding on a dictionary
-</span><span class="k">for</span> <span class="n">lines</span> <span class="ow">in</span> <span class="n">csv</span><span class="p">[</span><span class="s">'numbers_drawn'</span><span class="p">]:</span>    
-    <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">lines</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s">'-'</span><span class="p">):</span>
-            <span class="n">numbers</span><span class="p">[</span><span class="s">'number'</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+            <time datetime="2019-03-17 00:00:00 -0300" class="catalogue-time">17/03/2019</time>
         
+        <h1 class="catalogue-title">Meu primeiro projeto em Data Science</h1>
+        <div class="catalogue-line"></div>
 
-<span class="c1"># I used the dictionary to generate a new DataFrame
-</span><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+        <p>
+          Nesse post pretendo descrever meu primeiro projeto de Ciência de Dados. O projeto consiste em estudar os dados da Trimania que são disponibilizados no site da instituição. Nele eu levantei informações bem simples, como: números sorteados e bairros que mais tiveram ganhadores em um período.
+        </p>
 
-<span class="c1"># I count the quantity repeated numbers quantity and I get the twenty-first
-</span><span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s">'number'</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
-</code></pre></div></div>
-
-<p>To view a way nicier, I generate a chart of <strong>Numbers X Quantity</strong>.</p>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Configuration the font
-</span><span class="n">font</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s">'weight'</span><span class="p">:</span> <span class="s">'normal'</span><span class="p">,</span>
-    <span class="s">'size'</span><span class="p">:</span> <span class="mi">16</span>
-<span class="p">}</span>
-
-<span class="c1"># Configuration the labels from axes X and Y
-</span><span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'Numbers'</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'Quantity'</span><span class="p">,</span> <span class="n">fontdict</span><span class="o">=</span><span class="n">font</span><span class="p">)</span>
-
-<span class="c1"># It is displayed a bar chart
-</span><span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s">'bar'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-</code></pre></div></div>
-
-<p><img src="http://localhost:4000/images/2019-03-17/chart_numbers.png" alt="Drawn numbers x Quantity" /></p>
-
-<h3 id="analysis-of-the-locations">Analysis of the locations</h3>
-
-<p>On the study of the locations also I created another question <strong>‘What the neighborhoods had the most winners between January and April of 2018 in Joinville?’</strong>. To answer such question I made only a simple SQL.</p>
-
-<pre><code class="language-SQL">SELECT COUNT(*) AS total, city_district
-FROM locations
-WHERE draw_date BETWEEN '2018-01-01' AND '2018-04-30'
-      AND city_district like '%/Joinville%'
-GROUP BY city_district
-ORDER BY total DESC
-</code></pre>
-<p>After to execute I got my answer.</p>
-
-<p><img src="http://localhost:4000/images/2019-03-17/sql_result.png" alt="Neighboorhoods with most winners" /></p>
-
-<h3 id="considerations">Considerations</h3>
-
-<p>This project there no many complexities. I still need to improve my skills building challenges more complex. Even so, I believe this exercise has great value. If you have some doubt or suggestion, feel free to comment :)</p>
-
-
-    
-        <code>data science</code>
-    
-        <code>python</code>
-    
-
-    <hr/>
-<div class="share">
-    
-        
-            
-            
-            
-            
-            
-            
-
-            <a class="button" href="https://twitter.com/intent/tweet/?url=http://localhost:4000/2019/03/17/first-project-data-science&text=My%20first%20project%20with%20Data%20Science&via=fndomariano" style="background: #0d94e7">
-                Twitter
-                <svg 
-                    width="16" 
-                    height="16" 
-                    class="icon  icon--twitter" 
-                    role="img" 
-                    alt="Twitter">
-                        <title>twitter</title>
-                        <use 
-                            xlink:href="#twitter" 
-                            fill="CurrentColor">
-                        </use>
-                </svg>
-            </a>
-        
-    
-        
-            
-            
-            
-            
-            
-            
-
-            <a class="button" href="https://facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/03/17/first-project-data-science" style="background: #3B5998">
-                Facebook
-                <svg 
-                    width="16" 
-                    height="16" 
-                    class="icon  icon--facebook" 
-                    role="img" 
-                    alt="Facebook">
-                        <title>facebook</title>
-                        <use 
-                            xlink:href="#facebook" 
-                            fill="CurrentColor">
-                        </use>
-                </svg>
-            </a>
-        
-    
-        
-            
-            
-            
-            
-            
-            
-
-            <a class="button" href="https://www.linkedin.com/shareArticle?url=http://localhost:4000/2019/03/17/first-project-data-science&title=My first project with Data Science&source=Fernando Mariano&mini=true" style="background: #0073b1">
-                Linkedin
-                <svg 
-                    width="16" 
-                    height="16" 
-                    class="icon  icon--linkedin" 
-                    role="img" 
-                    alt="Linkedin">
-                        <title>linkedin</title>
-                        <use 
-                            xlink:href="#linkedin" 
-                            fill="CurrentColor">
-                        </use>
-                </svg>
-            </a>
-        
-    
-</div>
+      </div>
+    </a>
+  
 </div>
 
+<div class="pagination">
+  
+    <a href="/page3" class="left arrow">&#8592;</a>
+  
+  
 
-  <!-- Start disqus -->
-<script src="/assets/js/disqusLoader.js" /></script>
-<div id="disqus_thread"><h3>Discussion and feedback</h3></div>
-<div class="disqus"></div>
-<script>
-    disqusLoader('.disqus', {
-        scriptUrl: 'https://https-fndomariano-github-io.disqus.com/embed.js'
-    });
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<!-- End disqus -->
+  <span>4</span>
+</div>
 
     </main>
 
