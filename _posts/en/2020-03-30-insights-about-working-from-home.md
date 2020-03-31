@@ -11,6 +11,8 @@ tags:
     - remote job
 ---
 
+[Portuguese Version]({{site.url}}/2020/03/30/percepcoes-sobre-home-office)
+
 Always I worked inside companies and in occasional moments I worked from home. I never noted things that I list here.
 
 The first point I realized was my concentration. At home, I have fewer distractions and because of that, I reach to resolve several tasks and I produced better. 

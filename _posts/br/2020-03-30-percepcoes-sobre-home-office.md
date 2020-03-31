@@ -12,6 +12,8 @@ tags:
     - trabalho remoto
 ---
 
+[English Version]({{site.url}}/2020/03/30/insights-about-working-from-home)
+
 Eu sempre trabalhei dentro de empresas e em momentos ocasionais eu precisei trabalhar de casa, mas eu nunca notei coisas que eu listo aqui.
 
 O primeiro que eu notei foi minha concentração. Em casa, tenho menos distrações e por conta disso, consegui resolver várias tarefas e produzir melhor.
