@@ -5,13 +5,15 @@ a) Run
 docker-compose up
 ```
 
-b) Acess `localhost:4000`
+b) Access `localhost:4000`
 
 
-### Theme
+# Theme
 
 Tale is a minimal Jekyll theme curated for storytellers. Checkout the demo [here](https://chesterhow.github.io/tale/).
 
 ![Tale screenshot](http://i.imgur.com/pXZrtmo.png)
 
-[LICENSE](LICENSE)
+
+# LICENSE
+[MIT](LICENSE)
