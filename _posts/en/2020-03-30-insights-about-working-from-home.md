@@ -6,12 +6,14 @@ lang: en
 ref: insights-about-working-from-home
 excerpt:  "Always I worked inside companies and in occasional moments I worked from home. I never noted things that I list here."
 image: "/images/2020-03-30/working-from-home.jpg"
+feature_text: |
+    ## Insights about working from home
 tags:
     - working from home
     - remote job
 ---
 
-[Portuguese Version]({{site.url}}/2020/03/30/percepcoes-sobre-home-office)
+[Portuguese Version]({{site.baseurl}}/2020/03/30/percepcoes-sobre-home-office)
 
 Always I worked inside companies and in occasional moments I worked from home. I never noted things that I list here.
 

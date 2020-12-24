@@ -6,6 +6,8 @@ lang: en
 ref: logistic-regression
 excerpt:  "To talk about Logistic Regression, I used the same dataset of the post about Multiple Linear Regression. This one own scores about exams that help students to enter in colleges."
 image: "/images/2019-12-02/graduation.jpg"
+feature_text: |
+    ## Logistic Regression
 tags:
     - python
     - linear regression
@@ -13,13 +15,13 @@ tags:
     - statistic
 ---
 
-[Portuguese Version]({{site.url}}/2020/01/04/regressao-logistica)
+[Portuguese Version]({{site.baseurl}}/2020/01/04/regressao-logistica)
 
-To talk about Logistic Regression, I used the same dataset of the [post about Multiple Linear Regression]({{site.url}}/2019/12/02/multiple-linear-regression). It has scores of exams that help students to enter colleges.  
+To talk about Logistic Regression, I used the same dataset of the [post about Multiple Linear Regression]({{site.baseurl}}/2019/12/02/multiple-linear-regression). It has scores of exams that help students to enter colleges.  
 
 The Logistic Regression uses binary values to classify and this dataset doesn't have this type of data. So, I inserted a new column **Admitted**.
 
-![Table showing fourteen lines and ten columns]({{site.url}}/images/2020-01-04/new_column.png)
+![Table showing fourteen lines and ten columns]({{site.baseurl}}/images/2020-01-04/new_column.png)
 
 I added a new column with a basis on column **Chance of Admit**. If the chances are greater than 80% then the value is 1 if not is 0.
 
@@ -41,7 +43,7 @@ plt.xticks(x_pos, labels)
 plt.title('Admitted students')
 ```
 
-![Bar chart showing total admitted and not admitted students]({{site.url}}/images/2020-01-04/admitted_chart.png)
+![Bar chart showing total admitted and not admitted students]({{site.baseurl}}/images/2020-01-04/admitted_chart.png)
 
 After I started to prepare the data. Firstly, I made a new ```DataFrame``` only with the necessary columns.
 
@@ -57,7 +59,7 @@ x = pd.DataFrame(np.c_[toefl, gre, cgpa], columns=['toefl','gre', 'cgpa'])
 y = base.iloc[:, -1].values
 ```
 
-![Table showing nine lines and three columns]({{site.url}}/images/2020-01-04/new_dataframe.png)
+![Table showing nine lines and three columns]({{site.baseurl}}/images/2020-01-04/new_dataframe.png)
 
 I separated dataset on training and test data for I can create a model to predict.
 
@@ -79,7 +81,7 @@ plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
 ```
 
-![Confusion Matrix]({{site.url}}/images/2020-01-04/confusion_matrix.png)
+![Confusion Matrix]({{site.baseurl}}/images/2020-01-04/confusion_matrix.png)
 
 ```python
 print("Accuracy: ", metrics.accuracy_score(y_test, predictions))

@@ -6,13 +6,15 @@ lang: br
 ref: percepcoes-sobre-home-office
 excerpt:  "Eu sempre trabalhei dentro de empresas e em momentos ocasionais eu precisei trabalhar de casa, mas eu nunca notei coisas que eu listo aqui."
 image: "/images/2020-03-30/working-from-home.jpg"
+feature_text: |
+    ## Percepções sobre home office
 tags:
     - trabalhar de casa
     - home office
     - trabalho remoto
 ---
 
-[English Version]({{site.url}}/2020/03/30/insights-about-working-from-home)
+[Versão em Inglês]({{site.baseurl}}/2020/03/30/insights-about-working-from-home)
 
 Eu sempre trabalhei dentro de empresas e em momentos ocasionais eu precisei trabalhar de casa, mas eu nunca notei coisas que eu listo aqui.
 

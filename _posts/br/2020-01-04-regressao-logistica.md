@@ -6,6 +6,8 @@ lang: br
 ref: regressao-logistica
 excerpt:  "Para falar sobre Regressão Logística, usei o mesmo <i>dataset</i> da publicação sobre Regressão Linear Múltipla. Ele contém pontuações de exames que ajudam os alunos a ingressar em faculdades."
 image: "/images/2019-12-02/graduation.jpg"
+feature_text: |
+    ## Regressão Logística
 tags:
     - python
     - regressão logística
@@ -13,13 +15,13 @@ tags:
     - estatística
 ---
 
-[English Version]({{site.url}}/2020/01/04/logistic-regression)
+[Versão em Inglês]({{site.baseurl}}/2020/01/04/logistic-regression)
 
-Para falar sobre Regressão Logística, usei o mesmo _dataset_ da [publicação sobre Regressão Linear Múltipla]({{site.url}}/2019/12/02/regressao-linear-multipla). Ele contém pontuações de exames que ajudam os alunos a ingressar em faculdades.
+Para falar sobre Regressão Logística, usei o mesmo _dataset_ da [publicação sobre Regressão Linear Múltipla]({{site.baseurl}}/2019/12/02/regressao-linear-multipla). Ele contém pontuações de exames que ajudam os alunos a ingressar em faculdades.
 
 A regressão logística usa valores binários para classificar e esse _dataset_ não possui essa informação. Então, para resolver isso eu inseri uma nova coluna **Admitted**.
 
-![Tabela mostrando cartorze linhas e dez colunas]({{site.url}}/images/2020-01-04/new_column.png)
+![Tabela mostrando cartorze linhas e dez colunas]({{site.baseurl}}/images/2020-01-04/new_column.png)
 
 Eu adicionei uma nova coluna com base na coluna **Chance of Admit**. Se as chances forem maiores que 80%, o valor é 1 senão é 0.
 
@@ -41,7 +43,7 @@ plt.xticks(x_pos, labels)
 plt.title('Admitted students')
 ```
 
-![Gráfico de barras mostrando o total de de estudantes admitidos e não admitidos]({{site.url}}/images/2020-01-04/admitted_chart.png)
+![Gráfico de barras mostrando o total de de estudantes admitidos e não admitidos]({{site.baseurl}}/images/2020-01-04/admitted_chart.png)
 
 Depois, comecei a preparar os dados. Primeiramente, criei um novo ```DataFrame``` apenas com as colunas necessárias.
 
@@ -56,7 +58,7 @@ x = pd.DataFrame(np.c_[toefl, gre, cgpa], columns=['toefl','gre', 'cgpa'])
 y = base.iloc[:, -1].values
 ```
 
-![Tabela mostrando nove linhas e três colunas]({{site.url}}/images/2020-01-04/new_dataframe.png)
+![Tabela mostrando nove linhas e três colunas]({{site.baseurl}}/images/2020-01-04/new_dataframe.png)
 
 Separei o _dataset_ em treino e teste.
 
@@ -78,7 +80,7 @@ plt.ylabel('Actual label')
 plt.xlabel('Predicted label')
 ```
 
-![Matriz de confusão]({{site.url}}/images/2020-01-04/confusion_matrix.png)
+![Matriz de confusão]({{site.baseurl}}/images/2020-01-04/confusion_matrix.png)
 
 ```python
 print("Acurácia: ", metrics.accuracy_score(y_test, predictions))

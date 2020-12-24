@@ -13,7 +13,7 @@ tags:
     - python
 ---
 
-[Portuguese Version]({{site.url}}/2019/03/17/primeiro-projeto-ciencia-de-dados)
+[Portuguese Version]({{site.baseurl}}/2019/03/17/primeiro-projeto-ciencia-de-dados)
 
 In this post, I pretend to describe my first project with Data Science. The project consists to study Trimania data that are available on its site. On this project, I got simple information like drawn numbers e neighborhoods with most winners.
 
@@ -21,19 +21,19 @@ In this post, I pretend to describe my first project with Data Science. The proj
 
 To get data [I built a crawler](https://github.com/fndomariano/trimania-crawler). It was developed with PHP and a Symfony's library. The informations received are storage on two tables on database. One is for locations and other for numbers. 
 
-![Database tables]({{site.url}}/images/2019-03-17/tables.png)
+![Database tables]({{site.baseurl}}/images/2019-03-17/tables.png)
 
 The main difficulty to carry out this project is clean data. Always that imported a set of data was needed to realize data cleaning because constantly the city name came wrong. As an example in draws where there are winners in Joinville. On site, the data are shown like this: ```“Bairro / Joinvillle”```, ```“Joinvile/Bairro”```, ```“Joinville /Bairro”```. Below some example about the problem on 2nd September 2018.
 
-![Draws at 2nd September 2018]({{site.url}}/images/2019-03-17/result_draw.png)
+![Draws at 2nd September 2018]({{site.baseurl}}/images/2019-03-17/result_draw.png)
 
 If I didn't the data correction, the analysis would be got wrong. The next image is shown some neighborhoods with the city after data cleaning.
 
-![Locations table]({{site.url}}/images/2019-03-17/location_table.png)
+![Locations table]({{site.baseurl}}/images/2019-03-17/location_table.png)
 
 The drawn numbers don't have an exact quantity like Mega-Sena, in other words, the quantity of drawn number will variate. Then I've decided to create one column for all numbers and separate them by a hyphen.
 
-![Numbers table]({{site.url}}/images/2019-03-17/numbers_table.png)
+![Numbers table]({{site.baseurl}}/images/2019-03-17/numbers_table.png)
 
 ### Analysis of the numbers
 
@@ -45,7 +45,7 @@ csv = pd.read_csv('trimaniaNumbers.csv', delimiter=';');
 csv
 ```
 
-![Imported numbers from CSV file]({{site.url}}/images/2019-03-17/numbers_preview.png)
+![Imported numbers from CSV file]({{site.baseurl}}/images/2019-03-17/numbers_preview.png)
 
 ```python
 # Dictionary to insert the numbers
@@ -84,7 +84,7 @@ data.plot(kind='bar')
 plt.show()
 ```
 
-![Drawn numbers x Quantity]({{site.url}}/images/2019-03-17/chart_numbers.png)
+![Drawn numbers x Quantity]({{site.baseurl}}/images/2019-03-17/chart_numbers.png)
 
 ### Analysis of the locations
 
@@ -100,7 +100,7 @@ ORDER BY total DESC
 ```
 After to execute I got my answer.
 
-![Neighboorhoods with most winners]({{site.url}}/images/2019-03-17/sql_result.png)
+![Neighboorhoods with most winners]({{site.baseurl}}/images/2019-03-17/sql_result.png)
 
 ### Considerations
 

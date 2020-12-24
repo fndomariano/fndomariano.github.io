@@ -13,7 +13,7 @@ tags:
     - php
 ---
 
-[English Version]({{site.url}}/2019/04/06/wordpress-development-tips)
+[Versão em Inglês]({{site.baseurl}}/2019/04/06/wordpress-development-tips)
 
 Este texto é um pouco diferente dos anteriores onde falei assuntos que falavam sobre dados. Aqui pretendo ilustrar algumas dicas no desenvolvimento de projetos em Wordpress.
 

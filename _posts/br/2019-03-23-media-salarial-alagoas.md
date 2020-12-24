@@ -14,7 +14,7 @@ tags:
     - statistic
 ---
 
-[English Version]({{site.url}}/2019/03/23/mean-wage-alagoas)
+[Versão em Inglês]({{site.baseurl}}/2019/03/23/mean-wage-alagoas)
 
 Este exercício é de um curso da Udemy que eu fiz. No curso, eu precisei fazer uma tabela com valores estatísticos (média, mediana, desvio padrão, etc...). Então eu decidi fazer o mesmo exercício com Python e suas bibliotecas.
 
@@ -112,7 +112,7 @@ new_data = pd.concat([agreste, sertao, leste])
 new_data
 ```
 
-![Cidades sorteadas]({{site.url}}/images/2019-03-23/drawn_cities.png)
+![Cidades sorteadas]({{site.baseurl}}/images/2019-03-23/drawn_cities.png)
 
 Com as cidades sorteadas, precisei obter os valores pedidos (média, mediana, desvio padrão, coeficiente de variação, menor valor, maior valor, quartil de 25%, quartil de 75%, percentil de 10% e percentil de 90%).
 
@@ -187,7 +187,7 @@ result = {
 ```
 Para finalizar o exercício, fiz um gráfico com as médias por cargo.
 
-![Gráfico da média salarial por cargo]({{site.url}}/images/2019-03-23/chart_position.png)
+![Gráfico da média salarial por cargo]({{site.baseurl}}/images/2019-03-23/chart_position.png)
 
 ### Considerações
 

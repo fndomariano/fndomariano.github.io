@@ -14,7 +14,7 @@ tags:
     - statistic
 ---
 
-[Portuguese Version]({{site.url}}/2019/03/23/media-salarial-alagoas)
+[Portuguese Version]({{site.baseurl}}/2019/03/23/media-salarial-alagoas)
 
 This exercise is from Udemy Course that I did. On the course, I needed to make a table with statistical values (mean, median, standard deviation, etc..). Then I decided to make the same exercise with Python and its libraries.
 
@@ -115,7 +115,7 @@ new_data = pd.concat([agreste, sertao, leste])
 new_data
 ```
 
-![Drawn Cities]({{site.url}}/images/2019-03-23/drawn_cities.png)
+![Drawn Cities]({{site.baseurl}}/images/2019-03-23/drawn_cities.png)
 
 With the cities drawn, I needed to get the values asked (mean, median, standard derivation, the coefficient of variation, lowest value, highest value, quantile 25%, quantile 75%, percentile 10% and percentile 90%).
 
@@ -191,7 +191,7 @@ result = {
 
 To finish the exercise I made a chart with the mean wage by position. 
 
-![Chart of the Mean Wage by Position]({{site.url}}/images/2019-03-23/chart_position.png)
+![Chart of the Mean Wage by Position]({{site.baseurl}}/images/2019-03-23/chart_position.png)
 
 ### Considerations
 

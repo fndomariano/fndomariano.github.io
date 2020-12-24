@@ -15,7 +15,7 @@ tags:
     - statistic
 ---
 
-[English Version]({{site.url}}/2019/10/14/simple-linear-regression)
+[Versão em Inglês]({{site.baseurl}}/2019/10/14/simple-linear-regression)
 
 Hoje eu vou falar sobre os meus estudos com Regressão Linar e mostrar um exemplo simples. Para este conteúdo, eu procurei no [Kaggle](https://www.kaggle.com) e encontrei o dataset [Beer Consumption - Sao Paulo](https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/). Como o nome diz, este possui dados referente ao consumo de cerveja e neste post eu vou mostrar qual dado ajuda a variar o consumo.
 
@@ -31,11 +31,11 @@ base = pd.read_csv('dataset.csv')
 base.head()
 ```
 
-![Exibindo as cinco primeiras linhas do dataset]({{site.url}}/images/2019-10-14/head.png)
+![Exibindo as cinco primeiras linhas do dataset]({{site.baseurl}}/images/2019-10-14/head.png)
 
 Depois disso, eu percebi que havia um monte de linhas em branco.
 
-![Tabela exibindo alguns valores nulos]({{site.url}}/images/2019-10-14/nan.png)
+![Tabela exibindo alguns valores nulos]({{site.baseurl}}/images/2019-10-14/nan.png)
 
 Para ser exato, no dataset havia 576 linhas em branco. Para saber quantas delas eram valores nulos, eu executei o código abaixo.
 
@@ -45,7 +45,7 @@ base.isna().sum()
 
 E obtive a seguinte tabela.
 
-![Table with total NaN values by index]({{site.url}}/images/2019-10-14/total_nan_values.png)
+![Table with total NaN values by index]({{site.baseurl}}/images/2019-10-14/total_nan_values.png)
 
 
 Depois de levantar as informações acima, eu precisei limpar as linhas inúteis. Para fazer isso eu executei:
@@ -64,7 +64,7 @@ plt.hist(consumption)
 
 O código acima exibiu o seguinte gráfico:
 
-![Gráfico com os valores normalizados]({{site.url}}/images/2019-10-14/nd.png)
+![Gráfico com os valores normalizados]({{site.baseurl}}/images/2019-10-14/nd.png)
 
 
 No gráfico, eu vi que os dados estavam normalizados e com esta pré-condição, eu queria saber qual variável correlacionar, entender e prever o consumo de cerveja. Para isso, eu gerei um mapa de calor e eu pude ver qual variável tinha a relação mais forte.
@@ -97,7 +97,7 @@ Para gerar o mapa de calor eu usei a biblioteca [Seaborn](https://seaborn.pydata
 sns.heatmap(base.corr(), annot=True)
 ```
 
-![Mapa de calor]({{site.url}}/images/2019-10-14/heatmap.png)
+![Mapa de calor]({{site.baseurl}}/images/2019-10-14/heatmap.png)
 
 Com a imagem do mapa de calor, eu pude ver melhor a relação entre **beer_consumption** e **max_temperature**. A força desta correlação era de 0.64 e tinha uma nível moderado.
 
@@ -113,7 +113,7 @@ plt.scatter(x, y)
 ```
 Através do gráfico é possível perceber que conforme cresce **max_temperature**, também aumenta **beer_consumption**. 
 
-![Gráfico de dispersão]({{site.url}}/images/2019-10-14/scatter_chart.png)
+![Gráfico de dispersão]({{site.baseurl}}/images/2019-10-14/scatter_chart.png)
 
 Antes de prever o consumo de cerveja, era preciso treinar os dados. 
 
@@ -123,7 +123,7 @@ model.fit(x, y)
 ```
 Com os dados treinados, eu mostrei uma linha para os valores que foram previstos.
 
-![Gráfico de dispersão com valores previstos]({{site.url}}/images/2019-10-14/scatter_chart_values.png)
+![Gráfico de dispersão com valores previstos]({{site.baseurl}}/images/2019-10-14/scatter_chart_values.png)
 
 Para finalizar, uma outra experiência é tentar predizer um valor sozinho. Como por exemplo, eu vou tentar prever o consumo de cerveja com uma temperatura máxim de 38º.
 

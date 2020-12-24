@@ -6,6 +6,8 @@ lang: br
 ref: regressao-linear-multipla
 excerpt:  "Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um dataset about graduação que encontrei no Kaggle."
 image: "/images/2019-12-02/graduation.jpg"
+feature_text: |
+    ## Regressão Linear Multipla
 tags:
     - python
     - regressão linear
@@ -13,7 +15,7 @@ tags:
     - estatística
 ---
 
-[English Version]({{site.url}}/2019/12/02/multiple-linear-regression)
+[Versão em Inglês]({{site.baseurl}}/2019/12/02/multiple-linear-regression)
 
 Neste post, eu quero mostrar como implementei Regressão Linear Múltipla com um [dataset sobre graduação que encontrei no Kaggle](https://www.kaggle.com/mohansacharya/graduate-admissions).
 
@@ -35,11 +37,11 @@ base.head()
 
 O *dataset* possui as seguintes colunas.
 
-![Exibindo os seis primeiros registros com o nome da coluna]({{site.url}}/images/2019-12-02/graduation_columns.png)
+![Exibindo os seis primeiros registros com o nome da coluna]({{site.baseurl}}/images/2019-12-02/graduation_columns.png)
 
-Depois disso, como no post de [Regressão Linear Simples]({{site.url}}/2019/10/14/regressao-linear-simples), eu também usei a biblioteca Seaborn para gerar um gráfico de calor e verificar as correlações entre as variáveis.
+Depois disso, como no post de [Regressão Linear Simples]({{site.baseurl}}/2019/10/14/regressao-linear-simples), eu também usei a biblioteca Seaborn para gerar um gráfico de calor e verificar as correlações entre as variáveis.
 
-![Mapa de calor entre as variáveis do dataset]({{site.url}}/images/2019-12-02/graduation_heatmap.png)
+![Mapa de calor entre as variáveis do dataset]({{site.baseurl}}/images/2019-12-02/graduation_heatmap.png)
 
 Eu pude ver que existem fortes correlações entre **_GRE Score_**, **_TOEFL Score_** e **_CGPA Score_** com **_Chance of Admit_**, depois plotei gráficos para ter uma visualização melhor.
 
@@ -61,7 +63,7 @@ plt.xlabel('TOEFL Score')
 plt.ylabel('Chance of Admit')
 ```
 
-![Este gráfico mostra a correlação entre TOEFL Score e Chance of Admit]({{site.url}}/images/2019-12-02/graduation_chart_toefl.png)
+![Este gráfico mostra a correlação entre TOEFL Score e Chance of Admit]({{site.baseurl}}/images/2019-12-02/graduation_chart_toefl.png)
 
 ```python
 #gre
@@ -72,7 +74,7 @@ plt.xlabel('GRE Score')
 plt.ylabel('Chance of Admit')
 ```
 
-![Este gráfico mostra a correlação entre GRE Score e Chance of Admit]({{site.url}}/images/2019-12-02/graduation_chart_gre.png)
+![Este gráfico mostra a correlação entre GRE Score e Chance of Admit]({{site.baseurl}}/images/2019-12-02/graduation_chart_gre.png)
 
 ```python
 #cgpa
@@ -83,7 +85,7 @@ plt.xlabel('CGPA Score')
 plt.ylabel('Chance of Admit')
 ```
 
-![Este gráfico mostra a correlação entre CGPA Score e Chance of Admit]({{site.url}}/images/2019-12-02/graduation_chart_cgpa.png)
+![Este gráfico mostra a correlação entre CGPA Score e Chance of Admit]({{site.baseurl}}/images/2019-12-02/graduation_chart_cgpa.png)
 
 Com as variáveis definidas, construí o modelo para testar. O primeiro passo foi criar um novo ```DataFrame```.
 
@@ -92,7 +94,7 @@ x = pd.DataFrame(np.c_[toefl, gre, cgpa], columns=['toefl','gre', 'cgpa'])
 x.head()
 ```
 
-![Tabela mostrando as colunas toefl, gre and cgpa]({{site.url}}/images/2019-12-02/graduation_new_dataframe.png)
+![Tabela mostrando as colunas toefl, gre and cgpa]({{site.baseurl}}/images/2019-12-02/graduation_new_dataframe.png)
 
 Em seguida, separei o *dataset* em dois conjuntos de dados.
 

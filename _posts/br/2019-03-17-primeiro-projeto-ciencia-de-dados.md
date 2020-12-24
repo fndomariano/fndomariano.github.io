@@ -13,7 +13,7 @@ tags:
     - python
 ---
 
-[English Version]({{site.url}}/2019/03/17/first-project-data-science)
+[Versão em Inglês]({{site.baseurl}}/2019/03/17/first-project-data-science)
 
 Nesse post pretendo descrever meu primeiro projeto de Ciência de Dados. O projeto consiste em estudar os dados da Trimania que são disponibilizados no site da instituição. Nele eu levantei informações bem simples, como: números sorteados e bairros que mais tiveram ganhadores em um período.
 
@@ -21,19 +21,19 @@ Nesse post pretendo descrever meu primeiro projeto de Ciência de Dados. O proje
 
 Para obter os dados eu [criei um crawler](https://github.com/fndomariano/trimania-crawler). O mesmo foi desenvolvido em PHP utilizando uma biblioteca do framework Symfony. As informações recebidas são salvas em duas tabelas: uma para localização e outra para os números. 
 
-![Tabelas do banco de dados]({{site.url}}/images/2019-03-17/tables.png)
+![Tabelas do banco de dados]({{site.baseurl}}/images/2019-03-17/tables.png)
 
 Uma das dificuldades para executar esse projeto é o tratamento de dados. Sempre que importado um conjunto de dados foi necessário realizar o tratamento deles, pois, constantemente o nome das cidades divergiam. Como exemplo em sorteios que existem ganhadores na cidade Joinville. No site os dados eram apresentados da seguinte forma: ```“Bairro / Joinvillle”```, ```“Joinvile/Bairro”```, ```“Joinville /Bairro”```. Abaixo alguns exemplos do problema citado no sorteio do dia 02/09/2018.
 
-![Sorteios do dia 02/09/2018]({{site.url}}/images/2019-03-17/result_draw.png)
+![Sorteios do dia 02/09/2018]({{site.baseurl}}/images/2019-03-17/result_draw.png)
 
 Não realizando a correção desses dados a análise seria errônea. Na imagem seguinte é mostrada alguns bairros juntamente com a cidade após ter sido feita a correção dos caracteres. 
 
-![Tabela de localizações]({{site.url}}/images/2019-03-17/location_table.png)
+![Tabela de localizações]({{site.baseurl}}/images/2019-03-17/location_table.png)
 
 Os números sorteados não tem uma quantidade exata como na Mega-Sena, ou seja, a quantidade de números sorteados por rodada vai variar. Logo, não optei por ter uma coluna para cada valor sorteado. Criei uma coluna do tipo texto e salvei usando hífen como separador.
 
-![Tabela de númberos]({{site.url}}/images/2019-03-17/numbers_table.png)
+![Tabela de númberos]({{site.baseurl}}/images/2019-03-17/numbers_table.png)
 
 ### Análise dos números
 
@@ -45,7 +45,7 @@ csv = pd.read_csv('trimaniaNumbers.csv', delimiter=';');
 csv
 ```
 
-![Números importados do CSV]({{site.url}}/images/2019-03-17/numbers_preview.png)
+![Números importados do CSV]({{site.baseurl}}/images/2019-03-17/numbers_preview.png)
 
 ```python
 # Dicionário para inserir os números
@@ -84,7 +84,7 @@ data.plot(kind='bar')
 plt.show()
 ```
 
-![Números sorteados x Quantidade]({{site.url}}/images/2019-03-17/chart_numbers.png)
+![Números sorteados x Quantidade]({{site.baseurl}}/images/2019-03-17/chart_numbers.png)
 
 ### Análise das localizações
 
@@ -100,7 +100,7 @@ ORDER BY total DESC
 ```
 Após executar a SQL acima eu obtive a minha resposta:
 
-![Bairros que mais tiveram ganhadores]({{site.url}}/images/2019-03-17/sql_result.png)
+![Bairros que mais tiveram ganhadores]({{site.baseurl}}/images/2019-03-17/sql_result.png)
 
 ### Considerações
 

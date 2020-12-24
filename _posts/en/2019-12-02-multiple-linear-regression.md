@@ -6,6 +6,8 @@ lang: en
 ref: multiple-linear-regression
 excerpt:  "In this post, I want to show how I've implemented multiple linear regression with a dataset about graduation that I found on Kaggle."
 image: "/images/2019-12-02/graduation.jpg"
+feature_text: |
+    ## Multiple Linear Regression
 tags:
     - python
     - linear regression
@@ -13,7 +15,7 @@ tags:
     - statistic
 ---
 
-[Portuguese Version]({{site.url}}/2019/12/02/regressao-linear-multipla)
+[Portuguese Version]({{site.baseurl}}/2019/12/02/regressao-linear-multipla)
 
 In this post, I want to show how I've implemented Multiple Linear Regression with a [dataset about graduation that I found on Kaggle](https://www.kaggle.com/mohansacharya/graduate-admissions).
 
@@ -35,11 +37,11 @@ base.head()
 
 The dataset owns the following columns.
 
-![Showing six registers from dataset with column name]({{site.url}}/images/2019-12-02/graduation_columns.png)
+![Showing six registers from dataset with column name]({{site.baseurl}}/images/2019-12-02/graduation_columns.png)
 
-After this, as the [Linear Regression]({{site.url}}/2019/10/14/simple-linear-regression) post, also I used Seaborn to generate a heatmap with correlation among variables.
+After this, as the [Linear Regression]({{site.baseurl}}/2019/10/14/simple-linear-regression) post, also I used Seaborn to generate a heatmap with correlation among variables.
 
-![Heatmap among variables from dataset]({{site.url}}/images/2019-12-02/graduation_heatmap.png)
+![Heatmap among variables from dataset]({{site.baseurl}}/images/2019-12-02/graduation_heatmap.png)
 
 I could see that exits strong correlations among **GRE Score**, **TOEFL Score** and **CGPA Score** with **Chance of Admit**, then I plotted charts to get better visualization.
 
@@ -61,7 +63,7 @@ plt.xlabel('TOEFL Score')
 plt.ylabel('Chance of Admit')
 ```
 
-![This chart shows the correlation between TOEFL Score and Chance of Admit]({{site.url}}/images/2019-12-02/graduation_chart_toefl.png)
+![This chart shows the correlation between TOEFL Score and Chance of Admit]({{site.baseurl}}/images/2019-12-02/graduation_chart_toefl.png)
 
 ```python
 #gre
@@ -72,7 +74,7 @@ plt.xlabel('GRE Score')
 plt.ylabel('Chance of Admit')
 ```
 
-![This chart shows the correlation between GRE Score and Chance of Admit]({{site.url}}/images/2019-12-02/graduation_chart_gre.png)
+![This chart shows the correlation between GRE Score and Chance of Admit]({{site.baseurl}}/images/2019-12-02/graduation_chart_gre.png)
 
 ```python
 #cgpa
@@ -83,7 +85,7 @@ plt.xlabel('CGPA Score')
 plt.ylabel('Chance of Admit')
 ```
 
-![This chart shows the correlation between CGPA Score and Chance of Admit]({{site.url}}/images/2019-12-02/graduation_chart_cgpa.png)
+![This chart shows the correlation between CGPA Score and Chance of Admit]({{site.baseurl}}/images/2019-12-02/graduation_chart_cgpa.png)
 
 
 With the variables defined, I built the model to test. The first step was to create a new ```DataFrame```.
@@ -93,7 +95,7 @@ x = pd.DataFrame(np.c_[toefl, gre, cgpa], columns=['toefl','gre', 'cgpa'])
 x.head()
 ```
 
-![Table showing a new Dataframe with columns toefl, gre and cgpa]({{site.url}}/images/2019-12-02/graduation_new_dataframe.png)
+![Table showing a new Dataframe with columns toefl, gre and cgpa]({{site.baseurl}}/images/2019-12-02/graduation_new_dataframe.png)
 
 Next, I separated this one in two sets of data.
 

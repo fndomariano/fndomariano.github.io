@@ -13,7 +13,7 @@ tags:
     - php
 ---
 
-[Portuguese Version]({{site.url}}/2019/04/06/dicas-desenvolvimento-wordpress)
+[Portuguese Version]({{site.baseurl}}/2019/04/06/dicas-desenvolvimento-wordpress)
 
 This text is a few different from previous texts where I've talked about data subjects. Here I intent to illustrate some tips on projects Wordpress development.
 
