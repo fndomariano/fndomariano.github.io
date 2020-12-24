@@ -4,7 +4,7 @@ title:    "Regressão Linear Simples"
 comments: true
 lang: br
 ref: regressao-linear-simples
-excerpt:  "Hoje eu vou falar sobre os meus estudos com Regressão Linar e mostrar com um simples exemplo."
+excerpt:  "Hoje eu vou falar sobre os meus estudos com Regressão Linear e mostrar com um simples exemplo."
 image: "/images/2019-10-14/chart.jpg"
 feature_text: |
     ## Regressão Linear Simples
@@ -17,7 +17,7 @@ tags:
 
 [Versão em Inglês]({{site.baseurl}}/2019/10/14/simple-linear-regression)
 
-Hoje eu vou falar sobre os meus estudos com Regressão Linar e mostrar um exemplo simples. Para este conteúdo, eu procurei no [Kaggle](https://www.kaggle.com) e encontrei o dataset [Beer Consumption - Sao Paulo](https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/). Como o nome diz, este possui dados referente ao consumo de cerveja e neste post eu vou mostrar qual dado ajuda a variar o consumo.
+Hoje eu vou falar sobre os meus estudos com Regressão Linear e mostrar um exemplo simples. Para este conteúdo, eu procurei no [Kaggle](https://www.kaggle.com) e encontrei o dataset [Beer Consumption - Sao Paulo](https://www.kaggle.com/dongeorge/beer-consumption-sao-paulo/). Como o nome diz, este possui dados referente ao consumo de cerveja e neste post eu vou mostrar qual dado ajuda a variar o consumo.
 
 Primeiramente, eu importei as bibliotecas e o dataset para visualizar as colunas.
 
