@@ -1,5 +1,7 @@
 # My site
 
+Project is to share knowledge. 
+
 a) Run 
 ```bash 
 docker-compose up
