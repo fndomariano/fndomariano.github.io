@@ -27,7 +27,7 @@ Agora, imagine o cientista de dados trabalhando com uma ferramenta, flexível, s
 
 Se este cientista de dados usar o Streamlit, é possível. De acordo com o site, a definição para o Streamlit é: 
 
-> um framework pequeno para aplicativos poderosos.
+> um framework mínimo para aplicações poderosas.
 
 Ele foi feito para ser usado com Python, criar interfaces bonitas e colocar na web sem se preocupar com as complexidades de desenvolvimento backend.
 
@@ -87,7 +87,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Agora, execute `docker-compose up` no terminal, espere até terminar de processar, abra o navegador e digite `http://localhost:8051`. Se os passo anteriores funcionaram, você verá:
+Agora, execute `docker-compose up` no terminal, espere até terminar de processar, abra o navegador e digite `http://localhost:8051`. Se os passos anteriores funcionaram, você verá:
 
 ![Application title that is write "Data exploratory application"]({{site.baseurl}}/images/2020-12-23/streamlit1.png)
 
@@ -123,9 +123,9 @@ def main():
             st.markdown(f"__Mode__: {data[column].mode()[0] }")
 ```
 
-Para testar enviei o [mesmo dataset que eu escrevi sobre neste post]({{site.baseurl}}/2019/10/14/regressao-linear-simples), logo, depois das alterações a aplicação deve estar assim:
+Depois das alterações, eu enviei o [mesmo dataset que eu escrevi sobre neste post]({{site.baseurl}}/2019/10/14/regressao-linear-simples) para testar.
 
-![Application showing a field to upload files, table, total rows, total null rows, mean, and mode]({{site.baseurl}}/images/2020-12-23/streamlit1.png)
+![Application showing a field to upload files, table, total rows, total null rows, mean, and mode]({{site.baseurl}}/images/2020-12-23/streamlit2.png)
 
 Nosso projetinho está ficando bacana! Agora, vamos colocar os gráficos!
 

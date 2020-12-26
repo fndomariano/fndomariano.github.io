@@ -4,7 +4,7 @@ title:    "Streamlit, a framework that lets datascients' life more beautiful"
 comments: true
 lang: en
 ref: streamlit-a-framework-that-lets-datascients-life-more-beautiful
-excerpt:  "Imagine that a data scientist got datasets, he worked a lot standardizing, normalizing, and cleaning invalid values. Now he needed to get insights and to figure out if there was some behavior."
+excerpt:  "Imagine that a data scientist got datasets, he worked a lot standardizing, normalizing, and cleaning invalid values. He also needed to get insights and to figure out if there was some behavior."
 image: "/images/2020-12-23/streamlit.png"
 feature_text: |
     ## Streamlit, a framework that lets datascients' life more beautiful
@@ -17,7 +17,7 @@ tags:
 
 [Portuguese Version]({{site.baseurl}}/2020/12/23/streamlit-o-framework-que-deixa-a-vida-dos-cientistas-de-dados-mais-agradavel)
 
-Imagine that a data scientist got datasets, he worked a lot standardizing, normalizing, and cleaning invalid values. Now he needed to get insights and to figure out if there was some behavior. To do this, he plotted some charts, he calculated the averages and other repetitive chores. Afterward he got updated datasets and he needed to repeat all tasks. 
+Imagine that a data scientist got datasets, he worked a lot standardizing, normalizing, and cleaning invalid values. He also needed to get insights and to figure out if there was some behavior. To do this, he plotted some charts, he calculated the averages and other repetitive chores. Afterward he got updated datasets and he needed to repeat all tasks. 
 
 ![Homer making facepalm and speaking "Doh!"]({{site.baseurl}}/images/2020-12-23/doh.png){:height="200px" width="200px"}
 
@@ -31,7 +31,7 @@ If this data scientist uses Streamlit, it is possible. According to the site, th
 
 It was built to use with Python, to create nice interfaces and put it on the web without worrying with a complex backend development. 
 
-My purpose with this post is to create a very simple application where someone can make an exploratory data analysis and the same time show to you how easy is the Streamlit. With this application, you will make an upload file, also you will see some rows statistics and finally you will be able to plot charts (histogram, scatter and box). 
+My purpose with this post is to create a very simple application where someone can make an exploratory data analysis and the same time, I wanna show you how easy is the Streamlit. With this application, you will make an upload file, also you will see some rows statistics and finally you will be able to plot charts (histogram, scatter and box). 
 
 So, let 's do this!!!
 
@@ -89,7 +89,7 @@ if __name__ == '__main__':
     main()
 ```
 
-Now, you carry out `docker-compose up` on the terminal, wait until it finishes the process, open your browser and access `http://localhost:8051`. If previous steps were right, you will see:
+Now, carry out `docker-compose up` on the terminal, wait until it finishes the process, open your browser and access `http://localhost:8051`. If previous steps were right, you will see:
 
 
 ![Application title that is write "Data exploratory application"]({{site.baseurl}}/images/2020-12-23/streamlit1.png)
@@ -126,11 +126,9 @@ def main():
             st.markdown(f"__Mode__: {data[column].mode()[0] }")
 ```
 
-After the changes, our application should  be like this. 
+After the changes, I sent the [same dataset that I wrote about in this post]({{site.baseurl}}/2019/10/14/simple-linear-regression) to do a test.
 
-![Application showing a field to upload files, table, total rows, total null rows, mean, and mode]({{site.baseurl}}/images/2020-12-23/streamlit1.png)
-
-I uploaded the [same dataset that I wrote about in this post]({{site.baseurl}}/2019/10/14/simple-linear-regression).
+![Application showing a field to upload files, table, total rows, total null rows, mean, and mode]({{site.baseurl}}/images/2020-12-23/streamlit2.png)
 
 Our little project is getting nice! Now, we are going to put the charts!
 
@@ -182,7 +180,7 @@ __Histrogram__
 
 ![Histogram chart showing normalized values]({{site.baseurl}}/images/2020-12-23/histogram.png)
 
-To exemplify Scatter and Box charts, I sent the dataset that was used on the [Multiple Linear Regression’s post]({{site.baseurl}}/2019/12/02/multiple-linear-regression).
+To exemplify Scatter and Box charts, I got the dataset that was used on the [Multiple Linear Regression’s post]({{site.baseurl}}/2019/12/02/multiple-linear-regression).
 
 __Scatter__
 
