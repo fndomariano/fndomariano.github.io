@@ -4,7 +4,7 @@ title: "Armazenando dados com JSONB no PostgreSQL"
 comments: true
 lang: br
 ref: armazenando-dados-com-jsonb-no-postgresql
-excerpt:  "Recentemente estive trabalhando com um tipo de dados chamado JSONB e decidi escrever sobre. Basicamente este tipo de dado é um JSON, mas existem diferenças de de acordo com a documentação do PostgreSQL."
+excerpt:  "Recentemente estive trabalhando com um tipo de dados chamado JSONB e decidi escrever sobre. Basicamente este tipo de dado é um JSON, mas existem diferenças de acordo com a documentação do PostgreSQL."
 image: "/images/2021-01-30/"
 feature_text: |
     ## Armazenando dados com JSONB no PostgreSQL
@@ -16,7 +16,7 @@ tags:
 
 [Versão em Inglês]({{site.baseurl}}/2021/01/30/storing-data-with-jsonb-on-postgresql)
 
-Recentemente estive trabalhando com um tipo de dados chamado `jsonb` e decidi escrever sobre. Basicamente este tipo de dado é um `json`, mas existem diferenças de [de acordo com a documentação do PostgreSQL](https://www.postgresql.org/docs/9.4/datatype-json.html){:target="_blank"}.
+Recentemente estive trabalhando com um tipo de dados chamado `jsonb` e decidi escrever sobre. Basicamente este tipo de dado é um `json`, mas existem diferenças [de acordo com a documentação do PostgreSQL](https://www.postgresql.org/docs/9.4/datatype-json.html){:target="_blank"}.
 
 >O tipo json armazena uma cópia exata do texto de entrada, cuja as funções devem ser repartidas em cada execução; enquanto o tipo de dado jsonb é armazenado em um formato binário decomposto que torna a entrada ligeiramente mais lenta devido a sobrecarga de conversão adicionada, mas significativamente mais rápida de processar, desde que não é necessário reparar. O jsonb também suporta indexação, o que pode ser uma vantagem significativa.
 
@@ -173,4 +173,4 @@ No último exemplo, foi necessário usar a função `to_jsonb` para converter o 
 
 ## Considerações
 
-Ainda existem outras questão à explorar como indexes e funções, mas meu objetivo era fazer apenas uma introdulçao sobre este tipo de dados. Este foi meu primeiro texto sobre banco de dados e espero que tenham gostado. Qualquer dúvida deixe um comentário.
+Ainda existem outras questão à explorar como indexes e funções, mas meu objetivo era fazer apenas uma introdução sobre este tipo de dados. Este foi meu primeiro texto sobre banco de dados e espero que tenham gostado. Qualquer dúvida deixe um comentário.
