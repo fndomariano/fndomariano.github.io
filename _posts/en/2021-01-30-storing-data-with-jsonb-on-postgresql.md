@@ -5,7 +5,7 @@ comments: true
 lang: en
 ref: storing-data-with-jsonb-on-postgresql
 excerpt:  "Recently I’ve been working with a kind of data called JSONB and I’ve decided to write about it. Basically this kind of data is a JSON, but there are differences according the PostgresSQL’ documentation."
-image: "/images/2021-01-30/"
+image: "/images/2021-01-30/postgresql-logo.jpg"
 feature_text: |
     ## Storing data with JSONB on PostgreSQL
 tags:

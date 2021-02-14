@@ -5,7 +5,7 @@ comments: true
 lang: br
 ref: armazenando-dados-com-jsonb-no-postgresql
 excerpt:  "Recentemente estive trabalhando com um tipo de dados chamado JSONB e decidi escrever sobre. Basicamente este tipo de dado é um JSON, mas existem diferenças de acordo com a documentação do PostgreSQL."
-image: "/images/2021-01-30/"
+image: "/images/2021-01-30/postgresql-logo.jpg"
 feature_text: |
     ## Armazenando dados com JSONB no PostgreSQL
 tags:
