@@ -44,7 +44,7 @@ insert into products values('cd5a77d0-630d-11eb-ae93-0242ac130002', '{"name":"Co
 
 ### Selecting data
 
-**a)** Getting registers that having `features`.
+**a)** Getting records with `features` attribute.
 
 ```sql
 select id, data->>'name' as name 
@@ -170,9 +170,9 @@ _Result_:
 | d987878a-630a-11eb-ae93-0242ac130002 | SNES  | 500.0 |
 ```
 
-In the last example, was necessary to use the `to_jsonb` function to cast the value.
+In the last example, it was necessary to use the `to_jsonb` function to cast the value.
 
 
 ## Considerations
 
-It still a lot of other issues to explore as indexes and functions, but my goal was to make an introduction about this kind of data. This article was my first writing about databases and I hope you've liked it. If you have any doubt, let me know in the comments.
+Threre are a lot of other issues to see as indexes and functions, but my goal was to make an introduction about this kind of data. This article was my first writing about databases and I hope you've liked it. If you have any doubt, let me know in the comments.

@@ -22,7 +22,7 @@ Recentemente estive trabalhando com um tipo de dados chamado `jsonb` e decidi es
 
 ## Mãos na massa
 
-Tendo isso em mente, vou mostrar alguns exemplos and introduzir para você.
+Tendo isso em mente, vou mostrar alguns exemplos.
 
 ### Criando uma tabela
 
