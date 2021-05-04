@@ -3,7 +3,8 @@ FROM jekyll/builder
 WORKDIR /tmp
 ADD Gemfile /tmp/
 ADD tale.gemspec /tmp/
-RUN bundle install
+RUN bundle update
+RUN bundle install --no-deployment
 
 FROM jekyll/jekyll
 
