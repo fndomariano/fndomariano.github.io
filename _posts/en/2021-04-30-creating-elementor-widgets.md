@@ -24,9 +24,9 @@ In the first step, you need to create a custom post type for products and add cu
 
 ![Table showing custom fields data with order, label, name and type]({{site.baseurl}}/images/2021-05-04/fields.png)
 
-To work with Elementor I have a preference to build a plugin to keep more organized and using this strategy you can use in other projects.
+To work with Elementor I have a preference to build a plugin to keep the source more organized and using this strategy you can apply in other projects.
 
-To create a plugin, you need to create a directory called `elementor-custom-widgets` inside `wp-content > plugins`. This new directory will own the following structure.
+To create a plugin, you need to create a directory called `elementor-custom-widgets` inside `wp-content > plugins`. This new directory will have the following structure.
 
 ```bash
 > tree /wp-content/plugins/elementor-custom-widgets
@@ -212,7 +212,7 @@ To apply this widget is necessary to add a new page on WordPress editing with El
 
 ![Searching Products Widget]({{site.baseurl}}/images/2021-05-04/elementor_search.png)
 
-Dragging and dropping is possible to put the widget on the page. Also, control allows the definition of many products to show.
+Drag and drop to put the widget on the page. Also, control allows the definition of many products to show.
 
 ![Products Widget Control]({{site.baseurl}}/images/2021-05-04/elementor_control.png)
 
@@ -221,6 +221,6 @@ If you don't have products, add some of them and like this will be possible to s
 ![Table of products showing four registers with photo, name, brand and price]({{site.baseurl}}/images/2021-05-04/products.png)
 
 
-I hope that I could show how easy is to build an Elementor widget. The [codes above are available on my GitHub](https://github.com/fndomariano/elementor-custom-widgets){:target="_blank"}.
+I hope that I could show how easy it is to build an Elementor widget. The [codes above are available on my GitHub](https://github.com/fndomariano/elementor-custom-widgets){:target="_blank"}.
 
 Is there still any doubt? Please let me know! I will be happy to help you.
