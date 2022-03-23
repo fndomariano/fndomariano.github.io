@@ -46,7 +46,7 @@ Está na hora do teste!!!
 
 ![Uma pessoa fantasiada batendo ao lado do carro com sua mão]({{site.baseurl}}/images/2022-03-21/car_test.gif)
 
-No inicio, falei sobre a uma forma que o Laravel fornece para os desenvolvedores testarem arquivos. O framework possui a classe `Illuminate\Http\UploadedFile` que é muito simples de usar. Eu criei três testes. O primeiro é para para sucesso, o segundo verifica se o arquivo possui uma extensão válida e o último valida o tamanho do arquivo.
+No inicio, falei sobre a uma forma que o Laravel fornece para os desenvolvedores testarem arquivos. O framework possui a classe `Illuminate\Http\UploadedFile` que é muito simples de usar. Eu criei três testes. O primeiro é para sucesso, o segundo verifica se o arquivo possui uma extensão válida e o último valida o tamanho do arquivo.
 
 ```php
 class UploadExampleTest extends TestCase

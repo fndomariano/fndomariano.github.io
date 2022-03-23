@@ -4,7 +4,7 @@ title:    "How to make tests with files on Laravel?"
 comments: true
 lang: en
 ref: how-to-make-tests-with-files-on-laravel
-excerpt:  "Some months ago, I was working on a Laravel project that runs with uploads. Since I’ve started programming using automated tests I never had an opportunity to build them with files. Then I found out that Lavarel provides a way to work them in tests."
+excerpt:  "Some months ago, I was working on a Laravel project that runs uploads. Since I’ve started programming using automated tests I never had an opportunity to build them with files. Then I found out that Lavarel provides a way to work them in tests."
 image: "/images/2022-03-21/laravel.png"
 feature_text: |
     ## How to make tests with files on Laravel?
