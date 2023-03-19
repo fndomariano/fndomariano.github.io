@@ -56,7 +56,7 @@ The current response is like this:
 ]
 ```
 
-and need to be like this…
+and needs to be like this…
 
 ```json
 {
@@ -79,7 +79,7 @@ and need to be like this…
   ]
 }
 ```
-The first step the implementation was putting a configuration to enable the feature flag.
+The first step in the implementation was to put a configuration in place to enable the Feature Flag.
 
 ```python
 debug = os.getenv('DEBUG') == 'True'
@@ -88,10 +88,7 @@ app = Flask(__name__)
 
 app.config['FEATURE_FLAG_PRODUCTS_JSON_REPONSE'] = debug
 ```
-
-In summary, the code above says always the project runs in the development environment the Feature Flag will be active. 
-
-To use it there is no secret. Just add a condition and return what is necessary and be happy =D
+In summary, the code above enables the Feature Flag when the project is running in the development environment. To use it, simply add a condition and return the necessary information.
 
 ```python
 @app.route("/products")
@@ -145,7 +142,6 @@ def products():
 ```
 ## Considerations
 
-In software development there are many ways to add feature flags in products. Working [with a Multitenancy application](https://en.wikipedia.org/wiki/Multitenancy) is possible delivering the changes by a tenant. Also could be more refined [like this repository I found on Github](https://github.com/rachelsanders/Flask-FeatureFlags) in a fast search on Google. Creating a secondary project to manage the flags with a database or using something like [Split](https://www.split.io/) maybe can’t be a bad idea.
+In software development there are many ways to add feature flags in products. For example, where working [with a Multitenancy application](https://en.wikipedia.org/wiki/Multitenancy), it is possible to deliver changes by a tenant. Additionally, more sophisticated methods, [like this one found on Github](https://github.com/rachelsanders/Flask-FeatureFlags) through a quick search on Google. Creating a secondary project to manage the flags with a database or using something like [Split](https://www.split.io/) might also be a good idea.
 
-The objective of this article was to introduce you - if you didn’t know - the Feature Flags. It was a simple way to work with them and you if wanna talk more about this concept just send a message.
-
+The objective of this article was to introduce you to the concept of Feature Flags, and provide a simple way to work with them. If you have any further questions about this concept, please send a message.
