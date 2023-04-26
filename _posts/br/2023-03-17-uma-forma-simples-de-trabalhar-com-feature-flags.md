@@ -17,13 +17,13 @@ tags:
 
 [Versão em Inglês]({{site.baseurl}}/2023/03/17/simple-way-to-work-with-feature-flags)
 
-No desenvolvimento de software, é um comportamento comuim entregar partes de funcionalidades enquanto ainda estão em desenvolvimento. Esta prática é chamada de [Entrega Contínua](https://pt.wikipedia.org/wiki/Entrega_cont%C3%ADnua) ou [Integração Contínua](https://pt.wikipedia.org/wiki/Integra%C3%A7%C3%A3o_cont%C3%ADnua).
+No desenvolvimento de software, é um comportamento comum entregar partes de funcionalidades enquanto ainda estão em desenvolvimento. Esta prática é chamada de [Entrega Contínua](https://pt.wikipedia.org/wiki/Entrega_cont%C3%ADnua) ou [Integração Contínua](https://pt.wikipedia.org/wiki/Integra%C3%A7%C3%A3o_cont%C3%ADnua).
 
 Entregar coisas novas ao produto é mais fácil porque os clientes não sabem exatamente o que está acontecendo. Essas normalmente não alteram o que está funcionando. Mas o que fazer quando é necessário modificar algo que está rodando sem quebrar o software? A resposta para essa pergunta está no título deste texto: _Feature Flags!_
 
 [De acordo com Martin Fowler](https://martinfowler.com/articles/feature-toggles.html):
 
-> Feature Tootgles (também conhecida como _Feature Flags_) são uma poderosa técnica que permite times modificarem o comportamento do sistema sem alterar código. 
+> _Feature Toogles_ (também conhecida como _Feature Flags_) são uma poderosa técnica que permite times modificarem o comportamento do sistema sem alterar código. 
 
 Agora nós entendemos o conceito de _Feature Flags_, certo? Vamos ver algum código então!
 
@@ -89,7 +89,7 @@ app.config['FEATURE_FLAG_PRODUCTS_JSON_REPONSE'] = debug
 ```
 Em resumo, o código acima diz que sempre que o projeto rodar em modo de desenvolvimento, a _Feature Flag_ vai estar ativa.
 
-Para usá-la, não tem segredto. Apenas adicione uma condição, retorne o que é necessário e seja feliz =D
+Para usá-la, não tem segredo. Apenas adicione uma condição, retorne o que é necessário e seja feliz =D
 
 ```python
 @app.route("/products")
@@ -143,7 +143,7 @@ def products():
 ```
 ## Considerações
 
-No desenvolvimento de sofware existem muitas maneiras de adicionar _Feature Flags_ em produtos. Trabalhando em um [aplicação multitenant](https://en.wikipedia.org/wiki/Multitenancy) é possível enteregar as alterações por tenant. Também poderia ser uma forma mais refinada como [este repositório que eu encontrei no Github](https://github.com/rachelsanders/Flask-FeatureFlags) em uma busca rápida. Criar um projeto secundário para gerenciar as _flags_ através de um banco de dados ou usar algo como [Split](https://www.split.io/) talvez não seja uma má ideia.
+No desenvolvimento de sofware existem muitas maneiras de adicionar _Feature Flags_ em produtos. Trabalhando em um [aplicação _multitenant_](https://en.wikipedia.org/wiki/Multitenancy) é possível enteregar as alterações por _tenant_. Também poderia ser uma forma mais refinada como [este repositório que eu encontrei no Github](https://github.com/rachelsanders/Flask-FeatureFlags) em uma busca rápida. Criar um projeto secundário para gerenciar as _flags_ através de um banco de dados ou usar algo como [Split](https://www.split.io/) talvez não seja uma má ideia.
 
 O objetivo deste artigo foi introduzir para você - se não conhecia - as _Feature Flags_. Isso foi uma maneira simples de trabalhar com elas e se você deseja falar mais sobre este conceito basta me enviar uma mensagem.
 
