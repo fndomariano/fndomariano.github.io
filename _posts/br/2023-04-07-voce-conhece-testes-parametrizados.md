@@ -62,7 +62,7 @@ public class Calculator {
 ```
 O exemplo acima não tem mistério. Recebe `x`, `y` e de acordo com a operação o resultado será retornado. Se a operação é de desconhecida, o resutado será zero.
 
-Testar o código sem testes parametrizados geraria cinco métodos and a lot of lines como estas:
+Testar o código sem testes parametrizados geraria pelo menos cinco métodos e um monte de linhas como estas:
 
 ```java
 public class CalculatorTest {
@@ -165,4 +165,4 @@ public class CalculatorTest {
 
 ![Pessoa mostrando a parte interna das mãos como um gesto para mostrar que algo é fácil]({{site.baseurl}}/images/2023-04-07/easy.gif)
 
-Este texto foi simples como a maioria dos que eu já produzi. Eu acho que o objetivo foi cumprido. Mas os testes parametrizados tem várias formas de serem executados. Se você quiser se aprofundar mais, eu realmente recomendo o [Guia de testes automatizados no Junit5](https://www.baeldung.com/parameterized-tests-junit-5).
+Apesar de ser um texto simples, eu acho que o objetivo foi cumprido. Mas os testes parametrizados tem várias formas de serem executados. Se você quiser se aprofundar mais, eu realmente recomendo o [Guia de testes automatizados no Junit5](https://www.baeldung.com/parameterized-tests-junit-5).
